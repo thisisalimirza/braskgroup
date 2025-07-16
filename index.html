@@ -789,7 +789,7 @@
                         </div>
                         
                         <p class="text-lg">
-                            I'm not an expert. I haven't exited a company yet. But I've built things that work, helped others do the same, and I'm trying to make the journey a little easier — and a lot more honest — for the people coming up with me.
+                            I'm not an expert. But I've built things that work, helped others do the same, and I'm trying to make the journey a little easier — and a lot more honest — for the people coming up with me.
                         </p>
                         
                         <div class="space-y-4 my-8">
@@ -927,11 +927,14 @@
                         <div class="flex items-center">
                             <div class="text-gray-900 font-medium">— Ali</div>
                             <div class="ml-3 flex space-x-2">
-                                <a href="https://linkedin.com/in/alimirza" target="_blank" class="text-gray-400 hover:text-blue-600 transition-colors duration-200">
+                                <a href="https://linkedin.com/in/thisisalimirza" target="_blank" class="text-gray-400 hover:text-blue-600 transition-colors duration-200">
                                     <i class="fab fa-linkedin text-sm"></i>
                                 </a>
-                                <a href="https://twitter.com/alimirza" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors duration-200">
+                                <a href="https://twitter.com/thisisalimirza" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors duration-200">
                                     <i class="fab fa-twitter text-sm"></i>
+                                </a>
+                                <a href="https://thisisalimirza.substack.com/" target="_blank" class="text-gray-400 hover:text-orange-500 transition-colors duration-200">
+                                    <i class="fas fa-pen-nib text-sm"></i>
                                 </a>
                             </div>
                         </div>
@@ -987,7 +990,7 @@
                     </button>
                     <div class="faq-content hidden px-6 pb-4" id="content-3">
                         <p class="text-gray-700 leading-relaxed">
-                            We don't sell community. We build with it. Our revenue comes from the success of our ventures and the value we create together. When our community members succeed, we succeed. It's aligned incentives, not membership fees.
+                            We don't sell community. We build with it. Our revenue comes from the success of our own ventures and the value we create together. When our community members succeed, we succeed. It's aligned incentives, not membership fees.
                         </p>
                     </div>
                 </div>
@@ -1053,7 +1056,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-semibold text-gray-900">Response Time</h4>
-                                    <p class="text-gray-600">We typically respond within 24 hours</p>
+                                    <p class="text-gray-600">We typically respond within 48 hours</p>
                                 </div>
                             </div>
                             
@@ -1084,7 +1087,7 @@
                 <div class="bg-gray-50 rounded-lg p-8">
                     <h3 class="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
                     
-                    <form class="space-y-6" action="https://formspree.io/f/xpznvqno" method="POST">
+                    <form class="space-y-6" id="contactForm">
                         <div>
                             <label for="contact-name" class="block text-sm font-medium text-gray-700 mb-2">Name *</label>
                             <input type="text" id="contact-name" name="name" required 
@@ -1121,6 +1124,23 @@
                             Send Message
                         </button>
                     </form>
+                    
+                    <script>
+                    document.getElementById('contactForm').addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        
+                        const name = document.getElementById('contact-name').value;
+                        const email = document.getElementById('contact-email').value;
+                        const subject = document.getElementById('contact-subject').value;
+                        const message = document.getElementById('contact-message').value;
+                        
+                        const emailSubject = `Contact Form: ${subject} - ${name}`;
+                        const body = `Contact Form Submission:\n\nName: ${name}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}`;
+                        
+                        const mailtoLink = `mailto:ali@janusny.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(body)}`;
+                        window.location.href = mailtoLink;
+                    });
+                    </script>
                 </div>
             </div>
         </div>
@@ -1172,9 +1192,9 @@
                 <div>
                     <h4 class="font-semibold mb-4">Get Involved</h4>
                     <div class="space-y-2">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors block">Partner With Us</a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors block">Join Our Team</a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors block">Investment Opportunities</a>
+                        <a href="partner-with-us.html" class="text-gray-400 hover:text-white transition-colors block">Partner With Us</a>
+                        <a href="join-our-team.html" class="text-gray-400 hover:text-white transition-colors block">Join Our Team</a>
+                        <a href="investment-opportunities.html" class="text-gray-400 hover:text-white transition-colors block">Investment Opportunities</a>
                     </div>
                 </div>
             </div>
@@ -1287,7 +1307,7 @@
             function redirectToTally() {
                 // TODO: Replace with your actual Tally form URL
                 // Configure Tally to redirect to: https://yourdomain.com/welcome.html
-                window.location.href = 'https://tally.so/r/your-form-id';
+                window.location.href = 'https://tally.so/r/mZbdL0';
                 
                 // For development/demo purposes, uncomment this line:
                 // console.log('Would redirect to Tally form');
