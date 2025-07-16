@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Brask - Form Submitted</title>
+    <meta name="description" content="Thank you for joining Brask! Here's what happens next in your journey with us.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Welcome to Brask - Your Journey Begins">
+    <meta property="og:description" content="Thank you for joining Brask! Here's what happens next in your journey with us.">
+    <meta property="og:image" content="assets/brask-og-image.svg">
+    <meta property="og:url" content="https://braskgroup.com/welcome">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Welcome to Brask - Your Journey Begins">
+    <meta name="twitter:description" content="Thank you for joining Brask! Here's what happens next in your journey with us.">
+    <meta name="twitter:image" content="assets/brask-og-image.svg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="alternate icon" href="assets/favicon.ico">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brask-blue': '#2563eb',
+                        'brask-dark': '#1e40af',
+                        'brask-light': '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Analytics Tracking -->
+    <script>
+        // Form submission conversion tracking
+        window.addEventListener('load', function() {
+            // Google Analytics 4 Event (replace with your GA4 tracking ID)
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL', // Replace with your conversion tracking
+                    'value': 1.0,
+                    'currency': 'USD'
+                });
+            }
+            
+            // Facebook Pixel Event (replace with your pixel ID)
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead');
+            }
+            
+            // Custom analytics event
+            console.log('Form submission conversion tracked');
+        });
+    </script>
+</head>
+<body class="font-inter bg-gradient-to-br from-gray-50 to-blue-50 min-h-screen">
+    <!-- Success Section -->
+    <section class="h-screen flex items-center">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="bg-white rounded-2xl shadow-2xl p-8 lg:p-10">
+                <!-- Success Icon -->
+                <div class="text-green-500 text-5xl mb-6 animate-bounce">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                
+                <!-- Success Message -->
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    You're in! 🎉
+                </h1>
+                <h2 class="text-lg md:text-xl text-gray-700 mb-8">
+                    Welcome to your circle. Here's what happens next.
+                </h2>
+                
+                <!-- Next Steps - Horizontal Layout -->
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                        <div class="text-center">
+                            <div class="bg-brask-blue text-white p-3 rounded-full w-fit mx-auto mb-3">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3 class="font-semibold text-gray-900 mb-2">Check your email</h3>
+                            <p class="text-gray-600 text-sm">We'll send your invitation within 24 hours</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                        <div class="text-center">
+                            <div class="bg-emerald-500 text-white p-3 rounded-full w-fit mx-auto mb-3">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="font-semibold text-gray-900 mb-2">Join your community</h3>
+                            <p class="text-gray-600 text-sm">Connect with peers and start building</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
+                        <div class="text-center">
+                            <div class="bg-purple-500 text-white p-3 rounded-full w-fit mx-auto mb-3">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3 class="font-semibold text-gray-900 mb-2">Start building</h3>
+                            <p class="text-gray-600 text-sm">Access resources and turn ideas into reality</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+                    <a href="/" class="bg-brask-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-brask-dark transition-colors">
+                        <i class="fas fa-home mr-2"></i>
+                        Back to Home
+                    </a>
+                    <a href="mailto:hello@braskgroup.com" class="border-2 border-brask-blue text-brask-blue px-6 py-3 rounded-lg font-semibold hover:bg-brask-blue hover:text-white transition-colors">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Questions? Email Us
+                    </a>
+                </div>
+                
+                <!-- Bottom Row: Social & Stats -->
+                <div class="flex flex-col md:flex-row items-center justify-between border-t border-gray-200 pt-6">
+                    <!-- Social Sharing -->
+                    <div class="mb-4 md:mb-0">
+                        <h3 class="text-sm font-semibold text-gray-900 mb-2">Share your journey</h3>
+                        <div class="flex space-x-3">
+                            <a href="https://twitter.com/intent/tweet?text=Just%20joined%20@BraskGroup%20-%20excited%20to%20start%20building%20with%20an%20amazing%20community!%20%F0%9F%9A%80&url=https://braskgroup.com" 
+                               target="_blank" 
+                               class="bg-blue-500 text-white px-3 py-2 rounded-lg hover:bg-blue-600 transition-colors text-sm">
+                                <i class="fab fa-twitter mr-1"></i>
+                                Tweet
+                            </a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://braskgroup.com" 
+                               target="_blank" 
+                               class="bg-blue-700 text-white px-3 py-2 rounded-lg hover:bg-blue-800 transition-colors text-sm">
+                                <i class="fab fa-linkedin mr-1"></i>
+                                Share
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Fun Stats -->
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-xl font-bold text-brask-blue">You're #<span id="member-count">...</span></div>
+                            <div class="text-gray-600 text-xs">New member</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-xl font-bold text-brask-blue">4.8/5</div>
+                            <div class="text-gray-600 text-xs">Satisfaction</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-xl font-bold text-brask-blue">92%</div>
+                            <div class="text-gray-600 text-xs">Success rate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- JavaScript for dynamic content -->
+    <script>
+        // Dynamic member count (you can replace this with actual data)
+        document.addEventListener('DOMContentLoaded', function() {
+            const memberCountElement = document.getElementById('member-count');
+            const randomCount = Math.floor(Math.random() * 50) + 150; // Random between 150-200
+            
+            // Animate the count
+            let count = 0;
+            const interval = setInterval(() => {
+                count += Math.ceil(randomCount / 20);
+                if (count >= randomCount) {
+                    count = randomCount;
+                    clearInterval(interval);
+                }
+                memberCountElement.textContent = count;
+            }, 50);
+        });
+    </script>
+</body>
+</html>

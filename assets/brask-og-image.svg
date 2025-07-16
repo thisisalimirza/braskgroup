@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f9fafb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dbeafe;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Logo -->
+  <rect x="50" y="200" width="80" height="80" fill="url(#logoGradient)" rx="10"/>
+  <text x="90" y="255" font-family="Arial, sans-serif" font-size="50" font-weight="bold" fill="white" text-anchor="middle">B</text>
+  
+  <!-- Title -->
+  <text x="160" y="255" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="#111827">Brask</text>
+  
+  <!-- Tagline -->
+  <text x="50" y="340" font-family="Arial, sans-serif" font-size="32" fill="#4b5563">Creating opportunities for you</text>
+  
+  <!-- Description -->
+  <text x="50" y="400" font-family="Arial, sans-serif" font-size="24" fill="#6b7280">Join communities that help you build, ship, and scale.</text>
+  <text x="50" y="440" font-family="Arial, sans-serif" font-size="24" fill="#6b7280">From Builder's Forge to The Bara Society, find your circle.</text>
+  
+  <!-- Bottom accent -->
+  <rect x="50" y="500" width="200" height="4" fill="url(#logoGradient)" rx="2"/>
+</svg>
