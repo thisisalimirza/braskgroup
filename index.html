@@ -825,226 +825,25 @@
                 <p class="text-lg opacity-80">We'll invite you to the right circle.</p>
             </div>
             
-            <div class="text-center">
-                <button id="find-your-circle-btn" 
-                        class="bg-white text-brask-blue px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
-                    Find Your Circle
-                </button>
-            </div>
-            
-            <!-- Multi-step Form (initially hidden) -->
-            <div id="intake-form" class="hidden mt-12 max-w-2xl mx-auto">
+            <!-- Tally Form Embed -->
+            <div class="mt-12 max-w-4xl mx-auto">
                 <div class="bg-white rounded-lg shadow-2xl overflow-hidden">
-                    <!-- Form Header -->
                     <div class="bg-gradient-to-r from-brask-blue to-brask-dark text-white p-8 text-center">
                         <h3 class="text-2xl font-bold mb-2">Find Your Perfect Community</h3>
-                        <p class="opacity-90 mb-6">Tell us about yourself and we'll match you with the right Brask community.</p>
-                        
-                        <!-- Progress Bar -->
-                        <div class="bg-white/20 rounded-full h-2 mb-4">
-                            <div id="progress-bar" class="bg-white h-2 rounded-full transition-all duration-300" style="width: 25%"></div>
-                        </div>
-                        <p class="text-sm opacity-80">
-                            <span id="step-text">Step 1 of 4</span>
-                        </p>
+                        <p class="opacity-90">Tell us about yourself and we'll match you with the right Brask community.</p>
                     </div>
                     
-                    <!-- Form Steps -->
-                    <div class="p-8">
-                        <form id="community-form">
-                            <!-- Step 1: Basic Information -->
-                            <div class="form-step active" data-step="1">
-                                <div class="text-center mb-8">
-                                    <div class="text-4xl mb-4">👋</div>
-                                    <h4 class="text-xl font-semibold text-gray-900">Basic Information</h4>
-                                </div>
-                                
-                                <div class="space-y-6">
-                                    <div>
-                                        <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
-                                        <input type="text" id="name" name="name" required 
-                                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brask-blue focus:border-brask-blue text-gray-900 bg-white"
-                                               placeholder="John Doe">
-                                    </div>
-                                    
-                                    <div>
-                                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-                                        <input type="email" id="email" name="email" required 
-                                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brask-blue focus:border-brask-blue text-gray-900 bg-white"
-                                               placeholder="john@example.com">
-                                    </div>
-                                    
-                                    <div>
-                                        <label for="linkedin" class="block text-sm font-medium text-gray-700 mb-2">LinkedIn Profile (Optional)</label>
-                                        <input type="url" id="linkedin" name="linkedin" 
-                                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brask-blue focus:border-brask-blue text-gray-900 bg-white"
-                                               placeholder="https://linkedin.com/in/yourprofile">
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Step 2: Goals -->
-                            <div class="form-step" data-step="2">
-                                <div class="text-center mb-8">
-                                    <div class="text-4xl mb-4">🎯</div>
-                                    <h4 class="text-xl font-semibold text-gray-900">Your Goals</h4>
-                                </div>
-                                
-                                <div class="space-y-6">
-                                    <div>
-                                        <label for="interests" class="block text-sm font-medium text-gray-700 mb-2">Primary Interest *</label>
-                                        <select id="interests" name="interests" required 
-                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brask-blue focus:border-brask-blue text-gray-900 bg-white">
-                                            <option value="">Select your primary focus</option>
-                                            <option value="technology">🛠️ Technology & Product - Build faster, ship better</option>
-                                            <option value="business">📈 Business & Marketing - Scale to 6-7 figures</option>
-                                            <option value="personal">🧠 Ideas & Personal Growth - Think deeper, lead better</option>
-                                            <option value="healthcare">🩺 Healthcare & Education - Get into med school & beyond</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div>
-                                        <label for="experience" class="block text-sm font-medium text-gray-700 mb-2">Current Experience Level *</label>
-                                        <select id="experience" name="experience" required 
-                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brask-blue focus:border-brask-blue text-gray-900 bg-white">
-                                            <option value="">Select your experience level</option>
-                                            <option value="beginner">Beginner - Just starting out</option>
-                                            <option value="intermediate">Intermediate - Some experience, looking to grow</option>
-                                            <option value="advanced">Advanced - Experienced, seeking community</option>
-                                            <option value="expert">Expert - Looking to give back and mentor</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Step 3: Project -->
-                            <div class="form-step" data-step="3">
-                                <div class="text-center mb-8">
-                                    <div class="text-4xl mb-4">🚀</div>
-                                    <h4 class="text-xl font-semibold text-gray-900">Your Project</h4>
-                                </div>
-                                
-                                <div class="space-y-6">
-                                    <div>
-                                        <label for="goals" class="block text-sm font-medium text-gray-700 mb-2">What are you trying to build or achieve? *</label>
-                                        <textarea id="goals" name="goals" rows="4" required 
-                                                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brask-blue focus:border-brask-blue text-gray-900 bg-white"
-                                                  placeholder="Describe your current project, goals, or what you're trying to accomplish..."></textarea>
-                                    </div>
-                                    
-                                    <div>
-                                        <label for="timeline" class="block text-sm font-medium text-gray-700 mb-2">What's your timeline?</label>
-                                        <select id="timeline" name="timeline" 
-                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brask-blue focus:border-brask-blue text-gray-900 bg-white">
-                                            <option value="">Select your timeline</option>
-                                            <option value="immediate">Immediate - Looking to start now</option>
-                                            <option value="1-3months">1-3 months - Planning to begin soon</option>
-                                            <option value="3-6months">3-6 months - In research phase</option>
-                                            <option value="6-12months">6-12 months - Long-term planning</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Step 4: Final Details -->
-                            <div class="form-step" data-step="4">
-                                <div class="text-center mb-8">
-                                    <div class="text-4xl mb-4">✨</div>
-                                    <h4 class="text-xl font-semibold text-gray-900">Final Details</h4>
-                                </div>
-                                
-                                <div class="space-y-6">
-                                    <div>
-                                        <label class="block text-sm font-medium text-gray-700 mb-4">What kind of help do you need most?</label>
-                                        <div class="grid grid-cols-1 gap-3">
-                                            <label class="flex items-center space-x-3 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                                <input type="checkbox" name="help-needed" value="mentorship" class="text-brask-blue">
-                                                <span class="text-gray-700">Mentorship & Guidance</span>
-                                            </label>
-                                            <label class="flex items-center space-x-3 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                                <input type="checkbox" name="help-needed" value="cofounders" class="text-brask-blue">
-                                                <span class="text-gray-700">Finding Co-founders</span>
-                                            </label>
-                                            <label class="flex items-center space-x-3 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                                <input type="checkbox" name="help-needed" value="funding" class="text-brask-blue">
-                                                <span class="text-gray-700">Funding & Investment</span>
-                                            </label>
-                                            <label class="flex items-center space-x-3 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                                <input type="checkbox" name="help-needed" value="networking" class="text-brask-blue">
-                                                <span class="text-gray-700">Networking & Connections</span>
-                                            </label>
-                                            <label class="flex items-center space-x-3 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                                <input type="checkbox" name="help-needed" value="resources" class="text-brask-blue">
-                                                <span class="text-gray-700">Resources & Tools</span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    
-                                    <div>
-                                        <label for="referral" class="block text-sm font-medium text-gray-700 mb-2">How did you hear about Brask?</label>
-                                        <select id="referral" name="referral" 
-                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brask-blue focus:border-brask-blue text-gray-900 bg-white">
-                                            <option value="">Select one</option>
-                                            <option value="social">Social Media</option>
-                                            <option value="search">Google Search</option>
-                                            <option value="referral">Friend/Colleague Referral</option>
-                                            <option value="content">Blog/Content</option>
-                                            <option value="other">Other</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Form Actions -->
-                            <div class="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
-                                <button type="button" id="prev-step" 
-                                        class="hidden px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
-                                    Previous
-                                </button>
-                                <div class="flex space-x-4">
-                                    <button type="button" id="cancel-form" 
-                                            class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
-                                        Cancel
-                                    </button>
-                                    <button type="button" id="next-step" 
-                                            class="px-6 py-3 bg-brask-blue text-white rounded-lg hover:bg-brask-dark transition-colors">
-                                        Next
-                                    </button>
-                                    <button type="submit" id="submit-form" 
-                                            class="hidden px-6 py-3 bg-brask-blue text-white rounded-lg hover:bg-brask-dark transition-colors">
-                                        Submit Application
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    
-                    <!-- What Happens Next -->
-                    <div class="bg-gray-50 p-8 border-t border-gray-200">
-                        <h4 class="text-lg font-semibold text-gray-900 mb-4 text-center">What happens next?</h4>
-                        <div class="space-y-4">
-                            <div class="flex items-start space-x-4">
-                                <div class="bg-brask-blue text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm">1</div>
-                                <div>
-                                    <div class="font-medium text-gray-900">Review (24 hours)</div>
-                                    <div class="text-sm text-gray-600">We'll review your application and match you with the perfect community</div>
-                                </div>
-                            </div>
-                            <div class="flex items-start space-x-4">
-                                <div class="bg-brask-blue text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm">2</div>
-                                <div>
-                                    <div class="font-medium text-gray-900">Welcome Call (48 hours)</div>
-                                    <div class="text-sm text-gray-600">Personal introduction call to get you started and answer questions</div>
-                                </div>
-                            </div>
-                            <div class="flex items-start space-x-4">
-                                <div class="bg-brask-blue text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm">3</div>
-                                <div>
-                                    <div class="font-medium text-gray-900">Community Access (Same day)</div>
-                                    <div class="text-sm text-gray-600">Immediate access to your community, resources, and fellow members</div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="p-4">
+                        <iframe 
+                            data-tally-src="https://tally.so/embed/mZbdL0?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1" 
+                            loading="lazy" 
+                            width="100%" 
+                            height="648" 
+                            frameborder="0" 
+                            marginheight="0" 
+                            marginwidth="0" 
+                            title="Find Your Circle">
+                        </iframe>
                     </div>
                 </div>
             </div>
@@ -1505,6 +1304,11 @@
             content.classList.toggle('hidden');
             icon.classList.toggle('rotate-180');
         }
+    </script>
+    
+    <!-- Tally Forms Script -->
+    <script>
+        var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
     </script>
 </body>
 </html>
