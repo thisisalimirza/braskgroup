@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binaural Synth - Deep Focus & Relaxation</title>
+    <meta name="description" content="Deep focus and relaxation through binaural beats. Customizable frequencies for personalized audio experiences.">
+    <link rel="icon" type="image/png" href="assets/brask-icon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-size: 18px;
+            line-height: 1.5;
+            color: #1a1a1a;
+            background-color: #ffffff;
+            font-weight: 400;
+        }
+        
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 80px 50px;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                padding: 80px 60px;
+            }
+            
+            body {
+                font-size: 18px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            body {
+                font-size: 16px;
+            }
+            
+            .container {
+                padding: 60px 32px;
+            }
+        }
+        
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 48px;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+        }
+        
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 48px;
+            }
+        }
+        
+        h2 {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            color: #666666;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            margin-top: 48px;
+        }
+        
+        h2:first-of-type {
+            margin-top: 0;
+        }
+        
+        @media (min-width: 768px) {
+            h2 {
+                font-size: 12px;
+            }
+        }
+        
+        h3 {
+            font-size: 19px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 10px;
+            margin-top: 32px;
+            color: #1a1a1a;
+            letter-spacing: -0.3px;
+        }
+        
+        @media (min-width: 768px) {
+            h3 {
+                font-size: 21px;
+            }
+        }
+        
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 767px) {
+            p {
+                font-size: 16px;
+            }
+        }
+        
+        .back-link {
+            font-size: 15px;
+            color: #0066cc;
+            text-decoration: none;
+            margin-top: 48px;
+            display: inline-block;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        @media (max-width: 767px) {
+            .back-link {
+                font-size: 14px;
+            }
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .back-link:visited {
+            color: #0066cc;
+        }
+        
+        .divider {
+            width: 100%;
+            height: 1px;
+            background-color: #e8e8e8;
+            margin: 48px 0;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin-bottom: 16px;
+        }
+        
+        .feature-list li {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        @media (max-width: 767px) {
+            .feature-list li {
+                font-size: 16px;
+            }
+        }
+        
+        .feature-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 4px;
+            height: 4px;
+            background-color: #999999;
+            border-radius: 50%;
+            top: 8px;
+        }
+        
+        .section-content {
+            margin-bottom: 48px;
+        }
+        
+        .section-content ul {
+            list-style: none;
+            margin-bottom: 16px;
+        }
+        
+        .section-content ul li {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        @media (max-width: 767px) {
+            .section-content ul li {
+                font-size: 16px;
+            }
+        }
+        
+        .section-content ul li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 4px;
+            height: 4px;
+            background-color: #999999;
+            border-radius: 50%;
+            top: 8px;
+        }
+        
+        .section-content ol {
+            margin-left: 20px;
+            margin-bottom: 16px;
+        }
+        
+        .section-content ol li {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+        
+        @media (max-width: 767px) {
+            .section-content ol li {
+                font-size: 16px;
+            }
+        }
+        
+        .footer {
+            margin-top: 80px;
+            padding-top: 48px;
+            border-top: 1px solid #e8e8e8;
+            font-size: 13px;
+            color: #666666;
+        }
+        
+        @media (max-width: 767px) {
+            .footer {
+                margin-top: 60px;
+                padding-top: 32px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BINAURAL SYNTH</h1>
+        
+        <div class="section-content">
+            <p><strong>Experience deep focus and relaxation.</strong></p>
+            <p>Binaural Synth uses binaural beats to help you achieve deep focus and relaxation. Customize left and right ear frequencies, beat frequency, and base carrier tone to create personalized audio experiences. Headphones required.</p>
+        </div>
+        
+        <h2>HOW IT WORKS</h2>
+        <div class="section-content">
+            <ul class="feature-list">
+                <li><strong>Binaural Beats:</strong> Different frequencies in each ear create a perceived beat frequency that can influence brainwave states</li>
+                <li><strong>Customizable Frequencies:</strong> Adjust left ear, right ear, and beat frequency to create your ideal audio experience</li>
+                <li><strong>Base Carrier Tone:</strong> Control the pitch you hear (200-500 Hz is often most effective for the illusion)</li>
+                <li><strong>Session Control:</strong> Start and stop sessions as needed for focus, meditation, or relaxation</li>
+            </ul>
+        </div>
+        
+        <h2>FEATURES</h2>
+        <div class="section-content">
+            <ul class="feature-list">
+                <li>Customizable left and right ear frequencies</li>
+                <li>Adjustable beat frequency</li>
+                <li>Base carrier tone control (200-500 Hz recommended)</li>
+                <li>Simple start/stop session interface</li>
+                <li>Designed for use with headphones</li>
+                <li>Dark mode interface for comfortable use</li>
+            </ul>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <h2>PRIVACY POLICY</h2>
+        <div class="section-content">
+            <p><strong>Last updated: January 2025</strong></p>
+            
+            <h3>1. Information We Collect</h3>
+            <p>We collect information you provide directly to us when you:</p>
+            <ul>
+                <li>Create an account or profile</li>
+                <li>Use the app and adjust frequency settings</li>
+                <li>Contact us for support</li>
+                <li>Participate in surveys or feedback</li>
+            </ul>
+            
+            <h3>2. How We Use Your Information</h3>
+            <p>We use the information we collect to:</p>
+            <ul>
+                <li>Provide, maintain, and improve the app</li>
+                <li>Save your frequency preferences</li>
+                <li>Respond to your inquiries and provide support</li>
+                <li>Analyze usage patterns to improve our services</li>
+            </ul>
+            
+            <h3>3. Information Sharing</h3>
+            <p>We do not sell, trade, or otherwise transfer your personal information to third parties except:</p>
+            <ul>
+                <li>When required by law or to protect our rights</li>
+                <li>With service providers who assist in operating the app (under strict confidentiality agreements)</li>
+                <li>In connection with a business transfer or merger (with notice to users)</li>
+            </ul>
+            
+            <h3>4. Data Security</h3>
+            <p>We implement appropriate technical and organizational measures to protect your personal information. However, no method of transmission over the internet is 100% secure.</p>
+            
+            <h3>5. Your Rights</h3>
+            <p>You have the right to:</p>
+            <ul>
+                <li>Access your personal information</li>
+                <li>Correct inaccurate data</li>
+                <li>Request deletion of your account and data</li>
+                <li>Opt-out of certain communications</li>
+            </ul>
+            
+            <h3>6. Changes to This Policy</h3>
+            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the "Last updated" date.</p>
+            
+            <h3>7. Contact Us</h3>
+            <p>If you have questions about this Privacy Policy, please contact us at <a href="mailto:ali@braskgroup.com" style="color: #0066cc; text-decoration: none;">ali@braskgroup.com</a>.</p>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <h2>TERMS OF SERVICE</h2>
+        <div class="section-content">
+            <p><strong>Last updated: January 2025</strong></p>
+            
+            <h3>1. Acceptance of Terms</h3>
+            <p>By accessing and using Binaural Synth, you accept and agree to be bound by the terms and provisions of this agreement.</p>
+            
+            <h3>2. Description of Service</h3>
+            <p>Binaural Synth provides an audio application for generating binaural beats. The service includes:</p>
+            <ul>
+                <li>Customizable frequency controls</li>
+                <li>Audio generation and playback</li>
+                <li>Session management</li>
+            </ul>
+            
+            <h3>3. User Responsibilities</h3>
+            <p>Users agree to:</p>
+            <ul>
+                <li>Use headphones as recommended for optimal experience</li>
+                <li>Use the app responsibly and not while operating vehicles or machinery</li>
+                <li>Not share account credentials with others</li>
+                <li>Not attempt to reverse engineer or compromise the app</li>
+            </ul>
+            
+            <h3>4. Health Disclaimer</h3>
+            <p>Binaural Synth is an audio tool for focus and relaxation. It is not a medical device and does not diagnose, treat, cure, or prevent any disease. Consult with a healthcare professional before use if you have any medical conditions, especially related to hearing or neurological conditions.</p>
+            
+            <h3>5. Safety Warning</h3>
+            <p>Do not use Binaural Synth while driving, operating machinery, or in any situation where full attention is required. Use responsibly and at appropriate volume levels to protect your hearing.</p>
+            
+            <h3>6. Intellectual Property</h3>
+            <p>All content, features, and functionality of Binaural Synth are owned by Brask Group LLC and are protected by copyright, trademark, and other intellectual property laws.</p>
+            
+            <h3>7. Limitation of Liability</h3>
+            <p>Binaural Synth is provided "as is" without warranties of any kind. We are not liable for any damages arising from your use of the service, including but not limited to indirect, incidental, or consequential damages.</p>
+            
+            <h3>8. Account Termination</h3>
+            <p>We reserve the right to suspend or terminate your account at any time for violation of these terms or for any other reason we deem necessary.</p>
+            
+            <h3>9. Changes to Terms</h3>
+            <p>We may modify these Terms of Service at any time. Continued use of the service after changes constitutes acceptance of the new terms.</p>
+            
+            <h3>10. Contact Us</h3>
+            <p>If you have questions about these Terms of Service, please contact us at <a href="mailto:ali@braskgroup.com" style="color: #0066cc; text-decoration: none;">ali@braskgroup.com</a>.</p>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <a href="index.html" class="back-link">← Back to Brask Group</a>
+        
+        <div class="footer">
+            <p>Brask Group LLC | Registered in Connecticut, United States</p>
+            <p style="margin-top: 8px;">© 2025 Brask Group LLC. All rights reserved.</p>
+            <p style="margin-top: 12px;">
+                <a href="privacy-policy.html" style="color: #666666; text-decoration: none; margin-right: 16px;">Privacy Policy</a>
+                <a href="terms-of-service.html" style="color: #666666; text-decoration: none;">Terms of Service</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
