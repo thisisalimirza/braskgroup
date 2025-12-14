@@ -3,117 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found - Brask</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Favicon -->
+    <title>Page Not Found - Brask Group LLC</title>
+    <meta name="description" content="Page not found on Brask Group LLC website.">
     <link rel="icon" type="image/png" href="assets/brask-icon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/brask-icon.png">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'inter': ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        'brask-blue': '#2563eb',
-                        'brask-dark': '#1e40af',
-                        'brask-light': '#3b82f6',
-                    }
-                }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-size: 18px;
+            line-height: 1.5;
+            color: #1a1a1a;
+            background-color: #ffffff;
+            font-weight: 400;
+        }
+        
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 80px 50px;
+            text-align: center;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                padding: 80px 60px;
             }
         }
-    </script>
+        
+        @media (max-width: 767px) {
+            body {
+                font-size: 16px;
+            }
+            
+            .container {
+                padding: 60px 32px;
+            }
+        }
+        
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+        }
+        
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 48px;
+            }
+        }
+        
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #4a4a4a;
+            margin-bottom: 32px;
+        }
+        
+        @media (max-width: 767px) {
+            p {
+                font-size: 16px;
+            }
+        }
+        
+        .back-link {
+            font-size: 15px;
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+        
+        @media (max-width: 767px) {
+            .back-link {
+                font-size: 14px;
+            }
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .back-link:visited {
+            color: #0066cc;
+        }
+        
+        .footer {
+            margin-top: 80px;
+            padding-top: 48px;
+            border-top: 1px solid #e8e8e8;
+            font-size: 13px;
+            color: #666666;
+        }
+        
+        @media (max-width: 767px) {
+            .footer {
+                margin-top: 60px;
+                padding-top: 32px;
+                font-size: 12px;
+            }
+        }
+    </style>
 </head>
-<body class="font-inter bg-gray-50 text-gray-900">
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-200 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center">
-                    <a href="/" class="flex items-center">
-                        <img src="assets/brasklogo-transparent.png" alt="Brask" class="h-12 w-auto filter brightness-0">
-                    </a>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="/#what-we-do" class="text-gray-700 hover:text-brask-blue transition-colors">What We Do</a>
-                    <a href="/#projects" class="text-gray-700 hover:text-brask-blue transition-colors">Projects</a>
-                    <a href="/#join-ecosystem" class="text-gray-700 hover:text-brask-blue transition-colors">Join Community</a>
-                    <a href="/#contact" class="text-gray-700 hover:text-brask-blue transition-colors">Contact</a>
-                    <a href="/#join-ecosystem" class="bg-brask-blue text-white px-4 py-2 rounded-lg hover:bg-brask-dark transition-colors">Find Your Circle</a>
-                </div>
-            </div>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <p>Page not found.</p>
+        <a href="index.html" class="back-link">← Back to main page</a>
+        
+        <div class="footer">
+            <p>Brask Group LLC | Registered in Connecticut, United States</p>
+            <p style="margin-top: 8px;">© 2025 Brask Group LLC. All rights reserved.</p>
+            <p style="margin-top: 12px;">
+                <a href="privacy-policy.html" style="color: #666666; text-decoration: none; margin-right: 16px;">Privacy Policy</a>
+                <a href="terms-of-service.html" style="color: #666666; text-decoration: none;">Terms of Service</a>
+            </p>
         </div>
-    </nav>
-
-    <!-- 404 Content -->
-    <section class="pt-24 pb-20 bg-gradient-to-br from-gray-50 to-blue-50 min-h-screen flex items-center">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="bg-white rounded-2xl shadow-xl p-12">
-                <!-- 404 Icon -->
-                <div class="text-brask-blue text-8xl mb-8">
-                    <i class="fas fa-compass"></i>
-                </div>
-                
-                <!-- 404 Message -->
-                <h1 class="text-6xl font-bold text-gray-900 mb-6">404</h1>
-                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Page Not Found</h2>
-                <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-                    Looks like you've wandered off the beaten path. The page you're looking for doesn't exist, but that's okay—the best builders know that getting lost sometimes leads to the most interesting discoveries.
-                </p>
-                
-                <!-- Action Buttons -->
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="/" class="bg-brask-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brask-dark transition-colors">
-                        <i class="fas fa-home mr-2"></i>
-                        Go Home
-                    </a>
-                    <a href="/#join-ecosystem" class="border-2 border-brask-blue text-brask-blue px-8 py-3 rounded-lg font-semibold hover:bg-brask-blue hover:text-white transition-colors">
-                        <i class="fas fa-users mr-2"></i>
-                        Join Our Community
-                    </a>
-                </div>
-                
-                <!-- Helpful Links -->
-                <div class="mt-12 pt-8 border-t border-gray-200">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Looking for something specific?</h3>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <a href="/#what-we-do" class="text-brask-blue hover:text-brask-dark transition-colors">
-                            <i class="fas fa-users mr-2"></i>
-                            Communities
-                        </a>
-                        <a href="/#projects" class="text-brask-blue hover:text-brask-dark transition-colors">
-                            <i class="fas fa-rocket mr-2"></i>
-                            Projects
-                        </a>
-                        <a href="/#contact" class="text-brask-blue hover:text-brask-dark transition-colors">
-                            <i class="fas fa-envelope mr-2"></i>
-                            Contact
-                        </a>
-                        <a href="privacy-policy.html" class="text-brask-blue hover:text-brask-dark transition-colors">
-                            <i class="fas fa-shield-alt mr-2"></i>
-                            Privacy
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <div class="flex justify-center space-x-8 mb-4">
-                    <a href="privacy-policy.html" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="terms-of-service.html" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
-                </div>
-                <p class="text-gray-400">&copy; 2025 Brask Group</p>
-            </div>
-        </div>
-    </footer>
+    </div>
 </body>
 </html>
