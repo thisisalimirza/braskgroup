@@ -3,977 +3,370 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brask Group LLC - Venture Studio</title>
-    <meta name="description" content="Brask Group is a venture studio. We build things that should exist. We identify opportunities and problems, then solve them.">
-    
+    <title>Brask Group - Healthcare Infrastructure</title>
+    <meta name="description" content="Brask Group builds infrastructure for better healthcare. Founded by Ali Mirza, a medical student at UConn, we create tools and services that support physicians and healthcare businesses.">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://braskgroup.com/">
-    <meta property="og:title" content="Brask Group LLC - Venture Studio">
-    <meta property="og:description" content="Brask Group is a venture studio. We build things that should exist. We identify opportunities and problems, then solve them.">
+    <meta property="og:title" content="Brask Group - Healthcare Infrastructure">
+    <meta property="og:description" content="We build tools and services that support physicians and healthcare businesses - from marketing and education to products that improve how healthcare is delivered.">
     <meta property="og:image" content="https://braskgroup.com/assets/og_image.png">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://braskgroup.com/">
-    <meta property="twitter:title" content="Brask Group LLC - Venture Studio">
-    <meta property="twitter:description" content="Brask Group is a venture studio. We build things that should exist. We identify opportunities and problems, then solve them.">
+    <meta property="twitter:title" content="Brask Group - Healthcare Infrastructure">
+    <meta property="twitter:description" content="We build tools and services that support physicians and healthcare businesses - from marketing and education to products that improve how healthcare is delivered.">
     <meta property="twitter:image" content="https://braskgroup.com/assets/og_image.png">
-    
+
     <link rel="icon" type="image/png" href="assets/brask-icon.png">
     <link rel="apple-touch-icon" href="assets/brask-icon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+
     <style>
+        :root {
+            --text: #1a1a1a;
+            --text-light: #555;
+            --text-muted: #888;
+            --bg: #fafaf9;
+            --bg-card: #fff;
+            --border: #e5e5e5;
+            --accent: #2563eb;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
-        html, body {
-            height: 100%;
-        }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: 'Source Serif 4', Georgia, serif;
             font-size: 18px;
-            line-height: 1.5;
-            color: #1a1a1a;
-            background-color: #ffffff;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: var(--bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection {
+            background: var(--accent);
+            color: white;
+        }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 80px 24px 60px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 120px 24px 80px;
+            }
+        }
+
+        /* Header */
+        .site-header {
+            margin-bottom: 64px;
+        }
+
+        .site-name {
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: var(--text);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        /* Hero */
+        .hero {
+            margin-bottom: 64px;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 1.4;
+            color: var(--text);
+            margin-bottom: 24px;
+        }
+
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 38px;
+            }
+        }
+
+        .hero-sub {
+            font-size: 18px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 56px;
+        }
+
+        .section-label {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+
+        .section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* About */
+        .about-content {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            color: var(--text);
             font-weight: 400;
         }
-        
-        .wrapper {
+
+        /* Projects */
+        .projects {
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            padding: 40px 50px;
+            flex-direction: column;
+            gap: 32px;
         }
-        
-        .layout {
+
+        .project {
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .project-header {
             display: flex;
-            max-width: 1200px;
-            width: 100%;
-            gap: 0;
-            align-items: flex-start;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+            gap: 16px;
         }
-        
-        .sidebar {
-            width: 380px;
-            padding: 0 60px 40px 0;
-            position: sticky;
-            top: 40px;
-            height: fit-content;
-            align-self: flex-start;
-        }
-        
-        .content {
-            flex: 1;
-            padding: 0 0 40px 0;
-            max-width: 720px;
-            border-left: 1px solid #e8e8e8;
-            padding-left: 60px;
-        }
-        
-        @media (max-width: 1024px) {
-            .wrapper {
-                padding: 60px 40px;
-            }
-            
-            .layout {
-                flex-direction: column;
-                max-width: 700px;
-            }
-            
-            .sidebar {
-                width: 100%;
-                position: relative;
-                top: 0;
-                max-height: none;
-                padding: 0 0 32px 0;
-            }
-            
-            .content {
-                padding: 32px 0;
-                max-width: 100%;
-                border-left: none;
-                border-top: 1px solid #e5e5e5;
-                padding-top: 40px;
-                padding-left: 0;
-            }
-            
-            .apps-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 767px) {
-            body {
-                font-size: 16px;
-            }
-            
-            .wrapper {
-                padding: 32px 20px;
-            }
-            
-            .sidebar {
-                padding: 20px 0;
-            }
-            
-            .content {
-                padding: 20px 0;
-                padding-top: 24px;
-                padding-left: 0;
-            }
-        }
-        
-        h1 {
-            font-size: 36px;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            margin-top: 0;
-            color: #1a1a1a;
-            letter-spacing: -0.5px;
-        }
-        
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 48px;
-            }
-        }
-        
-        h2 {
-            font-size: 10px;
+
+        .project-name {
+            font-size: 20px;
             font-weight: 600;
-            letter-spacing: 2.5px;
-            color: #666666;
+            color: var(--text);
+        }
+
+        .project-status {
+            font-size: 12px;
+            font-weight: 600;
             text-transform: uppercase;
-            margin-bottom: 16px;
-            margin-top: 0;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            white-space: nowrap;
         }
-        
-        @media (min-width: 768px) {
-            h2 {
-                font-size: 12px;
-            }
+
+        .project-status.live {
+            color: #16a34a;
         }
-        
-        h3 {
-            font-size: 19px;
-            font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 10px;
-            color: #1a1a1a;
-            letter-spacing: -0.3px;
+
+        .project-status.coming {
+            color: var(--accent);
         }
-        
-        @media (min-width: 768px) {
-            h3 {
-                font-size: 21px;
-            }
+
+        .project-description {
+            color: var(--text-light);
+            margin-bottom: 12px;
+            font-size: 17px;
         }
-        
-        .intro {
-            font-size: 18px;
-            line-height: 1.5;
-            color: #1a1a1a;
-        }
-        
-        @media (max-width: 767px) {
-            .intro {
-                font-size: 16px;
-            }
-        }
-        
-        .intro-text {
+
+        .project-meta {
+            font-size: 15px;
+            color: var(--text-muted);
+            font-style: italic;
             margin-bottom: 12px;
         }
-        
-        .intro-text:last-of-type {
-            margin-bottom: 16px;
-        }
-        
-        .thesis-link {
-            font-size: 14px;
-            color: #666666;
-            text-decoration: none;
-            margin-top: 8px;
-            display: inline-block;
-        }
-        
-        .thesis-link:hover {
-            text-decoration: underline;
-        }
-        
-        .divider {
-            width: 100%;
-            height: 1px;
-            background-color: #e8e8e8;
-            margin: 40px 0;
-        }
-        
-        @media (max-width: 767px) {
-            .divider {
-                margin: 32px 0;
-            }
-        }
-        
-        .section {
-            margin-bottom: 40px;
-        }
-        
-        @media (max-width: 767px) {
-            .section {
-                margin-bottom: 32px;
-            }
-        }
-        
-        .section-header {
-            margin-bottom: 32px;
-        }
-        
-        @media (max-width: 767px) {
-            .section-header {
-                margin-bottom: 24px;
-            }
-        }
-        
-        .section-intro {
+
+        .project-link {
             font-size: 15px;
-            line-height: 1.5;
-            color: #666666;
-            margin-bottom: 0;
-            margin-top: -4px;
-        }
-        
-        .companies-section .section-intro,
-        .products-section .section-intro {
-            margin-top: 0;
-            margin-bottom: 24px;
-        }
-        
-        @media (max-width: 767px) {
-            .section-intro {
-                font-size: 14px;
-            }
-        }
-        
-        .companies-section,
-        .products-section {
-            background-color: transparent;
-            padding: 32px 0;
-            border-radius: 0;
-            border: none;
-        }
-        
-        @media (max-width: 767px) {
-            .companies-section,
-            .products-section {
-                padding: 24px 0;
-            }
-        }
-        
-        .venture-item {
-            margin-bottom: 32px;
-            padding: 28px 24px;
-            background-color: #ffffff;
-            border-radius: 0;
-            border: none;
-            border-left: 1px solid #e8e8e8;
-            padding-left: 28px;
-            transition: all 0.2s ease;
-        }
-        
-        .venture-item:hover {
-            border-left-color: #999999;
-        }
-        
-        .venture-item:last-child {
-            margin-bottom: 0;
-        }
-        
-        .venture-description {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #4a4a4a;
-            margin-bottom: 10px;
-        }
-        
-        @media (max-width: 767px) {
-            .venture-description {
-                font-size: 15px;
-            }
-        }
-        
-        .venture-link {
-            font-size: 15px;
-            color: #0066cc;
+            color: var(--accent);
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.2s ease;
-            display: inline-block;
         }
-        
-        @media (max-width: 767px) {
-            .venture-link {
-                font-size: 14px;
-            }
-        }
-        
-        .venture-link:hover {
+
+        .project-link:hover {
             text-decoration: underline;
         }
-        
-        .venture-link:visited {
-            color: #0066cc;
+
+        /* Contact */
+        .contact-section {
+            margin-top: 64px;
+            padding-top: 48px;
+            border-top: 1px solid var(--border);
         }
-        
-        .experiments-section {
-            background-color: transparent;
-            padding: 32px 0;
-            border-radius: 0;
-            border: none;
-        }
-        
-        @media (max-width: 767px) {
-            .experiments-section {
-                padding: 24px 0;
-            }
-        }
-        
-        .experiments-note {
-            font-size: 15px;
-            line-height: 1.5;
-            color: #666666;
-            margin-top: 0;
-            margin-bottom: 24px;
-        }
-        
-        @media (max-width: 767px) {
-            .experiments-note {
-                font-size: 14px;
-                margin-bottom: 20px;
-            }
-        }
-        
-        .experiments-content {
-            margin-top: 24px;
-        }
-        
-        .tools-section {
-            margin-top: 32px;
-            padding-top: 32px;
-            border-top: 1px solid #e8e8e8;
-            background-color: transparent;
-        }
-        
-        .tools-subheader {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: #666666;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-        
-        @media (min-width: 768px) {
-            .tools-subheader {
-                font-size: 12px;
-            }
-        }
-        
-        .tool-item {
-            margin-bottom: 16px;
-            font-size: 15px;
-            line-height: 1.5;
-        }
-        
-        .tool-item:last-child {
-            margin-bottom: 0;
-        }
-        
-        .tool-item h4 {
-            font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 2px;
-            color: #4a4a4a;
-            display: inline;
-        }
-        
-        .tool-item .tool-description {
-            font-size: 15px;
-            line-height: 1.5;
-            color: #666666;
-            display: inline;
-        }
-        
-        .tool-item .tool-link {
-            font-size: 15px;
-            color: #0066cc;
-            text-decoration: none;
-            margin-left: 4px;
-        }
-        
-        .tool-item .tool-link:hover {
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 767px) {
-            .tool-item {
-                font-size: 15px;
-            }
-            
-            .tool-item h4 {
-                font-size: 15px;
-            }
-            
-            .tool-item .tool-description {
-                font-size: 14px;
-            }
-            
-            .tool-item .tool-link {
-                font-size: 14px;
-            }
-        }
-        
+
         .contact-email {
             font-size: 18px;
-            color: #0066cc;
+            color: var(--accent);
             text-decoration: none;
         }
-        
-        @media (max-width: 767px) {
-            .contact-email {
-                font-size: 16px;
-            }
-        }
-        
+
         .contact-email:hover {
             text-decoration: underline;
         }
-        
-        .contact-email:visited {
-            color: #0066cc;
-        }
-        
-        .spacing-24 {
-            margin-bottom: 16px;
-        }
-        
-        .toggle-checkbox {
-            display: none;
-        }
-        
-        .toggle-label {
-            cursor: pointer;
+
+        .social-links {
+            margin-top: 16px;
             display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 20px;
-            user-select: none;
-        }
-        
-        .toggle-label h2 {
-            margin-bottom: 0;
-        }
-        
-        .toggle-label h2::after {
-            display: none;
-        }
-        
-        .toggle-label::after {
-            content: "→";
-            font-size: 12px;
-            color: #999999;
-            transition: transform 0.2s ease;
-            margin-left: 6px;
-            font-weight: 400;
-        }
-        
-        .toggle-checkbox:checked + .toggle-label::after {
-            transform: rotate(90deg);
-        }
-        
-        .toggle-label:hover::after {
-            color: #666666;
-        }
-        
-        .experiments-content,
-        .companies-content,
-        .products-content {
-            display: none;
-            padding-top: 8px;
-        }
-        
-        .toggle-checkbox:checked ~ .experiments-content,
-        .toggle-checkbox:checked ~ .companies-content,
-        .toggle-checkbox:checked ~ .products-content {
-            display: block;
-        }
-        
-        .apps-grid {
-            display: grid;
-            grid-template-columns: 1fr;
             gap: 20px;
         }
-        
-        @media (min-width: 768px) {
-            .apps-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 24px;
-            }
-        }
-        
-        @media (min-width: 1024px) {
-            .apps-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 24px;
-            }
-        }
-        
-        .app-item {
-            margin-bottom: 0;
-            padding: 24px 20px;
-            background-color: #ffffff;
-            border-radius: 0;
-            border: none;
-            border-left: 1px solid #e8e8e8;
-            padding-left: 24px;
-            transition: all 0.2s ease;
-        }
-        
-        .app-item:hover {
-            border-left-color: #999999;
-        }
-        
-        .app-item h3 {
-            font-size: 17px;
-            margin-bottom: 8px;
-            color: #1a1a1a;
-        }
-        
-        @media (min-width: 768px) {
-            .app-item h3 {
-                font-size: 18px;
-            }
-        }
-        
-        .app-item .venture-description {
-            font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 10px;
-            color: #4a4a4a;
-        }
-        
-        @media (min-width: 768px) {
-            .app-item .venture-description {
-                font-size: 15px;
-            }
-        }
-        
-        .app-item .venture-link {
-            font-size: 14px;
-            font-weight: 500;
-        }
-        
-        @media (min-width: 768px) {
-            .app-item .venture-link {
-                font-size: 15px;
-            }
-        }
-        
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 10px;
-            margin-top: -2px;
-        }
-        
-        .tag {
-            display: inline-block;
-            font-size: 10px;
-            font-weight: 500;
-            letter-spacing: 0.8px;
-            padding: 2px 8px;
-            border-radius: 2px;
-            text-transform: uppercase;
-            line-height: 1.4;
-            color: #666666;
-            background-color: transparent;
-            border: 1px solid #e0e0e0;
-            transition: all 0.2s ease;
-        }
-        
-        .tag:hover {
-            border-color: #999999;
-            color: #4a4a4a;
-        }
-        
-        .work-with-us {
-            margin-top: 32px;
-            padding-top: 32px;
-            border-top: 1px solid #e8e8e8;
+
+        .social-link {
             font-size: 15px;
-            line-height: 1.5;
-            color: #4a4a4a;
-        }
-        
-        @media (max-width: 767px) {
-            .work-with-us {
-                font-size: 14px;
-            }
-        }
-        
-        .founder-info {
-            margin-top: 32px;
-            padding-top: 32px;
-            border-top: 1px solid #e5e5e5;
-        }
-        
-        .founder-name {
-            font-size: 16px;
-            font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 4px;
-        }
-        
-        .founder-title {
-            font-size: 13px;
-            color: #666666;
-            margin-bottom: 12px;
-        }
-        
-        .founder-links {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-        
-        .founder-link {
-            font-size: 14px;
-            color: #666666;
+            color: var(--text-muted);
             text-decoration: none;
-            transition: color 0.2s ease;
         }
-        
-        .founder-link:hover {
-            color: #0066cc;
-            text-decoration: underline;
+
+        .social-link:hover {
+            color: var(--text);
         }
-        
+
+        /* Footer */
         .footer {
             margin-top: 80px;
-            padding-top: 48px;
-            border-top: 1px solid #e8e8e8;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            font-size: 14px;
+            color: var(--text-muted);
         }
-        
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 24px;
-            font-size: 13px;
-            color: #666666;
-            line-height: 1.6;
-        }
-        
+
         .footer-links {
+            margin-top: 12px;
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+            gap: 16px;
         }
-        
+
         .footer-link {
-            color: #666666;
+            color: var(--text-muted);
             text-decoration: none;
-            transition: color 0.2s ease;
         }
-        
+
         .footer-link:hover {
-            color: #0066cc;
-            text-decoration: underline;
+            color: var(--text-light);
         }
-        
-        @media (max-width: 767px) {
-            .footer {
-                margin-top: 60px;
-                padding-top: 32px;
-            }
-            
-            .footer-content {
-                font-size: 12px;
-            }
+
+        /* Quote/Philosophy */
+        .philosophy {
+            margin: 48px 0;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .philosophy-text {
+            font-size: 17px;
+            font-style: italic;
+            color: var(--text-light);
+            line-height: 1.7;
         }
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="layout">
-            <div class="sidebar">
-                <h1>BRASK GROUP</h1>
-                
-                <div class="intro">
-                    <p class="intro-text">Brask Group is a venture studio. We build things that should exist.</p>
-                    <p class="intro-text">We identify opportunities and problems, then solve them. Whatever we build, we make it available to the market. We focus on healthcare, marketing, and software. Each company teaches us something we use in the next one.</p>
-                    <a href="thesis.html" class="thesis-link">→ How we operate</a>
-                </div>
-                
-                <div class="work-with-us">
-                    <p>We're always looking to work with sharp, curious, ambitious thinkers and builders.</p>
-                </div>
-                
-                <div class="founder-info">
-                    <div class="founder-name">Ali Mirza</div>
-                    <div class="founder-title">Founder & Managing Member</div>
-                    <div class="founder-links">
-                        <a href="https://thisisalimirza.substack.com" class="founder-link">→ Writing</a>
-                        <a href="https://www.linkedin.com/in/thisisalimirza/" class="founder-link">→ LinkedIn</a>
-                        <a href="https://x.com/thisisalimirza" class="founder-link">→ Twitter/X</a>
-                    </div>
-                </div>
+    <div class="container">
+        <header class="site-header">
+            <a href="/" class="site-name">Brask Group</a>
+        </header>
+
+        <section class="hero">
+            <h1>Brask Group builds infrastructure for better healthcare.</h1>
+            <p class="hero-sub">Tools and services that support physicians and healthcare businesses—from marketing and education to products that improve how healthcare is delivered and experienced.</p>
+        </section>
+
+        <section class="section">
+            <div class="section-label">About</div>
+            <div class="about-content">
+                <p>Founded by <span class="highlight">Ali Mirza</span>, a second-year medical student at UConn School of Medicine (Class of 2028), Brask Group operates at the intersection of medicine, technology, and business.</p>
+                <p>I've built <span class="highlight">50+ products</span> across healthcare and technology, published first-author research on machine learning applications in medicine, and bring a global perspective shaped by living across four continents—Kenya, Pakistan, Lebanon, and the United States.</p>
+                <p>My work focuses on making healthcare feel less like bureaucracy and more like hospitality.</p>
             </div>
-            
-            <div class="content">
-                <div class="section">
-                    <div class="companies-section">
-                        <input type="checkbox" id="toggle-companies" class="toggle-checkbox">
-                        <label for="toggle-companies" class="toggle-label">
-                            <h2 style="margin-bottom: 0;">PORTFOLIO COMPANIES</h2>
-                        </label>
-                        <p class="section-intro" style="margin-top: 0; margin-bottom: 24px;">Operating businesses generating revenue and building institutional knowledge.</p>
-                        
-                        <div class="companies-content">
-                        <div class="venture-item">
-                        <div class="tags">
-                            <span class="tag tag-agency">Agency</span>
-                            <span class="tag tag-b2b">B2B</span>
-                            <span class="tag tag-healthcare">Healthcare</span>
-                        </div>
-                        <h3>JANUS</h3>
-                        <p class="venture-description">Performance marketing agency for healthtech and telemedicine. We've scaled client revenue from zero to seven figures, learning customer acquisition and growth operations at scale.</p>
-                        <a href="https://janusny.com" class="venture-link">→ Visit janusny.com</a>
-                    </div>
-                    
-                    <div class="venture-item">
-                        <div class="tags">
-                            <span class="tag tag-agency">Agency</span>
-                            <span class="tag tag-b2b">B2B</span>
-                        </div>
-                        <h3>OnCall Ads</h3>
-                        <p class="venture-description">Creative performance partner for brands spending $10k+/month. Flat-fee model eliminates misaligned incentives. Relentless testing velocity drives results, not percentage-based fees.</p>
-                        <a href="https://www.oncallads.com" class="venture-link">→ Visit oncallads.com</a>
-                    </div>
-                    
-                    <div class="venture-item">
-                        <div class="tags">
-                            <span class="tag tag-saas">SaaS</span>
-                            <span class="tag tag-b2b">B2B</span>
-                        </div>
-                        <h3>AppFlow</h3>
-                        <p class="venture-description">Custom iOS apps that transform local service businesses. We turn one-time customers into recurring revenue through owned channels. The retention protocol for service businesses.</p>
-                        <a href="https://appflow-eight.vercel.app/" class="venture-link">→ Visit AppFlow</a>
-                    </div>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="divider"></div>
-                
-                <div class="section">
-                    <div class="products-section">
-                        <input type="checkbox" id="toggle-products" class="toggle-checkbox">
-                        <label for="toggle-products" class="toggle-label">
-                            <h2 style="margin-bottom: 0;">PRODUCTS</h2>
-                        </label>
-                        <p class="section-intro" style="margin-top: 0; margin-bottom: 24px;">Consumer and B2B applications we've built, launched, and operate.</p>
-                        
-                        <div class="products-content">
-                        <div class="apps-grid">
-                        <div class="app-item">
-                            <div class="tags">
-                                <span class="tag tag-healthcare">Healthcare</span>
-                                <span class="tag tag-education">Education</span>
-                            </div>
-                            <h3>Med Atlas</h3>
-                            <p class="venture-description">All-in-one platform for planning, tracking, and navigating your medical career. Tools for pre-meds through attendings.</p>
-                            <a href="https://medatlas-omega.vercel.app" class="venture-link">→ Visit</a>
-                        </div>
+        </section>
 
-                        <div class="app-item">
-                            <div class="tags">
-                                <span class="tag tag-healthcare">Healthcare</span>
-                                <span class="tag tag-education">Education</span>
-                            </div>
-                            <h3>Rounds</h3>
-                            <p class="venture-description">Master USMLE Step 1 through daily clinical cases. Game-based learning with 400+ cases across all specialties.</p>
-                            <a href="rounds.html" class="venture-link">→ Learn more</a>
-                        </div>
-
-                        <div class="app-item">
-                            <div class="tags">
-                                <span class="tag tag-healthcare">Healthcare</span>
-                                <span class="tag tag-consumer">Consumer</span>
-                            </div>
-                            <h3>Doctor Notes</h3>
-                            <p class="venture-description">Record doctor visits, get jargon-free summaries, and share playback with caregivers. Never forget important medical instructions.</p>
-                            <a href="doctor-notes.html" class="venture-link">→ Learn more</a>
-                        </div>
-
-                        <div class="app-item">
-                            <div class="tags">
-                                <span class="tag tag-healthcare">Healthcare</span>
-                                <span class="tag tag-tool">Tool</span>
-                            </div>
-                            <h3>Pearls</h3>
-                            <p class="venture-description">Rapid notes for rounds. Capture clinical pearls, review with automatic reminders, and build your knowledge library.</p>
-                            <a href="pearls.html" class="venture-link">→ Learn more</a>
-                        </div>
-
-                        <div class="app-item">
-                            <div class="tags">
-                                <span class="tag tag-wellness">Wellness</span>
-                                <span class="tag tag-consumer">Consumer</span>
-                            </div>
-                            <h3>Binaural Synth</h3>
-                            <p class="venture-description">Deep focus and relaxation through binaural beats. Customizable frequencies for personalized audio experiences.</p>
-                            <a href="binaural-synth.html" class="venture-link">→ Learn more</a>
-                        </div>
-
-                        <div class="app-item">
-                            <div class="tags">
-                                <span class="tag tag-tool">Tool</span>
-                                <span class="tag tag-b2b">B2B</span>
-                            </div>
-                            <h3>Doc What</h3>
-                            <p class="venture-description">Documentation made simple. Capture and organize information quickly and efficiently.</p>
-                            <a href="doc-what.html" class="venture-link">→ Learn more</a>
-                        </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="divider"></div>
-                
-                <div class="section">
-                    <div class="experiments-section">
-                        <input type="checkbox" id="toggle-experiments" class="toggle-checkbox">
-                        <label for="toggle-experiments" class="toggle-label">
-                            <h2 style="margin-bottom: 0;">EXPERIMENTS</h2>
-                        </label>
-                        
-                        <p class="experiments-note">Early-stage experiments, talent networks, and internal tools. Some will become portfolio companies. Others help us identify exceptional operators and potential co-founders.</p>
-
-                        <div class="experiments-content">
-                        <div class="venture-item">
-                            <div class="tags">
-                                <span class="tag tag-network">Network</span>
-                            </div>
-                            <h3>The Bara Society</h3>
-                            <p class="venture-description">Invite-only network of ambitious operators, founders, and thinkers. A talent pipeline and testing ground for ideas that might become companies.</p>
-                            <a href="bara-society.html" class="venture-link">→ Learn more</a>
-                        </div>
-                
-                        <div class="venture-item">
-                            <div class="tags">
-                                <span class="tag tag-capital">Capital</span>
-                            </div>
-                            <h3>Capital Allocation</h3>
-                            <p class="venture-description">Building a public track record in markets. We share our process and results transparently. If the track record holds, we'll formalize this into a capital allocation vehicle for the portfolio.</p>
-                            <a href="https://capitalalpha.substack.com" class="venture-link">→ Capital Alpha</a>
-                        </div>
-                
-                        <div class="tools-section">
-                            <h3 class="tools-subheader">Internal Tools</h3>
-                            
-                            <div class="tool-item">
-                                <div class="tags" style="margin-bottom: 8px;">
-                                    <span class="tag tag-tool">Tool</span>
-                                    <span class="tag tag-healthcare">Healthcare</span>
-                                </div>
-                                <h4>ClaimGuard</h4>
-                                <span class="tool-description">Catch medical coding errors before they hit the clearinghouse.</span>
-                            </div>
-                            
-                            <div class="tool-item">
-                                <div class="tags" style="margin-bottom: 8px;">
-                                    <span class="tag tag-tool">Tool</span>
-                                    <span class="tag tag-healthcare">Healthcare</span>
-                                </div>
-                                <h4>CareGuided</h4>
-                                <span class="tool-description">Rapid health literacy assessment for providers.</span>
-                            </div>
-            
-                            <div class="tool-item">
-                                <div class="tags" style="margin-bottom: 8px;">
-                                    <span class="tag tag-tool">Tool</span>
-                                    <span class="tag tag-healthcare">Healthcare</span>
-                                </div>
-                                <h4>ReviewLoopMD</h4>
-                                <span class="tool-description">Help doctors collect patient reviews systematically.</span>
-                            </div>
-                            
-                            <div class="tool-item">
-                                <div class="tags" style="margin-bottom: 8px;">
-                                    <span class="tag tag-tool">Tool</span>
-                                    <span class="tag tag-healthcare">Healthcare</span>
-                                </div>
-                                <h4>RVU Lookup</h4>
-                                <span class="tool-description">Rapid search tool for procedural code RVU breakdowns.</span>
-                            </div>
-                            
-                            <div class="tool-item">
-                                <div class="tags" style="margin-bottom: 8px;">
-                                    <span class="tag tag-tool">Tool</span>
-                                    <span class="tag tag-consumer">Consumer</span>
-                                </div>
-                                <h4>DoneIt!</h4>
-                                <span class="tool-description">Task manager that breaks down overwhelming tasks.</span>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- <div class="divider"></div>
-                
-                <div class="section">
-                    <h2>ELSEWHERE</h2>
-                    
-                    <div class="venture-item">
-                        <h3>Writing</h3>
-                        <p class="venture-description">Long-form thoughts and analysis</p>
-                        <a href="https://thisisalimirza.substack.com/" class="venture-link">→ Visit Substack</a>
-                        </div>
-                        </div>
-                        
-                <div class="divider"></div> -->
-                
-                <div class="divider"></div>
-                
-                <div class="section">
-                    <div class="section-header">
-                        <h2>CONTACT</h2>
-                    </div>
-                    <p style="font-size: 16px; color: #4a4a4a; margin-bottom: 0;">Partnerships, acquisitions, or building together. → <a href="mailto:ali@braskgroup.com" class="venture-link">ali@braskgroup.com</a></p>
-                </div>
-                
-                <div class="footer">
-                    <div class="footer-content">
-                        <div style="flex: 1; min-width: 200px;">
-                            <p style="margin-bottom: 12px;"><strong>Brask Group LLC</strong></p>
-                            <p style="margin-bottom: 8px;">Registered in Connecticut, United States</p>
-                            <p style="margin-bottom: 0;">© 2025 Brask Group LLC. All rights reserved.</p>
-                        </div>
-                        <div class="footer-links">
-                            <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
-                            <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="philosophy">
+            <p class="philosophy-text">"Everything is negotiable"—we believe healthcare can feel like hospitality, not bureaucracy. We're building the tools and systems to make that possible.</p>
         </div>
+
+        <section class="section">
+            <div class="section-label">Current Projects</div>
+            <div class="projects">
+                <div class="project">
+                    <div class="project-header">
+                        <span class="project-name">On-Call Ads</span>
+                        <span class="project-status live">Live</span>
+                    </div>
+                    <p class="project-description">Healthcare marketing agency built by healthcare insiders. We serve DTC health brands, private practices, and healthcare startups with paid advertising, email/SMS marketing, content creation, and creative production.</p>
+                    <p class="project-meta">Built for healthcare brands who need a team that actually understands the space.</p>
+                    <a href="https://oncallads.com" class="project-link">oncallads.com →</a>
+                </div>
+
+                <div class="project">
+                    <div class="project-header">
+                        <span class="project-name">Rounds</span>
+                        <span class="project-status coming">Launching Soon</span>
+                    </div>
+                    <p class="project-description">Medical education app with 400+ diagnostic cases for USMLE Step 1. Flashcards like Anki are too granular. QBanks like UWorld and AMBOSS are comprehensive but overwhelming. Rounds fills the gap—focused, case-based learning that helps you master the diagnosis.</p>
+                    <p class="project-meta">50+ students on the waitlist from 30+ medical schools across the US, UK, Australia, and Pakistan.</p>
+                    <a href="rounds.html" class="project-link">Learn more →</a>
+                </div>
+
+                <div class="project">
+                    <div class="project-header">
+                        <span class="project-name">Capital Alpha</span>
+                        <span class="project-status">Public Portfolio</span>
+                    </div>
+                    <p class="project-description">Documenting a $1,000 to $100,000 investment challenge with transparent returns and investment thesis. Building a public track record.</p>
+                    <a href="https://capitalalpha.substack.com" class="project-link">Follow on Substack →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="section-label">Contact</div>
+            <p>For business inquiries:</p>
+            <a href="mailto:ali@braskgroup.com" class="contact-email">ali@braskgroup.com</a>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/thisisalimirza/" class="social-link">LinkedIn</a>
+                <a href="https://x.com/thisisalimirza" class="social-link">Twitter</a>
+                <a href="https://thisisalimirza.substack.com" class="social-link">Writing</a>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Brask Group LLC · Registered in Connecticut, United States</p>
+            <p>© <span id="year"></span> Brask Group LLC</p>
+            <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+            <div class="footer-links">
+                <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+                <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
+            </div>
+        </footer>
     </div>
 </body>
 </html>

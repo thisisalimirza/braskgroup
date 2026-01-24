@@ -3,130 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found - Brask Group LLC</title>
-    <meta name="description" content="Page not found on Brask Group LLC website.">
+    <title>Page Not Found | Brask Group</title>
+    <meta name="description" content="Page not found.">
+
     <link rel="icon" type="image/png" href="assets/brask-icon.png">
+    <link rel="apple-touch-icon" href="assets/brask-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+
     <style>
+        :root {
+            --text: #1a1a1a;
+            --text-light: #555;
+            --text-muted: #888;
+            --bg: #fafaf9;
+            --border: #e5e5e5;
+            --accent: #2563eb;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: 'Source Serif 4', Georgia, serif;
             font-size: 18px;
-            line-height: 1.5;
-            color: #1a1a1a;
-            background-color: #ffffff;
-            font-weight: 400;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: var(--bg);
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
-        
+
+        ::selection {
+            background: var(--accent);
+            color: white;
+        }
+
         .container {
-            max-width: 680px;
+            max-width: 640px;
             margin: 0 auto;
-            padding: 80px 50px;
+            padding: 120px 24px 60px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             text-align: center;
         }
-        
+
+        .site-name {
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: var(--text);
+            text-decoration: none;
+            text-transform: uppercase;
+            position: absolute;
+            top: 40px;
+            left: 24px;
+        }
+
         @media (min-width: 768px) {
-            .container {
-                padding: 80px 60px;
+            .site-name {
+                left: 60px;
             }
         }
-        
-        @media (max-width: 767px) {
-            body {
-                font-size: 16px;
-            }
-            
-            .container {
-                padding: 60px 32px;
-            }
+
+        .site-name:hover {
+            color: var(--accent);
         }
-        
+
         h1 {
-            font-size: 36px;
-            font-weight: 700;
-            line-height: 1.2;
+            font-size: 72px;
+            font-weight: 400;
+            line-height: 1;
+            color: var(--text-muted);
             margin-bottom: 16px;
-            color: #1a1a1a;
-            letter-spacing: -0.5px;
         }
-        
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 48px;
-            }
-        }
-        
+
         p {
             font-size: 18px;
-            line-height: 1.6;
-            color: #4a4a4a;
+            color: var(--text-light);
             margin-bottom: 32px;
         }
-        
-        @media (max-width: 767px) {
-            p {
-                font-size: 16px;
-            }
-        }
-        
+
         .back-link {
             font-size: 15px;
-            color: #0066cc;
+            color: var(--accent);
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.2s ease;
-            display: inline-block;
         }
-        
-        @media (max-width: 767px) {
-            .back-link {
-                font-size: 14px;
-            }
-        }
-        
+
         .back-link:hover {
             text-decoration: underline;
         }
-        
-        .back-link:visited {
-            color: #0066cc;
-        }
-        
+
         .footer {
-            margin-top: 80px;
-            padding-top: 48px;
-            border-top: 1px solid #e8e8e8;
-            font-size: 13px;
-            color: #666666;
+            padding: 32px 24px;
+            border-top: 1px solid var(--border);
+            font-size: 14px;
+            color: var(--text-muted);
+            text-align: center;
         }
-        
-        @media (max-width: 767px) {
-            .footer {
-                margin-top: 60px;
-                padding-top: 32px;
-                font-size: 12px;
-            }
+
+        .footer-links {
+            margin-top: 12px;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .footer-link {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            color: var(--text-light);
         }
     </style>
 </head>
 <body>
+    <a href="index.html" class="site-name">Brask Group</a>
+
     <div class="container">
         <h1>404</h1>
         <p>Page not found.</p>
-        <a href="index.html" class="back-link">← Back to main page</a>
-        
-        <div class="footer">
-            <p>Brask Group LLC | Registered in Connecticut, United States</p>
-            <p style="margin-top: 8px;">© 2025 Brask Group LLC. All rights reserved.</p>
-            <p style="margin-top: 12px;">
-                <a href="privacy-policy.html" style="color: #666666; text-decoration: none; margin-right: 16px;">Privacy Policy</a>
-                <a href="terms-of-service.html" style="color: #666666; text-decoration: none;">Terms of Service</a>
-            </p>
-        </div>
+        <a href="index.html" class="back-link">← Back to Brask Group</a>
     </div>
+
+    <footer class="footer">
+        <p>Brask Group LLC · Registered in Connecticut, United States</p>
+        <p>© <span id="year"></span> Brask Group LLC</p>
+        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+        <div class="footer-links">
+            <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+            <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
+        </div>
+    </footer>
 </body>
 </html>
