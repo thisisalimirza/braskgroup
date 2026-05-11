@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brask Group - Healthcare Venture Studio</title>
-    <meta name="description" content="Brask Group is a venture studio building businesses in healthcare. We operate On-Call Ads, Rounds, and more. Founded by Ali Mirza.">
+    <meta name="description" content="Brask Group is a venture studio building businesses in healthcare and software. Founded by Ali Mirza — Epic Systems alum, published author, and medical student shipping products.">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://braskgroup.com/">
     <meta property="og:title" content="Brask Group - Healthcare Venture Studio">
-    <meta property="og:description" content="We build and operate businesses that make healthcare work better — for providers, for patients, for the industry.">
+    <meta property="og:description" content="We build and operate businesses that make healthcare work better — for providers, patients, and the businesses that serve them.">
     <meta property="og:image" content="https://braskgroup.com/assets/og_image.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://braskgroup.com/">
     <meta property="twitter:title" content="Brask Group - Healthcare Venture Studio">
-    <meta property="twitter:description" content="We build and operate businesses that make healthcare work better — for providers, for patients, for the industry.">
+    <meta property="twitter:description" content="We build and operate businesses that make healthcare work better — for providers, patients, and the businesses that serve them.">
     <meta property="twitter:image" content="https://braskgroup.com/assets/og_image.png">
 
     <link rel="icon" type="image/png" href="assets/brask-icon.png">
@@ -161,26 +161,26 @@
         .hero {
             max-width: 1080px;
             margin: 0 auto;
-            padding: 160px 32px 80px;
+            padding: 150px 32px 60px;
         }
 
         .hero h1 {
             font-family: 'Source Serif 4', Georgia, serif;
-            font-size: clamp(32px, 4.5vw, 48px);
+            font-size: clamp(34px, 4.5vw, 50px);
             font-weight: 700;
-            line-height: 1.15;
+            line-height: 1.12;
             color: var(--text);
             margin-bottom: 20px;
-            max-width: 680px;
-            letter-spacing: -1px;
+            max-width: 700px;
+            letter-spacing: -1.5px;
         }
 
         .hero-desc {
             font-size: 18px;
             line-height: 1.7;
             color: var(--text-secondary);
-            max-width: 560px;
-            margin-bottom: 40px;
+            max-width: 540px;
+            margin-bottom: 36px;
         }
 
         .hero-cta {
@@ -199,17 +199,18 @@
         .hero-cta svg {
             width: 16px;
             height: 16px;
-            transition: transform 0.2s;
         }
 
         /* Proof strip */
         .proof {
             max-width: 1080px;
             margin: 0 auto;
-            padding: 0 32px 80px;
-            display: flex;
-            gap: 48px;
-            flex-wrap: wrap;
+            padding: 48px 32px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
 
         .proof-item {
@@ -218,7 +219,7 @@
         }
 
         .proof-number {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 700;
             color: var(--text);
             letter-spacing: -0.5px;
@@ -228,32 +229,11 @@
         .proof-label {
             font-size: 13px;
             color: var(--text-muted);
-            margin-top: 2px;
+            margin-top: 4px;
+            line-height: 1.4;
         }
 
-        /* Divider */
-        .divider {
-            max-width: 1080px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-
-        .divider-line {
-            height: 1px;
-            background: var(--border);
-        }
-
-        /* Portfolio */
-        .portfolio {
-            max-width: 1080px;
-            margin: 0 auto;
-            padding: 80px 32px;
-        }
-
-        .portfolio-header {
-            margin-bottom: 48px;
-        }
-
+        /* Section shared */
         .section-eyebrow {
             font-size: 12px;
             font-weight: 700;
@@ -271,6 +251,25 @@
             letter-spacing: -0.5px;
         }
 
+        .section-subtitle {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-top: 8px;
+            max-width: 480px;
+            line-height: 1.6;
+        }
+
+        /* Portfolio */
+        .portfolio {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 80px 32px;
+        }
+
+        .portfolio-header {
+            margin-bottom: 40px;
+        }
+
         .portfolio-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -283,11 +282,11 @@
 
         .portfolio-item {
             background: var(--bg);
-            padding: 32px;
+            padding: 28px 32px;
             display: grid;
             grid-template-columns: 1fr auto;
             gap: 24px;
-            align-items: start;
+            align-items: center;
             text-decoration: none;
             transition: background 0.15s;
         }
@@ -295,53 +294,40 @@
         .portfolio-item:hover { background: var(--bg-subtle); }
 
         .portfolio-item-content h3 {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 700;
             color: var(--text);
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .portfolio-item-content p {
-            font-size: 15px;
+            font-size: 14px;
             color: var(--text-secondary);
-            line-height: 1.6;
-            max-width: 520px;
+            line-height: 1.5;
         }
 
         .portfolio-item-meta {
-            text-align: right;
             display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 8px;
+            align-items: center;
+            gap: 12px;
         }
 
         .status-badge {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            font-size: 12px;
+            gap: 5px;
+            font-size: 11px;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.4px;
             padding: 4px 10px;
             border-radius: 100px;
+            white-space: nowrap;
         }
 
-        .status-badge.live {
-            background: #ecfdf5;
-            color: #047857;
-        }
-
-        .status-badge.soon {
-            background: #eff6ff;
-            color: #1d4ed8;
-        }
-
-        .status-badge.public {
-            background: #f8fafc;
-            color: #64748b;
-        }
+        .status-badge.live { background: #ecfdf5; color: #047857; }
+        .status-badge.soon { background: #eff6ff; color: #1d4ed8; }
+        .status-badge.public { background: #f8fafc; color: #64748b; border: 1px solid var(--border); }
 
         .status-dot {
             width: 5px;
@@ -350,11 +336,13 @@
             background: currentColor;
         }
 
-        .portfolio-link {
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--accent);
+        .portfolio-arrow {
+            color: var(--text-muted);
+            font-size: 14px;
+            transition: transform 0.15s;
         }
+
+        .portfolio-item:hover .portfolio-arrow { transform: translateX(2px); }
 
         /* Approach */
         .approach {
@@ -374,7 +362,7 @@
 
         .approach-left h2 {
             font-family: 'Source Serif 4', Georgia, serif;
-            font-size: clamp(24px, 3vw, 30px);
+            font-size: clamp(22px, 2.5vw, 28px);
             font-weight: 600;
             color: var(--text);
             margin-bottom: 16px;
@@ -383,13 +371,15 @@
         }
 
         .approach-left p {
-            font-size: 16px;
+            font-size: 15px;
             line-height: 1.7;
             color: var(--text-secondary);
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .approach-left a {
+            display: inline-block;
+            margin-top: 8px;
             font-size: 14px;
             font-weight: 600;
             color: var(--accent);
@@ -402,21 +392,21 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 24px;
-            padding-top: 8px;
+            gap: 20px;
+            padding-top: 4px;
         }
 
         .approach-list li {
-            padding-left: 20px;
+            padding-left: 16px;
             border-left: 2px solid var(--border);
         }
 
         .approach-list li strong {
             display: block;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
             color: var(--text);
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
 
         .approach-list li span {
@@ -432,42 +422,51 @@
             padding: 80px 32px;
         }
 
-        .founder-content {
-            max-width: 640px;
+        .founder-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: start;
         }
 
-        .founder-content h2 {
+        .founder-bio h2 {
             font-family: 'Source Serif 4', Georgia, serif;
             font-size: 24px;
             font-weight: 600;
             color: var(--text);
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             letter-spacing: -0.3px;
         }
 
-        .founder-content p {
-            font-size: 16px;
+        .founder-bio p {
+            font-size: 15px;
             line-height: 1.8;
             color: var(--text-secondary);
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
-        .founder-content p:last-of-type { margin-bottom: 0; }
+        .founder-bio p:last-of-type { margin-bottom: 0; }
+
+        .founder-meta {
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
 
         .founder-name {
-            margin-top: 24px;
-            font-size: 14px;
-            font-weight: 600;
+            font-size: 15px;
+            font-weight: 700;
             color: var(--text);
         }
 
         .founder-title {
             font-size: 13px;
             color: var(--text-muted);
+            margin-top: 2px;
         }
 
         .founder-links {
-            margin-top: 16px;
+            margin-top: 12px;
             display: flex;
             gap: 16px;
         }
@@ -481,6 +480,53 @@
         }
 
         .founder-links a:hover { color: var(--accent); }
+
+        .founder-sidebar {
+            background: var(--bg-subtle);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+        }
+
+        .founder-sidebar h3 {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .credential-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .credential-list li {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.4;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .credential-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 7px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .credential-list li strong {
+            color: var(--text);
+            font-weight: 600;
+        }
 
         /* CTA */
         .cta {
@@ -509,7 +555,7 @@
             letter-spacing: -0.3px;
         }
 
-        .cta-box p {
+        .cta-box > div > p {
             font-size: 15px;
             color: #94a3b8;
             line-height: 1.6;
@@ -518,24 +564,24 @@
         .cta-actions {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 12px;
         }
 
         .cta-actions a {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 16px 20px;
+            padding: 14px 18px;
             background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.1);
             border-radius: 10px;
             text-decoration: none;
             transition: all 0.15s;
         }
 
         .cta-actions a:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.18);
         }
 
         .cta-action-text {
@@ -544,26 +590,23 @@
         }
 
         .cta-action-text strong {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
             color: #fff;
         }
 
         .cta-action-text span {
-            font-size: 13px;
+            font-size: 12px;
             color: #94a3b8;
-            margin-top: 2px;
+            margin-top: 1px;
         }
 
-        .cta-arrow {
-            color: #64748b;
-            font-size: 18px;
-        }
+        .cta-arrow { color: #64748b; font-size: 16px; }
 
         /* Footer */
         .footer {
             border-top: 1px solid var(--border);
-            padding: 48px 32px;
+            padding: 40px 32px;
         }
 
         .footer-inner {
@@ -577,12 +620,12 @@
         .footer-left p {
             font-size: 13px;
             color: var(--text-muted);
-            margin-top: 8px;
+            margin-top: 6px;
         }
 
         .footer-right {
             display: flex;
-            gap: 24px;
+            gap: 20px;
         }
 
         .footer-right a {
@@ -598,17 +641,18 @@
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .mobile-toggle { display: block; }
-            .hero { padding: 120px 24px 60px; }
-            .proof { padding: 0 24px 60px; gap: 32px; }
+            .hero { padding: 120px 24px 48px; }
+            .proof { grid-template-columns: repeat(2, 1fr); gap: 24px; padding: 32px 24px; }
             .portfolio { padding: 60px 24px; }
-            .portfolio-item { grid-template-columns: 1fr; gap: 12px; }
-            .portfolio-item-meta { align-items: flex-start; flex-direction: row; gap: 12px; }
+            .portfolio-item { grid-template-columns: 1fr; gap: 8px; padding: 20px 24px; }
+            .portfolio-item-meta { justify-content: flex-start; }
             .approach-inner { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px; }
             .founder { padding: 60px 24px; }
+            .founder-grid { grid-template-columns: 1fr; gap: 32px; }
             .cta { padding: 0 24px 60px; }
-            .cta-box { grid-template-columns: 1fr; padding: 40px 28px; gap: 32px; }
+            .cta-box { grid-template-columns: 1fr; padding: 36px 24px; gap: 28px; }
             .footer { padding: 32px 24px; }
-            .footer-inner { flex-direction: column; gap: 20px; }
+            .footer-inner { flex-direction: column; gap: 16px; }
         }
     </style>
     <!-- Vercel Web Analytics -->
@@ -643,9 +687,9 @@
     <!-- Hero -->
     <section class="hero">
         <h1>We build and operate businesses in healthcare.</h1>
-        <p class="hero-desc">Brask Group is a venture studio focused on healthcare and the businesses that serve it. We build products, run an agency, and ship things that solve real problems for physicians and health brands.</p>
+        <p class="hero-desc">Brask Group is a venture studio. We make products, run services, and ship software that solves real problems — primarily in healthcare, but wherever we see clear opportunity.</p>
         <a href="#portfolio" class="hero-cta">
-            See what we're building
+            See the portfolio
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
         </a>
     </section>
@@ -653,60 +697,89 @@
     <!-- Proof -->
     <div class="proof">
         <div class="proof-item">
+            <span class="proof-number">3</span>
+            <span class="proof-label">Published books</span>
+        </div>
+        <div class="proof-item">
             <span class="proof-number">50+</span>
             <span class="proof-label">Products shipped</span>
         </div>
         <div class="proof-item">
-            <span class="proof-number">30+</span>
-            <span class="proof-label">Medical schools reached</span>
-        </div>
-        <div class="proof-item">
-            <span class="proof-number">4</span>
+            <span class="proof-number">6</span>
             <span class="proof-label">Active ventures</span>
         </div>
         <div class="proof-item">
-            <span class="proof-number">1st</span>
-            <span class="proof-label">Author ML research published</span>
+            <span class="proof-number">2</span>
+            <span class="proof-label">Peer-reviewed publications</span>
         </div>
     </div>
-
-    <div class="divider"><div class="divider-line"></div></div>
 
     <!-- Portfolio -->
     <section class="portfolio" id="portfolio">
         <div class="portfolio-header">
             <div class="section-eyebrow">Portfolio</div>
-            <h2 class="section-title">Current companies and products</h2>
+            <h2 class="section-title">What we're building and operating</h2>
+            <p class="section-subtitle">Active companies, products, and projects under the Brask Group umbrella.</p>
         </div>
         <div class="portfolio-grid">
             <a href="https://oncallads.com" class="portfolio-item" target="_blank">
                 <div class="portfolio-item-content">
                     <h3>On-Call Ads</h3>
-                    <p>Healthcare marketing agency. Paid ads, email/SMS, content, and creative for DTC health brands, private practices, and healthcare startups. Built by people who actually understand healthcare.</p>
+                    <p>Healthcare marketing agency — paid ads, email/SMS, content, and creative for health brands and private practices.</p>
                 </div>
                 <div class="portfolio-item-meta">
                     <span class="status-badge live"><span class="status-dot"></span> Live</span>
-                    <span class="portfolio-link">oncallads.com &rarr;</span>
+                    <span class="portfolio-arrow">&rarr;</span>
                 </div>
             </a>
-            <a href="rounds.html" class="portfolio-item">
+            <a href="https://getrounds.app" class="portfolio-item" target="_blank">
                 <div class="portfolio-item-content">
                     <h3>Rounds</h3>
-                    <p>Medical education app with 400+ diagnostic cases for USMLE Step 1. Case-based learning with progressive hints — the gap between Anki and QBanks. 50+ students on the waitlist from 30+ medical schools.</p>
+                    <p>Daily clinical case game for medical students. 400+ diagnostic cases for USMLE Step 1 prep.</p>
                 </div>
                 <div class="portfolio-item-meta">
                     <span class="status-badge soon"><span class="status-dot"></span> Launching</span>
-                    <span class="portfolio-link">Learn more &rarr;</span>
+                    <span class="portfolio-arrow">&rarr;</span>
+                </div>
+            </a>
+            <a href="https://usesitr.com" class="portfolio-item" target="_blank">
+                <div class="portfolio-item-content">
+                    <h3>Sitr</h3>
+                    <p>Event ticketing and seating management platform.</p>
+                </div>
+                <div class="portfolio-item-meta">
+                    <span class="status-badge live"><span class="status-dot"></span> Live</span>
+                    <span class="portfolio-arrow">&rarr;</span>
+                </div>
+            </a>
+            <a href="https://bylineblogs.com" class="portfolio-item" target="_blank">
+                <div class="portfolio-item-content">
+                    <h3>Byline</h3>
+                    <p>Automated blog pipeline for product-led SEO. Publish content that drives organic traffic.</p>
+                </div>
+                <div class="portfolio-item-meta">
+                    <span class="status-badge live"><span class="status-dot"></span> Live</span>
+                    <span class="portfolio-arrow">&rarr;</span>
+                </div>
+            </a>
+            <a href="https://mymedstack.com" class="portfolio-item" target="_blank">
+                <div class="portfolio-item-content">
+                    <h3>MedStack</h3>
+                    <p>All-in-one toolkit for the physician pipeline — from premed through residency.</p>
+                </div>
+                <div class="portfolio-item-meta">
+                    <span class="status-badge live"><span class="status-dot"></span> Live</span>
+                    <span class="portfolio-arrow">&rarr;</span>
                 </div>
             </a>
             <a href="https://capitalalpha.substack.com" class="portfolio-item" target="_blank">
                 <div class="portfolio-item-content">
                     <h3>Capital Alpha</h3>
-                    <p>Public investment portfolio documenting a $1K → $100K challenge with transparent returns and thesis. Building a track record in the open.</p>
+                    <p>Public investment portfolio. $1K → $100K challenge with transparent returns and thesis.</p>
                 </div>
                 <div class="portfolio-item-meta">
                     <span class="status-badge public"><span class="status-dot"></span> Public</span>
-                    <span class="portfolio-link">Substack &rarr;</span>
+                    <span class="portfolio-arrow">&rarr;</span>
                 </div>
             </a>
         </div>
@@ -717,26 +790,26 @@
         <div class="approach-inner">
             <div class="approach-left">
                 <h2>Find problems. Build solutions. Operate them well.</h2>
-                <p>We focus on healthcare, marketing, and software because that's where we have experience and see clear opportunity. Each company we build teaches us something we apply to the next one.</p>
-                <p>The model is simple: identify real problems, build lean solutions, and run them profitably. No hype, no pitch decks for things that don't exist yet.</p>
+                <p>We focus on healthcare and software because that's where we have experience and see clear opportunity. Each company teaches us something we use in the next one.</p>
+                <p>The model is simple: identify real problems, build lean, ship fast, and run things profitably. Each company makes the next one easier.</p>
                 <a href="thesis.html">Read the full thesis &rarr;</a>
             </div>
             <ul class="approach-list">
                 <li>
                     <strong>Marketing & Growth</strong>
-                    <span>On-Call Ads gives us deep expertise in customer acquisition, performance marketing, and scaling revenue for health brands.</span>
+                    <span>On-Call Ads and Byline give us deep expertise in customer acquisition, paid media, and content-driven growth.</span>
                 </li>
                 <li>
-                    <strong>Product Development</strong>
-                    <span>Building Rounds and other tools teaches us product-market fit, user acquisition, and what it takes to ship products people actually use.</span>
+                    <strong>Product & Engineering</strong>
+                    <span>Rounds, Sitr, and MedStack teach us product-market fit, distribution, and building software people actually use.</span>
+                </li>
+                <li>
+                    <strong>Healthcare Operations</strong>
+                    <span>Medical training + Epic Systems experience means we understand the workflows, incentives, and constraints inside healthcare.</span>
                 </li>
                 <li>
                     <strong>Capital Allocation</strong>
-                    <span>We're developing a public track record in markets — learning to evaluate businesses and deploy capital effectively.</span>
-                </li>
-                <li>
-                    <strong>Talent & Network</strong>
-                    <span>We're always looking for sharp, curious builders who want to do meaningful work. Every good person we meet makes the next venture easier.</span>
+                    <span>Building a public track record in markets to develop our ability to evaluate and fund businesses effectively.</span>
                 </li>
             </ul>
         </div>
@@ -744,17 +817,35 @@
 
     <!-- Founder -->
     <section class="founder" id="founder">
-        <div class="founder-content">
-            <div class="section-eyebrow">Founder</div>
-            <h2>Built by Ali Mirza</h2>
-            <p>I'm a second-year medical student at UConn (Class of 2028) who's been building products and businesses since before med school. I've shipped 50+ projects, published first-author machine learning research in medicine, and lived across four continents — Kenya, Pakistan, Lebanon, and the United States.</p>
-            <p>I started Brask Group because I kept finding problems in healthcare that nobody was solving well, and I got tired of waiting. Right now it's just me and a few collaborators. The plan is to keep it lean, stay focused on what works, and grow by being genuinely useful — not by being loud.</p>
-            <div class="founder-name">Ali Mirza</div>
-            <div class="founder-title">Founder, Brask Group</div>
-            <div class="founder-links">
-                <a href="https://www.linkedin.com/in/thisisalimirza/">LinkedIn</a>
-                <a href="https://x.com/thisisalimirza">Twitter</a>
-                <a href="https://thisisalimirza.substack.com">Writing</a>
+        <div class="founder-grid">
+            <div class="founder-bio">
+                <div class="section-eyebrow">Founder</div>
+                <h2>Ali Mirza</h2>
+                <p>After college, I worked at Epic Systems — the company behind most of America's electronic health records. I saw how healthcare technology really works at scale, and where it falls short.</p>
+                <p>Now I'm a second-year medical student at UConn, building the businesses I wish existed when I was on the other side of the system. I've shipped 50+ products, written 3 books, published peer-reviewed research in machine learning and philosophy, and lived across four continents.</p>
+                <p>Brask Group is how I organize all of this. It's lean, it's focused, and it's growing because the things we build actually work for the people who use them.</p>
+                <div class="founder-meta">
+                    <div class="founder-name">Ali Mirza</div>
+                    <div class="founder-title">Founder &middot; Epic Systems Alum &middot; UConn Medicine '28</div>
+                    <div class="founder-links">
+                        <a href="https://thisisalimirza.com">Personal site</a>
+                        <a href="https://www.linkedin.com/in/thisisalimirza/">LinkedIn</a>
+                        <a href="https://x.com/thisisalimirza">Twitter</a>
+                        <a href="https://thisisalimirza.substack.com">Newsletter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="founder-sidebar">
+                <h3>Background</h3>
+                <ul class="credential-list">
+                    <li><strong>Epic Systems</strong> — health tech, EHR systems</li>
+                    <li><strong>UConn School of Medicine</strong> — Class of 2028</li>
+                    <li><strong>3 published books</strong> — economics, travel, personal finance</li>
+                    <li><strong>ML research</strong> — predicting inpatient mortality using administrative data</li>
+                    <li><strong>Philosophy research</strong> — published in PhilArchive</li>
+                    <li><strong>4 continents</strong> — Kenya, Pakistan, Lebanon, United States</li>
+                    <li><strong>50+ products</strong> — shipped across healthcare and software</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -763,8 +854,8 @@
     <section class="cta">
         <div class="cta-box">
             <div>
-                <h2>Interested in working together?</h2>
-                <p>Whether you're a healthcare brand that needs marketing, a builder who wants to collaborate, or just someone who thinks we'd get along — I'd like to hear from you.</p>
+                <h2>Want to work together?</h2>
+                <p>Whether you're a healthcare brand that needs marketing help, a builder who wants to collaborate on something, or you just think we should talk — reach out.</p>
             </div>
             <div class="cta-actions">
                 <a href="mailto:ali@braskgroup.com">
@@ -777,14 +868,14 @@
                 <a href="https://oncallads.com" target="_blank">
                     <div class="cta-action-text">
                         <strong>Hire On-Call Ads</strong>
-                        <span>Healthcare marketing services</span>
+                        <span>Healthcare marketing</span>
                     </div>
                     <span class="cta-arrow">&rarr;</span>
                 </a>
                 <a href="join-our-team.html">
                     <div class="cta-action-text">
                         <strong>Join the team</strong>
-                        <span>See open roles</span>
+                        <span>Open roles &amp; collaboration</span>
                     </div>
                     <span class="cta-arrow">&rarr;</span>
                 </a>
