@@ -4,28 +4,27 @@
 <script>document.documentElement.className += ' js';</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brask Group — Ali Mirza</title>
-<meta name="description" content="Brask Group is the name under which Ali Mirza ships software — currently Rounds, a clinical reasoning app for medical students, plus a few smaller tools. MS3 at UConn School of Medicine.">
+<title>Brask Group — Building the parts of AI in medicine worth wanting</title>
+<meta name="description" content="Brask Group builds software and writes analysis for a healthcare system being remade by AI — training, practice, and delivery alike. Independent, self-funded, no outside capital.">
 <link rel="canonical" href="https://braskgroup.com/">
 <meta name="author" content="Ali Mirza">
-<meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#111110" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FFFFFF">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Brask Group">
 <meta property="og:url" content="https://braskgroup.com/">
-<meta property="og:title" content="Brask Group — Ali Mirza">
-<meta property="og:description" content="The name under which I ship things — currently Rounds, a clinical reasoning app for medical students, plus a few smaller tools.">
+<meta property="og:title" content="Brask Group — Building the parts of AI in medicine worth wanting">
+<meta property="og:description" content="Software and analysis for a healthcare system being remade by AI — training, practice, and delivery alike.">
 <meta property="og:image" content="https://braskgroup.com/assets/og_image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Brask Group — Ali Mirza">
-<meta name="twitter:description" content="The name under which I ship things — currently Rounds, a clinical reasoning app for medical students, plus a few smaller tools.">
+<meta name="twitter:title" content="Brask Group — Building the parts of AI in medicine worth wanting">
+<meta name="twitter:description" content="Software and analysis for a healthcare system being remade by AI — training, practice, and delivery alike.">
 <meta name="twitter:image" content="https://braskgroup.com/assets/og_image.png">
 
 <link rel="icon" type="image/png" href="assets/brask-icon.png">
 <link rel="apple-touch-icon" href="assets/brask-icon.png">
 
-<link rel="preload" href="assets/fonts/newsreader-300600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/schibsted-grotesk-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/ibm-plex-mono-500-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
@@ -33,16 +32,18 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Ali Mirza",
+  "@type": "Organization",
+  "name": "Brask Group",
+  "legalName": "Brask Group LLC",
   "url": "https://braskgroup.com/",
   "email": "ali@braskgroup.com",
-  "jobTitle": "Medical student and software builder",
-  "affiliation": { "@type": "CollegeOrUniversity", "name": "UConn School of Medicine" },
-  "worksFor": { "@type": "Organization", "name": "Brask Group LLC", "url": "https://braskgroup.com/" },
+  "founder": {
+    "@type": "Person",
+    "name": "Ali Mirza",
+    "url": "https://thisisalimirza.com"
+  },
   "sameAs": [
     "https://www.linkedin.com/in/thisisalimirza/",
-    "https://x.com/thisisalimirza",
     "https://thisisalimirza.substack.com"
   ]
 }
@@ -62,9 +63,9 @@
   <div class="wrap masthead-inner">
     <a href="/" class="wordmark"><span class="mark" aria-hidden="true"></span>Brask Group</a>
     <nav class="nav" aria-label="Primary">
-      <a href="#work">Rounds</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#approach">Approach</a>
       <a href="#writing">Writing</a>
-      <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -75,22 +76,43 @@
   <!-- ── Hero ─────────────────────────────────────────── -->
   <section class="wrap hero">
     <div class="hero-stack">
-      <h1>I build software. Right now I&rsquo;m also a <em>medical student.</em></h1>
-      <p class="hero-sub">Brask Group is the name under which I ship things &mdash; currently <a href="#work">Rounds</a>, a clinical reasoning app for medical students, plus a few smaller tools. I&rsquo;m an MS3 at UConn School of Medicine, heading toward cardiology.</p>
-      <p class="hero-note">One person, a few products, no roadmap slides.</p>
+      <h1>AI is already reshaping medicine. We&rsquo;re building <span class="accent">the parts of that future worth wanting.</span></h1>
+      <p class="hero-sub">Brask Group builds software and writes analysis for a healthcare system being remade by AI &mdash; training, practice, and delivery alike. We start wherever we can see the problem clearest, and build outward from there.</p>
+      <p class="fact-strip">
+        <span>Independent</span>
+        <span>Self-funded</span>
+        <span>No outside capital</span>
+      </p>
     </div>
   </section>
 
-  <!-- ── What I've built ──────────────────────────────── -->
-  <section class="wrap section" id="work">
-    <p class="eyebrow register-label">What I&rsquo;ve built</p>
+  <!-- ── Approach ─────────────────────────────────────── -->
+  <section class="wrap section" id="approach">
+    <div class="row">
+      <p class="eyebrow">Our thesis</p>
+      <div class="prose">
+        <p class="lead-in">AI is coming to medicine regardless of how the field feels about it &mdash; training, clinical practice, and how care gets delivered are all already changing. Some clinicians are excited, many are anxious, and both reactions are reasonable: a lot of what&rsquo;s being built is built by people who&rsquo;ve never sat with a patient or carried a pager.</p>
+        <p>We build from the other side of that gap. Not as a general bet on AI, but problem by problem, wherever the failure mode is clear enough to build directly against. Our first was in medical education: students are already heavy users of AI, but most of that use looks the same way &mdash; ask a question, get an answer, move on. That&rsquo;s fast, and it&rsquo;s exactly the wrong shape for how clinical intuition actually gets built, which happens through iterative, back-and-forth reasoning, wrong turns included. Rounds is our answer to that specific problem. It won&rsquo;t be the last problem we take on.</p>
+        <p>That&rsquo;s the whole approach, and it scales past where we started. Every product and every essay is a brick in the same structure &mdash; a specific, growing answer to what AI should look like inside medicine, built by people close enough to the problem to get the details right, wherever in the system that problem happens to be.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Portfolio ────────────────────────────────────── -->
+  <section class="wrap section" id="portfolio">
+    <p class="eyebrow register-label">What we&rsquo;ve built &mdash; starting point, not the whole map</p>
     <div class="register">
 
       <article class="entry entry--lead">
         <p class="entry-index">01</p>
         <div class="entry-body">
           <h3 class="entry-name">Rounds</h3>
-          <p>A clinical reasoning app for medical students. I built it because I needed it &mdash; a way to actually practice thinking like a doctor, not just memorize facts. It&rsquo;s live on the App Store now, used daily by students working through clerkships.</p>
+          <p>Our starting point was medical education, because that&rsquo;s the vantage point our founder had. We noticed medical students using AI the same way they&rsquo;d use a search engine: ask, get an answer, move on. That&rsquo;s efficient, and it skips the exact back-and-forth reasoning that builds clinical intuition. Rounds is built to put that reasoning process back in &mdash; AI-generated case simulations that push students to work through a case the way a real patient encounter demands, not hand them the answer.</p>
+          <p>Live on the App Store, used daily by students across clinical rotations. Rounds is self-sustaining on its own revenue. It&rsquo;s our flagship today because it&rsquo;s what we&rsquo;ve proven &mdash; not because medical education is the limit of what we&rsquo;re building toward.</p>
+          <p class="entry-tags">
+            <span class="tag tag--ai"><span class="dot" aria-hidden="true"></span>Uses AI &mdash; case generation</span>
+            <span class="tag">Live &middot; App Store</span>
+          </p>
           <p class="entry-actions">
             <!-- Drop the App Store listing URL in here when it's handy:
                  <a class="link" href="https://apps.apple.com/app/id…">View on the App Store <span class="arw">&rarr;</span></a> -->
@@ -103,7 +125,10 @@
         <p class="entry-index">02</p>
         <div class="entry-body">
           <h3 class="entry-name">Byline Blogs</h3>
-          <p>An automated article pipeline &mdash; I use it to write and publish content at a fraction of the usual cost.</p>
+          <p>An automated content pipeline giving small healthcare practices &mdash; starting with direct primary care clinics &mdash; access to real SEO content without agency costs.</p>
+          <p class="entry-tags">
+            <span class="tag">No AI</span>
+          </p>
         </div>
       </article>
 
@@ -111,7 +136,10 @@
         <p class="entry-index">03</p>
         <div class="entry-body">
           <h3 class="entry-name">Med Stack</h3>
-          <p>A tool for exploring medical training programs. Built for students trying to make sense of a confusing application process.</p>
+          <p>A discovery tool for medical training programs, built to simplify an application process that&rsquo;s more opaque than it needs to be. No AI component &mdash; a straightforward data and search problem, solved as one.</p>
+          <p class="entry-tags">
+            <span class="tag">No AI</span>
+          </p>
         </div>
       </article>
 
@@ -119,33 +147,54 @@
         <p class="entry-index">04</p>
         <div class="entry-body">
           <h3 class="entry-name">Sitr</h3>
-          <p>Event seating, solved simply. A small tool for a problem that shouldn&rsquo;t need a big one.</p>
+          <p>Originally built to solve inpatient bed management, Sitr&rsquo;s core logic generalized into event seating &mdash; a clean example of how a healthcare-first problem can produce a broader product.</p>
+          <p class="entry-tags">
+            <span class="tag">No AI</span>
+          </p>
         </div>
       </article>
 
     </div>
   </section>
 
-  <!-- ── About ────────────────────────────────────────── -->
-  <section class="wrap section" id="about">
+  <!-- ── Writing ──────────────────────────────────────── -->
+  <section class="wrap section" id="writing">
     <div class="row">
-      <p class="eyebrow">Who&rsquo;s behind this</p>
+      <p class="eyebrow">Analysis</p>
       <div class="prose">
-        <p>I&rsquo;m Ali. I&rsquo;m a third-year medical student at UConn, on a path toward cardiology. Before medical school I worked in software engineering and did ML research &mdash; an ECG-based deep learning project on left ventricular hypertrophy detection, among other things. I never really stopped building; I just started pointing it at healthcare.</p>
-        <p>Outside the clinic and the codebase, I read a lot of things that don&rsquo;t obviously connect to either &mdash; classical political philosophy, Islamic intellectual history, geopolitics. I published a poetry collection at some point along the way. I write about all of it, loosely organized, at <a href="#writing"><em>Side Effects</em></a>.</p>
-        <p class="lead">Brask Group is just the name for the building part.</p>
+        <p>Software is half the approach. The other half is written &mdash; arguing for what medicine&rsquo;s relationship with AI should look like, from someone still training inside it. We publish at <em>Side Effects</em>: essays on AI in clinical practice, medical education, and the systems underneath both.</p>
+        <p class="doc-actions">
+          <a class="link" href="https://thisisalimirza.substack.com" rel="me">Read Side Effects <span class="arw">&rarr;</span></a>
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- ── Writing ──────────────────────────────────────── -->
-  <section class="wrap section" id="writing">
+  <!-- ── How we operate ───────────────────────────────── -->
+  <section class="wrap section" id="operate">
     <div class="row">
-      <p class="eyebrow">Elsewhere</p>
+      <p class="eyebrow">Structure</p>
       <div class="prose">
-        <p>I write <em>Side Effects</em>, a newsletter about medicine, technology, and whatever else is on my mind that week. New pieces land irregularly &mdash; no content calendar, just when something&rsquo;s worth saying.</p>
+        <div class="subgroup">
+          <p class="subgroup-label">Structure</p>
+          <p>Brask Group is a registered LLC. It handles banking, contracts, and payments across every product in the portfolio.</p>
+        </div>
+        <div class="subgroup">
+          <p class="subgroup-label">Funding</p>
+          <p>Rounds funds itself. The rest of the portfolio is funded independently &mdash; through consulting work, JANUS (a marketing agency operated prior to Brask Group), and Capital Alpha, an investment portfolio under the same ownership. Brask Group has taken no outside investment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Founder ──────────────────────────────────────── -->
+  <section class="wrap section" id="founder">
+    <div class="row">
+      <p class="eyebrow">Built by</p>
+      <div class="prose">
+        <p>Brask Group was founded by Ali Mirza, when he was a 1st year medical student at UConn School of Medicine. Prior to Brask Group and medical school, he founded and operated a marketing agency (JANUS). Prior to his work in marketing he worked at Epic Systems, learning first-hand what the interface of tech and medicine looks like at highest levels today. In undergrad he studied Classics, Biochemistry, Economics, and Game Theory. Today, Ali writes <em>Side Effects</em> and leads Brask Group&rsquo;s product and editorial work.</p>
         <p class="doc-actions">
-          <a class="link" href="https://thisisalimirza.substack.com" rel="me">Read Side Effects <span class="arw">&rarr;</span></a>
+          <a class="link" href="https://thisisalimirza.com" rel="me">More about Ali <span class="arw">&rarr;</span></a>
         </p>
       </div>
     </div>
@@ -157,11 +206,11 @@
       <p class="eyebrow">Get in touch</p>
       <div class="prose">
         <a class="contact-email" href="mailto:ali@braskgroup.com">ali@braskgroup.com</a>
-        <p class="contact-note">I read everything. I also write small angel checks into healthcare companies I&rsquo;d want to use myself &mdash; if that&rsquo;s what you&rsquo;re building, this is the address.</p>
         <div class="elsewhere">
           <a href="https://www.linkedin.com/in/thisisalimirza/" rel="me">LinkedIn</a>
           <a href="https://thisisalimirza.substack.com" rel="me">Substack</a>
-          <a href="https://x.com/thisisalimirza" rel="me">X</a>
+          <!-- Drop the App Store listing URL in here when it's handy:
+               <a href="https://apps.apple.com/app/id…">App Store</a> -->
         </div>
       </div>
     </div>
@@ -170,7 +219,7 @@
 </main>
 
 <footer class="wrap colophon">
-  <p>Brask Group LLC &middot; Connecticut, United States &middot; Built by one person.</p>
+  <p>Brask Group LLC &middot; Connecticut, United States</p>
   <p class="colophon-legal">
     <a href="privacy-policy.html">Privacy</a>
     <a href="terms-of-service.html">Terms</a>
