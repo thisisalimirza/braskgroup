@@ -236,12 +236,13 @@ a { color: inherit; }
 .entry {
   display: grid;
   grid-template-columns: var(--rail) 1fr;
-  gap: var(--gutter);
+  column-gap: var(--gutter);
+  row-gap: 0;
   padding: 36px 0;
   border-bottom: 1px solid var(--rule);
 }
 @media (max-width: 860px) {
-  .entry { grid-template-columns: 1fr; gap: 10px; padding: 28px 0; }
+  .entry { grid-template-columns: 1fr; column-gap: 0; row-gap: 10px; padding: 28px 0; }
 }
 .entry:last-child { border-bottom: none; padding-bottom: 0; }
 
@@ -314,37 +315,64 @@ a { color: inherit; }
 }
 
 /* ── Figures ────────────────────────────────────────────
-   Images are evidence, not decoration: hairline frame, mono
-   caption, no shadows. Figures inside a prose column break
-   the measure so screenshots read at a usable size.
+   A figure is a row in the same grid as everything else,
+   never a block dropped into the text flow: mono label in
+   the rail, images in the content column, hairlines above
+   and below so it reads as structure rather than insertion.
    ──────────────────────────────────────────────────────── */
 
-.figure { margin-top: 30px; max-width: none; }
+.figure-row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: var(--rail) 1fr;
+  gap: var(--gutter);
+  align-items: start;
+  max-width: none;
+  margin: 40px 0 0;
+  padding: 28px 0 26px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+@media (max-width: 860px) {
+  .figure-row { grid-template-columns: 1fr; gap: 16px; margin-top: 26px; }
+}
+/* Outside the register there is no grid gap to inherit. */
+.doc .figure-row,
+.doc-body .figure-row { margin: 38px 0 0; }
 
-.figure figcaption {
-  margin-top: 13px;
+.figure-label {
   font-family: var(--mono);
   font-size: 11px;
   font-weight: 500;
-  letter-spacing: .06em;
+  letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--ink-mute);
+  line-height: 1.5;
+  padding-top: .3em;
+}
+@media (max-width: 860px) { .figure-label { padding-top: 0; } }
+
+.figure-body { min-width: 0; }
+
+.figure-body figcaption {
+  margin-top: 16px;
+  font-size: .88rem;
   line-height: 1.6;
+  color: var(--ink-mute);
+  max-width: 62ch;
 }
 
 .shots {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
 }
-.shots--trio { grid-template-columns: repeat(3, 1fr); max-width: 760px; }
-.shots--pair { grid-template-columns: repeat(2, 1fr); max-width: 510px; }
+.shots--pair { grid-template-columns: repeat(2, 1fr); max-width: 548px; }
 @media (max-width: 700px) {
-  /* Two-up wraps cleanly; a trio stays one row rather than
-     orphaning its third shot onto a line of its own. */
-  .shots { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .shots--pair { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .shots--trio { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  /* A trio holds its single row on phones rather than
+     orphaning the third shot onto a line of its own. */
+  .shots { gap: 8px; }
+  .shots--pair { gap: 10px; }
 }
 
 .shots img {
@@ -352,9 +380,15 @@ a { color: inherit; }
   width: 100%;
   height: auto;
   border: 1px solid var(--rule);
-  border-radius: 7px;
+  border-radius: 8px;
   background: var(--paper-2);
 }
+
+/* The register's rows stay in column two once a figure has
+   spanned the full width of an entry. */
+.entry-foot { grid-column: 2; margin-top: 26px; }
+.entry-foot .entry-tags { margin-top: 0; }
+@media (max-width: 860px) { .entry-foot { grid-column: 1; margin-top: 22px; } }
 
 /* App icon paired with a product name. */
 
