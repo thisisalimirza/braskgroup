@@ -1,377 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brask Group - Healthcare Infrastructure</title>
-    <meta name="description" content="Brask Group builds infrastructure for better healthcare. Founded by Ali Mirza, a medical student at UConn, we create tools and services that support physicians and healthcare businesses.">
+<script>document.documentElement.className += ' js';</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brask Group — Building the parts of AI in medicine worth wanting</title>
+<meta name="description" content="Brask Group builds software and writes analysis for a healthcare system being remade by AI — training, practice, and delivery alike. Independent, self-funded, no outside capital.">
+<link rel="canonical" href="https://braskgroup.com/">
+<meta name="author" content="Ali Mirza">
+<meta name="theme-color" content="#FFFFFF">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://braskgroup.com/">
-    <meta property="og:title" content="Brask Group - Healthcare Infrastructure">
-    <meta property="og:description" content="We build tools and services that support physicians and healthcare businesses - from marketing and education to products that improve how healthcare is delivered.">
-    <meta property="og:image" content="https://braskgroup.com/assets/og_image.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Brask Group">
+<meta property="og:url" content="https://braskgroup.com/">
+<meta property="og:title" content="Brask Group — Building the parts of AI in medicine worth wanting">
+<meta property="og:description" content="Software and analysis for a healthcare system being remade by AI — training, practice, and delivery alike.">
+<meta property="og:image" content="https://braskgroup.com/assets/og_image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Brask Group — Building the parts of AI in medicine worth wanting">
+<meta name="twitter:description" content="Software and analysis for a healthcare system being remade by AI — training, practice, and delivery alike.">
+<meta name="twitter:image" content="https://braskgroup.com/assets/og_image.png">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://braskgroup.com/">
-    <meta property="twitter:title" content="Brask Group - Healthcare Infrastructure">
-    <meta property="twitter:description" content="We build tools and services that support physicians and healthcare businesses - from marketing and education to products that improve how healthcare is delivered.">
-    <meta property="twitter:image" content="https://braskgroup.com/assets/og_image.png">
+<link rel="icon" type="image/png" href="assets/brask-icon.png">
+<link rel="apple-touch-icon" href="assets/brask-icon.png">
 
-    <link rel="icon" type="image/png" href="assets/brask-icon.png">
-    <link rel="apple-touch-icon" href="assets/brask-icon.png">
+<link rel="preload" href="assets/fonts/schibsted-grotesk-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ibm-plex-mono-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Brask Group",
+  "legalName": "Brask Group LLC",
+  "url": "https://braskgroup.com/",
+  "email": "ali@braskgroup.com",
+  "founder": {
+    "@type": "Person",
+    "name": "Ali Mirza",
+    "url": "https://thisisalimirza.com"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/thisisalimirza/",
+    "https://thisisalimirza.substack.com"
+  ]
+}
+</script>
 
-    <style>
-        :root {
-            --text: #1a1a1a;
-            --text-light: #555;
-            --text-muted: #888;
-            --bg: #fafaf9;
-            --bg-card: #fff;
-            --border: #e5e5e5;
-            --accent: #2563eb;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 18px;
-            line-height: 1.7;
-            color: var(--text);
-            background-color: var(--bg);
-            -webkit-font-smoothing: antialiased;
-        }
-
-        ::selection {
-            background: var(--accent);
-            color: white;
-        }
-
-        .container {
-            max-width: 640px;
-            margin: 0 auto;
-            padding: 80px 24px 60px;
-        }
-
-        @media (min-width: 768px) {
-            .container {
-                padding: 120px 24px 80px;
-            }
-        }
-
-        /* Header */
-        .site-header {
-            margin-bottom: 64px;
-        }
-
-        .site-name {
-            font-size: 15px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            color: var(--text);
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        /* Hero */
-        .hero {
-            margin-bottom: 64px;
-        }
-
-        .hero h1 {
-            font-size: 32px;
-            font-weight: 400;
-            line-height: 1.4;
-            color: var(--text);
-            margin-bottom: 24px;
-        }
-
-        @media (min-width: 768px) {
-            .hero h1 {
-                font-size: 38px;
-            }
-        }
-
-        .hero-sub {
-            font-size: 18px;
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-
-        /* Sections */
-        .section {
-            margin-bottom: 56px;
-        }
-
-        .section-label {
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-
-        .section p {
-            color: var(--text-light);
-            margin-bottom: 16px;
-        }
-
-        .section p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* About */
-        .about-content {
-            font-size: 18px;
-            line-height: 1.8;
-        }
-
-        .highlight {
-            color: var(--text);
-            font-weight: 400;
-        }
-
-        /* Projects */
-        .projects {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-        }
-
-        .project {
-            padding-bottom: 32px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .project:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 8px;
-            gap: 16px;
-        }
-
-        .project-name {
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--text);
-        }
-
-        .project-status {
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--text-muted);
-            white-space: nowrap;
-        }
-
-        .project-status.live {
-            color: #16a34a;
-        }
-
-        .project-status.coming {
-            color: var(--accent);
-        }
-
-        .project-description {
-            color: var(--text-light);
-            margin-bottom: 12px;
-            font-size: 17px;
-        }
-
-        .project-meta {
-            font-size: 15px;
-            color: var(--text-muted);
-            font-style: italic;
-            margin-bottom: 12px;
-        }
-
-        .project-link {
-            font-size: 15px;
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .project-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Contact */
-        .contact-section {
-            margin-top: 64px;
-            padding-top: 48px;
-            border-top: 1px solid var(--border);
-        }
-
-        .contact-email {
-            font-size: 18px;
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .contact-email:hover {
-            text-decoration: underline;
-        }
-
-        .social-links {
-            margin-top: 16px;
-            display: flex;
-            gap: 20px;
-        }
-
-        .social-link {
-            font-size: 15px;
-            color: var(--text-muted);
-            text-decoration: none;
-        }
-
-        .social-link:hover {
-            color: var(--text);
-        }
-
-        /* Footer */
-        .footer {
-            margin-top: 80px;
-            padding-top: 32px;
-            border-top: 1px solid var(--border);
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-
-        .footer-links {
-            margin-top: 12px;
-            display: flex;
-            gap: 16px;
-        }
-
-        .footer-link {
-            color: var(--text-muted);
-            text-decoration: none;
-        }
-
-        .footer-link:hover {
-            color: var(--text-light);
-        }
-
-        /* Quote/Philosophy */
-        .philosophy {
-            margin: 48px 0;
-            padding: 24px 0;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .philosophy-text {
-            font-size: 17px;
-            font-style: italic;
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-    </style>
-    <!-- Vercel Web Analytics -->
-    <script>
-      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
-    <div class="container">
-        <header class="site-header">
-            <a href="/" class="site-name">Brask Group</a>
-        </header>
 
-        <section class="hero">
-            <h1>Brask Group builds infrastructure for better healthcare.</h1>
-            <p class="hero-sub">Tools and services that support physicians and healthcare businesses—from marketing and education to products that improve how healthcare is delivered and experienced.</p>
-        </section>
+<a class="skip" href="#main">Skip to content</a>
 
-        <section class="section">
-            <div class="section-label">About</div>
-            <div class="about-content">
-                <p>Founded by <span class="highlight">Ali Mirza</span>, a second-year medical student at UConn School of Medicine (Class of 2028), Brask Group operates at the intersection of medicine, technology, and business.</p>
-                <p>I've built <span class="highlight">50+ products</span> across healthcare and technology, published first-author research on machine learning applications in medicine, and bring a global perspective shaped by living across four continents—Kenya, Pakistan, Lebanon, and the United States.</p>
-                <p>My work focuses on making healthcare feel less like bureaucracy and more like hospitality.</p>
-            </div>
-        </section>
+<header class="masthead" id="masthead">
+  <div class="wrap masthead-inner">
+    <a href="/" class="wordmark"><span class="mark" aria-hidden="true"></span>Brask Group</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#portfolio">Portfolio</a>
+      <a href="#approach">Approach</a>
+      <a href="#writing">Writing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-        <div class="philosophy">
-            <p class="philosophy-text">"Everything is negotiable"—we believe healthcare can feel like hospitality, not bureaucracy. We're building the tools and systems to make that possible.</p>
-        </div>
+<main id="main">
 
-        <section class="section">
-            <div class="section-label">Current Projects</div>
-            <div class="projects">
-                <div class="project">
-                    <div class="project-header">
-                        <span class="project-name">On-Call Ads</span>
-                        <span class="project-status live">Live</span>
-                    </div>
-                    <p class="project-description">Healthcare marketing agency built by healthcare insiders. We serve DTC health brands, private practices, and healthcare startups with paid advertising, email/SMS marketing, content creation, and creative production.</p>
-                    <p class="project-meta">Built for healthcare brands who need a team that actually understands the space.</p>
-                    <a href="https://oncallads.com" class="project-link">oncallads.com →</a>
-                </div>
-
-                <div class="project">
-                    <div class="project-header">
-                        <span class="project-name">Rounds</span>
-                        <span class="project-status coming">Launching Soon</span>
-                    </div>
-                    <p class="project-description">Medical education app with 400+ diagnostic cases for USMLE Step 1. Flashcards like Anki are too granular. QBanks like UWorld and AMBOSS are comprehensive but overwhelming. Rounds fills the gap—focused, case-based learning that helps you master the diagnosis.</p>
-                    <p class="project-meta">50+ students on the waitlist from 30+ medical schools across the US, UK, Australia, and Pakistan.</p>
-                    <a href="rounds.html" class="project-link">Learn more →</a>
-                </div>
-
-                <div class="project">
-                    <div class="project-header">
-                        <span class="project-name">Capital Alpha</span>
-                        <span class="project-status">Public Portfolio</span>
-                    </div>
-                    <p class="project-description">Documenting a $1,000 to $100,000 investment challenge with transparent returns and investment thesis. Building a public track record.</p>
-                    <a href="https://capitalalpha.substack.com" class="project-link">Follow on Substack →</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact-section">
-            <div class="section-label">Contact</div>
-            <p>For business inquiries:</p>
-            <a href="mailto:ali@braskgroup.com" class="contact-email">ali@braskgroup.com</a>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/thisisalimirza/" class="social-link">LinkedIn</a>
-                <a href="https://x.com/thisisalimirza" class="social-link">Twitter</a>
-                <a href="https://thisisalimirza.substack.com" class="social-link">Writing</a>
-            </div>
-        </section>
-
-        <footer class="footer">
-            <p>Brask Group LLC · Registered in Connecticut, United States</p>
-            <p>© <span id="year"></span> Brask Group LLC</p>
-            <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-            <div class="footer-links">
-                <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
-                <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
-            </div>
-        </footer>
+  <!-- ── Hero ─────────────────────────────────────────── -->
+  <section class="wrap hero">
+    <div class="hero-stack">
+      <h1>AI is already reshaping medicine. We&rsquo;re building <span class="accent">the parts of that future worth wanting.</span></h1>
+      <p class="hero-sub">Brask Group builds software and writes analysis for a healthcare system being remade by AI &mdash; training, practice, and delivery alike. We start wherever we can see the problem clearest, and build outward from there.</p>
+      <p class="fact-strip">
+        <span>Independent</span>
+        <span>Self-funded</span>
+        <span>No outside capital</span>
+      </p>
     </div>
+  </section>
+
+  <!-- ── Approach ─────────────────────────────────────── -->
+  <section class="wrap section" id="approach">
+    <div class="row">
+      <p class="eyebrow">Our thesis</p>
+      <div class="prose">
+        <p class="lead-in">AI is coming to medicine regardless of how the field feels about it &mdash; training, clinical practice, and how care gets delivered are all already changing. Some clinicians are excited, many are anxious, and both reactions are reasonable: a lot of what&rsquo;s being built is built by people who&rsquo;ve never sat with a patient or carried a pager.</p>
+        <p>We build from the other side of that gap. Not as a general bet on AI, but problem by problem, wherever the failure mode is clear enough to build directly against. Our first was in medical education: students are already heavy users of AI, but most of that use looks the same way &mdash; ask a question, get an answer, move on. That&rsquo;s fast, and it&rsquo;s exactly the wrong shape for how clinical intuition actually gets built, which happens through iterative, back-and-forth reasoning, wrong turns included. Rounds is our answer to that specific problem. It won&rsquo;t be the last problem we take on.</p>
+        <p>That&rsquo;s the whole approach, and it scales past where we started. Every product and every essay is a brick in the same structure &mdash; a specific, growing answer to what AI should look like inside medicine, built by people close enough to the problem to get the details right, wherever in the system that problem happens to be.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Portfolio ────────────────────────────────────── -->
+  <section class="wrap section" id="portfolio">
+    <p class="eyebrow register-label">What we&rsquo;ve built &mdash; starting point, not the whole map</p>
+    <div class="register">
+
+      <article class="entry entry--lead">
+        <p class="entry-index">01</p>
+        <div class="entry-body">
+          <h3 class="entry-name">Rounds</h3>
+          <p>Our starting point was medical education, because that&rsquo;s the vantage point our founder had. We noticed medical students using AI the same way they&rsquo;d use a search engine: ask, get an answer, move on. That&rsquo;s efficient, and it skips the exact back-and-forth reasoning that builds clinical intuition. Rounds is built to put that reasoning process back in &mdash; AI-generated case simulations that push students to work through a case the way a real patient encounter demands, not hand them the answer.</p>
+          <p>Live on the App Store, used daily by students across clinical rotations. Rounds is self-sustaining on its own revenue. It&rsquo;s our flagship today because it&rsquo;s what we&rsquo;ve proven &mdash; not because medical education is the limit of what we&rsquo;re building toward.</p>
+          <p class="entry-tags">
+            <span class="tag tag--ai"><span class="dot" aria-hidden="true"></span>Uses AI &mdash; case generation</span>
+            <span class="tag">Live &middot; App Store</span>
+          </p>
+          <p class="entry-actions">
+            <!-- Drop the App Store listing URL in here when it's handy:
+                 <a class="link" href="https://apps.apple.com/app/id…">View on the App Store <span class="arw">&rarr;</span></a> -->
+            <a class="link" href="rounds.html">About Rounds <span class="arw">&rarr;</span></a>
+          </p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <p class="entry-index">02</p>
+        <div class="entry-body">
+          <h3 class="entry-name">Byline Blogs</h3>
+          <p>An automated content pipeline giving small healthcare practices &mdash; starting with direct primary care clinics &mdash; access to real SEO content without agency costs.</p>
+          <p class="entry-tags">
+            <span class="tag">No AI</span>
+          </p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <p class="entry-index">03</p>
+        <div class="entry-body">
+          <h3 class="entry-name">Med Stack</h3>
+          <p>A discovery tool for medical training programs, built to simplify an application process that&rsquo;s more opaque than it needs to be. No AI component &mdash; a straightforward data and search problem, solved as one.</p>
+          <p class="entry-tags">
+            <span class="tag">No AI</span>
+          </p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <p class="entry-index">04</p>
+        <div class="entry-body">
+          <h3 class="entry-name">Sitr</h3>
+          <p>Originally built to solve inpatient bed management, Sitr&rsquo;s core logic generalized into event seating &mdash; a clean example of how a healthcare-first problem can produce a broader product.</p>
+          <p class="entry-tags">
+            <span class="tag">No AI</span>
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ── Writing ──────────────────────────────────────── -->
+  <section class="wrap section" id="writing">
+    <div class="row">
+      <p class="eyebrow">Analysis</p>
+      <div class="prose">
+        <p>Software is half the approach. The other half is written &mdash; arguing for what medicine&rsquo;s relationship with AI should look like, from someone still training inside it. We publish at <em>Side Effects</em>: essays on AI in clinical practice, medical education, and the systems underneath both.</p>
+        <p class="doc-actions">
+          <a class="link" href="https://thisisalimirza.substack.com" rel="me">Read Side Effects <span class="arw">&rarr;</span></a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── How we operate ───────────────────────────────── -->
+  <section class="wrap section" id="operate">
+    <div class="row">
+      <p class="eyebrow">Structure</p>
+      <div class="prose">
+        <div class="subgroup">
+          <p class="subgroup-label">Structure</p>
+          <p>Brask Group is a registered LLC. It handles banking, contracts, and payments across every product in the portfolio.</p>
+        </div>
+        <div class="subgroup">
+          <p class="subgroup-label">Funding</p>
+          <p>Rounds funds itself. The rest of the portfolio is funded independently &mdash; through consulting work, JANUS (a marketing agency operated prior to Brask Group), and Capital Alpha, an investment portfolio under the same ownership. Brask Group has taken no outside investment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Founder ──────────────────────────────────────── -->
+  <section class="wrap section" id="founder">
+    <div class="row">
+      <p class="eyebrow">Built by</p>
+      <div class="prose">
+        <p>Brask Group was founded by Ali Mirza, when he was a 1st year medical student at UConn School of Medicine. Prior to Brask Group and medical school, he founded and operated a marketing agency (JANUS). Prior to his work in marketing he worked at Epic Systems, learning first-hand what the interface of tech and medicine looks like at highest levels today. In undergrad he studied Classics, Biochemistry, Economics, and Game Theory. Today, Ali writes <em>Side Effects</em> and leads Brask Group&rsquo;s product and editorial work.</p>
+        <p class="doc-actions">
+          <a class="link" href="https://thisisalimirza.com" rel="me">More about Ali <span class="arw">&rarr;</span></a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact ──────────────────────────────────────── -->
+  <section class="wrap section" id="contact">
+    <div class="row">
+      <p class="eyebrow">Get in touch</p>
+      <div class="prose">
+        <a class="contact-email" href="mailto:ali@braskgroup.com">ali@braskgroup.com</a>
+        <div class="elsewhere">
+          <a href="https://www.linkedin.com/in/thisisalimirza/" rel="me">LinkedIn</a>
+          <a href="https://thisisalimirza.substack.com" rel="me">Substack</a>
+          <!-- Drop the App Store listing URL in here when it's handy:
+               <a href="https://apps.apple.com/app/id…">App Store</a> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap colophon">
+  <p>Brask Group LLC &middot; Connecticut, United States</p>
+  <p class="colophon-legal">
+    <a href="privacy-policy.html">Privacy</a>
+    <a href="terms-of-service.html">Terms</a>
+    <span>&copy; <span id="yr">2026</span></span>
+  </p>
+</footer>
+
+<script src="assets/site.js" defer></script>
+
 </body>
 </html>

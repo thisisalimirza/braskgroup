@@ -1,445 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rounds - Medical Education App | Brask Group</title>
-    <meta name="description" content="Master USMLE Step 1 through daily clinical cases. 400+ diagnostic cases with progressive hints. The middle ground between Anki and QBanks.">
+<script>document.documentElement.className += ' js';</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rounds — AI-generated clinical reasoning practice | Brask Group</title>
+<meta name="description" content="Rounds is a clinical reasoning app for medical students: AI-generated case simulations with progressive clues, built to practice thinking like a doctor rather than asking AI for the answer.">
+<link rel="canonical" href="https://braskgroup.com/rounds.html">
+<meta name="theme-color" content="#FFFFFF">
 
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Rounds - Medical Education App">
-    <meta property="og:description" content="The middle ground between Anki and QBanks. 400+ diagnostic cases with progressive hints to master clinical diagnosis for USMLE Step 1.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Brask Group">
+<meta property="og:url" content="https://braskgroup.com/rounds.html">
+<meta property="og:title" content="Rounds — AI-generated clinical reasoning practice">
+<meta property="og:description" content="AI-generated case simulations with progressive clues. Built to practice thinking like a doctor, not just asking AI for the answer.">
+<meta property="og:image" content="https://braskgroup.com/assets/og_image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rounds — AI-generated clinical reasoning practice">
+<meta name="twitter:description" content="AI-generated case simulations with progressive clues. Built to practice thinking like a doctor, not just asking AI for the answer.">
+<meta name="twitter:image" content="https://braskgroup.com/assets/og_image.png">
 
-    <link rel="icon" type="image/png" href="assets/brask-icon.png">
-    <link rel="apple-touch-icon" href="assets/brask-icon.png">
+<link rel="icon" type="image/png" href="assets/brask-icon.png">
+<link rel="apple-touch-icon" href="assets/brask-icon.png">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/schibsted-grotesk-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ibm-plex-mono-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
 
-    <style>
-        :root {
-            --text: #1a1a1a;
-            --text-light: #555;
-            --text-muted: #888;
-            --bg: #fafaf9;
-            --border: #e5e5e5;
-            --accent: #2563eb;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 18px;
-            line-height: 1.7;
-            color: var(--text);
-            background-color: var(--bg);
-            -webkit-font-smoothing: antialiased;
-        }
-
-        ::selection {
-            background: var(--accent);
-            color: white;
-        }
-
-        .container {
-            max-width: 640px;
-            margin: 0 auto;
-            padding: 80px 24px 60px;
-        }
-
-        @media (min-width: 768px) {
-            .container {
-                padding: 120px 24px 80px;
-            }
-        }
-
-        .site-header {
-            margin-bottom: 64px;
-        }
-
-        .site-name {
-            font-size: 15px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            color: var(--text);
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .site-name:hover {
-            color: var(--accent);
-        }
-
-        h1 {
-            font-size: 32px;
-            font-weight: 400;
-            line-height: 1.3;
-            color: var(--text);
-            margin-bottom: 24px;
-        }
-
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 38px;
-            }
-        }
-
-        .status-badge {
-            display: inline-block;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--accent);
-            margin-bottom: 16px;
-        }
-
-        .intro {
-            font-size: 18px;
-            line-height: 1.8;
-            color: var(--text-light);
-            margin-bottom: 48px;
-        }
-
-        .intro strong {
-            color: var(--text);
-            font-weight: 600;
-        }
-
-        .section {
-            margin-bottom: 48px;
-        }
-
-        .section-label {
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-        }
-
-        .section p {
-            color: var(--text-light);
-            margin-bottom: 16px;
-        }
-
-        .feature-list {
-            list-style: none;
-        }
-
-        .feature-list li {
-            font-size: 17px;
-            line-height: 1.6;
-            color: var(--text-light);
-            margin-bottom: 12px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .feature-list li::before {
-            content: "·";
-            position: absolute;
-            left: 0;
-            color: var(--text-muted);
-            font-weight: bold;
-        }
-
-        .feature-list li strong {
-            color: var(--text);
-            font-weight: 600;
-        }
-
-        .highlight-box {
-            background: white;
-            border: 1px solid var(--border);
-            padding: 24px;
-            margin: 32px 0;
-        }
-
-        .highlight-box p {
-            margin: 0;
-            font-style: italic;
-            color: var(--text-light);
-        }
-
-        .highlight-box strong {
-            color: var(--text);
-        }
-
-        .divider {
-            width: 100%;
-            height: 1px;
-            background-color: var(--border);
-            margin: 48px 0;
-        }
-
-        .legal-section {
-            margin-bottom: 48px;
-        }
-
-        .legal-section h2 {
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-        }
-
-        .legal-section h3 {
-            font-size: 17px;
-            font-weight: 600;
-            color: var(--text);
-            margin-top: 24px;
-            margin-bottom: 8px;
-        }
-
-        .legal-section h3:first-of-type {
-            margin-top: 0;
-        }
-
-        .legal-section p {
-            font-size: 16px;
-            line-height: 1.7;
-            color: var(--text-light);
-            margin-bottom: 12px;
-        }
-
-        .legal-section ul {
-            list-style: none;
-            margin-bottom: 16px;
-        }
-
-        .legal-section ul li {
-            font-size: 16px;
-            line-height: 1.6;
-            color: var(--text-light);
-            margin-bottom: 8px;
-            padding-left: 16px;
-            position: relative;
-        }
-
-        .legal-section ul li::before {
-            content: "·";
-            position: absolute;
-            left: 0;
-            color: var(--text-muted);
-        }
-
-        .back-link {
-            display: inline-block;
-            font-size: 15px;
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
-            margin-top: 32px;
-        }
-
-        .back-link:hover {
-            text-decoration: underline;
-        }
-
-        .footer {
-            margin-top: 80px;
-            padding-top: 32px;
-            border-top: 1px solid var(--border);
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-
-        .footer-links {
-            margin-top: 12px;
-            display: flex;
-            gap: 16px;
-        }
-
-        .footer-link {
-            color: var(--text-muted);
-            text-decoration: none;
-        }
-
-        .footer-link:hover {
-            color: var(--text-light);
-        }
-
-        a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
-    <!-- Vercel Web Analytics -->
-    <script>
-      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
-    <div class="container">
-        <header class="site-header">
-            <a href="index.html" class="site-name">Brask Group</a>
-        </header>
 
-        <div class="status-badge">Launching Soon on App Store</div>
-        <h1>Rounds</h1>
+<a class="skip" href="#main">Skip to content</a>
 
-        <div class="intro">
-            <p><strong>Master USMLE Step 1 through daily clinical cases.</strong></p>
-            <p>Flashcards like Anki get too granular—you memorize facts but miss the bigger picture. QBanks like UWorld and AMBOSS are comprehensive but overwhelming and expensive.</p>
-            <p>Rounds fills the gap. Focused, case-based learning with progressive hints that helps you master the diagnosis—the skill that actually matters on test day.</p>
-        </div>
+<header class="masthead" id="masthead">
+  <div class="wrap masthead-inner">
+    <a href="index.html" class="wordmark"><span class="mark" aria-hidden="true"></span>Brask Group</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html#portfolio">Portfolio</a>
+      <a href="index.html#approach">Approach</a>
+      <a href="index.html#writing">Writing</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-        <div class="highlight-box">
-            <p><strong>50+ students</strong> on the waitlist from <strong>30+ medical schools</strong> across the US, UK, Australia, and Pakistan.</p>
-        </div>
+<main id="main">
 
-        <div class="section">
-            <div class="section-label">How It Works</div>
-            <ul class="feature-list">
-                <li><strong>Daily Cases:</strong> A new clinical case every day to build your diagnostic skills</li>
-                <li><strong>Progressive Clues:</strong> Unlock clinical clues one by one as you work through each case</li>
-                <li><strong>400+ Cases:</strong> Comprehensive library covering all medical specialties</li>
-                <li><strong>Track Progress:</strong> Monitor your streak, win rate, and performance over time</li>
-                <li><strong>Browse by Specialty:</strong> Filter cases by category—Cardiology, Endocrinology, Urology, and more</li>
-            </ul>
-        </div>
+  <section class="wrap wrap--narrow doc">
+    <p class="doc-kicker"><span class="dot" aria-hidden="true"></span>Rounds &middot; iOS</p>
+    <h1>Practice clinical reasoning, one case at a time.</h1>
+    <p class="doc-lede">Most students already use AI to study &mdash; but as an answer machine: ask a question, get an answer, move on. That skips the back-and-forth reasoning that actually builds clinical intuition.</p>
+    <p class="doc-lede">Rounds puts that reasoning process back in. Each case is an AI-generated clinical simulation with clues that unlock one at a time, so you practice arriving at a diagnosis the way a real encounter demands &mdash; not recognizing an answer choice.</p>
 
-        <div class="section">
-            <div class="section-label">Features</div>
-            <ul class="feature-list">
-                <li>Daily case challenges to build consistent study habits</li>
-                <li>Random case mode for varied practice</li>
-                <li>Browse 400+ cases organized by medical specialty</li>
-                <li>Statistics tracking: streaks, win rate, guess distribution</li>
-                <li>Progressive hint system to guide learning</li>
-                <li>Score tracking to measure improvement</li>
-            </ul>
-        </div>
+    <p class="doc-actions">
+      <!-- Drop the App Store listing URL in here when it's handy:
+           <a class="link" href="https://apps.apple.com/app/id…">View on the App Store <span class="arw">&rarr;</span></a> -->
+      <a class="link" href="mailto:ali@braskgroup.com?subject=Rounds">Questions? Email me <span class="arw">&rarr;</span></a>
+    </p>
+  </section>
 
-        <div class="divider"></div>
+  <section class="wrap wrap--narrow doc-body" style="padding-bottom:24px">
 
-        <div class="legal-section">
-            <h2>Privacy Policy</h2>
-            <p><strong>Last updated: January 2025</strong></p>
+    <h2>How it works</h2>
+    <ul>
+      <li><strong>A case a day.</strong> One new clinical case daily, so the habit is small enough to keep during rotations.</li>
+      <li><strong>AI-generated cases.</strong> Each case is drafted with AI, built to mirror how a real patient presents &mdash; not pulled from a fixed answer bank.</li>
+      <li><strong>Progressive clues.</strong> Findings unlock one at a time &mdash; commit to a diagnosis early, or spend clues to narrow it down.</li>
+      <li><strong>400+ cases.</strong> A library spanning the major specialties, browsable whenever the daily case isn&rsquo;t enough.</li>
+      <li><strong>Browse by specialty.</strong> Filter to cardiology, endocrinology, urology, and the rest when you want to drill a rotation.</li>
+      <li><strong>Progress tracking.</strong> Streaks, win rate, and guess distribution, so improvement is visible over weeks rather than guessed at.</li>
+    </ul>
 
-            <h3>1. Information We Collect</h3>
-            <p>We collect information you provide directly to us when you:</p>
-            <ul>
-                <li>Create an account or profile</li>
-                <li>Use the app and interact with cases</li>
-                <li>Contact us for support</li>
-                <li>Participate in surveys or feedback</li>
-            </ul>
-
-            <h3>2. How We Use Your Information</h3>
-            <p>We use the information we collect to:</p>
-            <ul>
-                <li>Provide, maintain, and improve the app</li>
-                <li>Track your progress and personalize your experience</li>
-                <li>Send you updates and notifications (with your consent)</li>
-                <li>Respond to your inquiries and provide support</li>
-                <li>Analyze usage patterns to improve our services</li>
-            </ul>
-
-            <h3>3. Information Sharing</h3>
-            <p>We do not sell, trade, or otherwise transfer your personal information to third parties except:</p>
-            <ul>
-                <li>When required by law or to protect our rights</li>
-                <li>With service providers who assist in operating the app (under strict confidentiality agreements)</li>
-                <li>In connection with a business transfer or merger (with notice to users)</li>
-            </ul>
-
-            <h3>4. Data Security</h3>
-            <p>We implement appropriate technical and organizational measures to protect your personal information. However, no method of transmission over the internet is 100% secure.</p>
-
-            <h3>5. Your Rights</h3>
-            <p>You have the right to:</p>
-            <ul>
-                <li>Access your personal information</li>
-                <li>Correct inaccurate data</li>
-                <li>Request deletion of your account and data</li>
-                <li>Opt-out of certain communications</li>
-            </ul>
-
-            <h3>6. Children's Privacy</h3>
-            <p>Rounds is intended for medical students and healthcare professionals. We do not knowingly collect information from children under 13.</p>
-
-            <h3>7. Changes to This Policy</h3>
-            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the "Last updated" date.</p>
-
-            <h3>8. Contact Us</h3>
-            <p>If you have questions about this Privacy Policy, please contact us at <a href="mailto:ali@braskgroup.com">ali@braskgroup.com</a>.</p>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="legal-section">
-            <h2>Terms of Service</h2>
-            <p><strong>Last updated: January 2025</strong></p>
-
-            <h3>1. Acceptance of Terms</h3>
-            <p>By accessing and using Rounds, you accept and agree to be bound by the terms and provisions of this agreement.</p>
-
-            <h3>2. Description of Service</h3>
-            <p>Rounds provides an educational platform for medical students to practice clinical diagnosis through game-based learning. The service includes:</p>
-            <ul>
-                <li>Access to clinical case studies and diagnostic challenges</li>
-                <li>Progress tracking and statistics</li>
-                <li>Educational content related to USMLE Step 1 preparation</li>
-            </ul>
-
-            <h3>3. User Responsibilities</h3>
-            <p>Users agree to:</p>
-            <ul>
-                <li>Provide accurate and complete information when creating an account</li>
-                <li>Use the service for educational purposes only</li>
-                <li>Not share account credentials with others</li>
-                <li>Not attempt to reverse engineer or compromise the app</li>
-                <li>Respect intellectual property rights</li>
-            </ul>
-
-            <h3>4. Educational Use</h3>
-            <p>Rounds is designed as a study tool and should not replace formal medical education, clinical training, or professional medical advice. The content is for educational purposes only and does not constitute medical advice.</p>
-
-            <h3>5. Intellectual Property</h3>
-            <p>All content, features, and functionality of Rounds are owned by Brask Group LLC and are protected by copyright, trademark, and other intellectual property laws.</p>
-
-            <h3>6. Limitation of Liability</h3>
-            <p>Rounds is provided "as is" without warranties of any kind. We are not liable for any damages arising from your use of the service, including but not limited to indirect, incidental, or consequential damages.</p>
-
-            <h3>7. Account Termination</h3>
-            <p>We reserve the right to suspend or terminate your account at any time for violation of these terms or for any other reason we deem necessary.</p>
-
-            <h3>8. Changes to Terms</h3>
-            <p>We may modify these Terms of Service at any time. Continued use of the service after changes constitutes acceptance of the new terms.</p>
-
-            <h3>9. Contact Us</h3>
-            <p>If you have questions about these Terms of Service, please contact us at <a href="mailto:ali@braskgroup.com">ali@braskgroup.com</a>.</p>
-        </div>
-
-        <div class="divider"></div>
-
-        <a href="index.html" class="back-link">← Back to Brask Group</a>
-
-        <footer class="footer">
-            <p>Brask Group LLC · Registered in Connecticut, United States</p>
-            <p>© <span id="year"></span> Brask Group LLC</p>
-            <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-            <div class="footer-links">
-                <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
-                <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
-            </div>
-        </footer>
+    <div class="callout">
+      <p><strong>A study tool, not a clinical one.</strong> Rounds is built for education. It doesn&rsquo;t replace formal medical training or professional medical advice, and nothing in it should be used to make decisions about a real patient.</p>
     </div>
+
+    <h2>Privacy Policy</h2>
+    <p class="doc-meta">Last updated: January 2025</p>
+
+    <h3>1. Information we collect</h3>
+    <p>We collect information you provide directly to us when you:</p>
+    <ul>
+      <li>Create an account or profile</li>
+      <li>Use the app and interact with cases</li>
+      <li>Contact us for support</li>
+      <li>Participate in surveys or feedback</li>
+    </ul>
+
+    <h3>2. How we use your information</h3>
+    <p>We use the information we collect to:</p>
+    <ul>
+      <li>Provide, maintain, and improve the app</li>
+      <li>Track your progress and personalize your experience</li>
+      <li>Send you updates and notifications (with your consent)</li>
+      <li>Respond to your inquiries and provide support</li>
+      <li>Analyze usage patterns to improve our services</li>
+    </ul>
+
+    <h3>3. Information sharing</h3>
+    <p>We do not sell, trade, or otherwise transfer your personal information to third parties except:</p>
+    <ul>
+      <li>When required by law or to protect our rights</li>
+      <li>With service providers who assist in operating the app (under strict confidentiality agreements)</li>
+      <li>In connection with a business transfer or merger (with notice to users)</li>
+    </ul>
+
+    <h3>4. Data security</h3>
+    <p>We implement appropriate technical and organizational measures to protect your personal information. However, no method of transmission over the internet is 100% secure.</p>
+
+    <h3>5. Your rights</h3>
+    <p>You have the right to:</p>
+    <ul>
+      <li>Access your personal information</li>
+      <li>Correct inaccurate data</li>
+      <li>Request deletion of your account and data</li>
+      <li>Opt out of certain communications</li>
+    </ul>
+
+    <h3>6. Children&rsquo;s privacy</h3>
+    <p>Rounds is intended for medical students and healthcare professionals. We do not knowingly collect information from children under 13.</p>
+
+    <h3>7. Changes to this policy</h3>
+    <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the &ldquo;Last updated&rdquo; date.</p>
+
+    <h3>8. Contact us</h3>
+    <p>If you have questions about this Privacy Policy, please contact us at <a href="mailto:ali@braskgroup.com">ali@braskgroup.com</a>.</p>
+
+    <h2>Terms of Service</h2>
+    <p class="doc-meta">Last updated: January 2025</p>
+
+    <h3>1. Acceptance of terms</h3>
+    <p>By accessing and using Rounds, you accept and agree to be bound by the terms and provisions of this agreement.</p>
+
+    <h3>2. Description of service</h3>
+    <p>Rounds provides an educational platform for medical students to practice clinical diagnosis through case-based learning. The service includes:</p>
+    <ul>
+      <li>Access to clinical case studies and diagnostic challenges</li>
+      <li>Progress tracking and statistics</li>
+      <li>Educational content related to medical training</li>
+    </ul>
+
+    <h3>3. User responsibilities</h3>
+    <p>Users agree to:</p>
+    <ul>
+      <li>Provide accurate and complete information when creating an account</li>
+      <li>Use the service for educational purposes only</li>
+      <li>Not share account credentials with others</li>
+      <li>Not attempt to reverse engineer or compromise the app</li>
+      <li>Respect intellectual property rights</li>
+    </ul>
+
+    <h3>4. Educational use</h3>
+    <p>Rounds is designed as a study tool and should not replace formal medical education, clinical training, or professional medical advice. The content is for educational purposes only and does not constitute medical advice.</p>
+
+    <h3>5. Intellectual property</h3>
+    <p>All content, features, and functionality of Rounds are owned by Brask Group LLC and are protected by copyright, trademark, and other intellectual property laws.</p>
+
+    <h3>6. Limitation of liability</h3>
+    <p>Rounds is provided &ldquo;as is&rdquo; without warranties of any kind. We are not liable for any damages arising from your use of the service, including but not limited to indirect, incidental, or consequential damages.</p>
+
+    <h3>7. Account termination</h3>
+    <p>We reserve the right to suspend or terminate your account at any time for violation of these terms or for any other reason we deem necessary.</p>
+
+    <h3>8. Changes to terms</h3>
+    <p>We may modify these Terms of Service at any time. Continued use of the service after changes constitutes acceptance of the new terms.</p>
+
+    <h3>9. Contact us</h3>
+    <p>If you have questions about these Terms of Service, please contact us at <a href="mailto:ali@braskgroup.com">ali@braskgroup.com</a>.</p>
+
+    <p class="doc-back"><a class="link link--back" href="index.html">&larr; Brask Group</a></p>
+  </section>
+
+</main>
+
+<footer class="wrap colophon">
+  <p>Brask Group LLC &middot; Connecticut, United States</p>
+  <p class="colophon-legal">
+    <a href="privacy-policy.html">Privacy</a>
+    <a href="terms-of-service.html">Terms</a>
+    <span>&copy; <span id="yr">2026</span></span>
+  </p>
+</footer>
+
+<script src="assets/site.js" defer></script>
+
 </body>
 </html>
