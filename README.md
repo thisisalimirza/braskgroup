@@ -1,102 +1,52 @@
-🏛️ Brask Group – Landing Page Copy Draft
-🔹 HEADER / HERO SECTION
-Headline:
-Brask
-Creating opportunities for you.
+# braskgroup.com
 
-Subheadline:
-We’re a venture studio and community engine helping ambitious people build, grow, and impact the world — across business, tech, and society.
+Static site for Brask Group — the name Ali Mirza ships software under. No build step,
+no framework, no dependencies. Edit the HTML, commit, push; Vercel serves it.
 
-Primary CTA:
-[ Join a Brask Community ]
-(or “Get Started” → scrolls to community form)
+## Layout
 
-Secondary CTA (optional):
-[ See Our Projects ]
+| Path | What it is |
+| --- | --- |
+| `index.html` | Front page: hero, register of products, about, writing, contact |
+| `rounds.html` | Rounds product page, plus its App Store–required privacy policy and terms |
+| `privacy-policy.html` / `terms-of-service.html` | Company-level legal pages |
+| `404.html` | Not-found page |
+| `assets/site.css` | The whole design system — every page links this one file |
+| `assets/site.js` | Footer year, masthead hairline, section reveal |
+| `doctor-notes.html`, `pearls.html`, `doc-what.html`, `binaural-synth.html` | Older product pages, still on the old styling and not linked from the front page |
 
-🔹 SECTION 1: Who We Are
-Brask is a launchpad for projects, people, and progress.
+## Design system
 
-We back ideas that matter.
-We build ventures that move fast.
-We create communities that ship, share, and scale.
+Editorial/institutional: warm paper, ink serif, mono labels.
 
-Brask is a home for the future builders of the world — those bold enough to try and build it themselves.
+- **Type** — [Newsreader](https://fonts.google.com/specimen/Newsreader) for prose and
+  headlines, [IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono) for eyebrows,
+  nav, indices, and the colophon.
+- **Colour** — warm paper `#FAF7F2` / ink `#1A1917` / oxblood accent `#973520`, with a full
+  dark theme that follows `prefers-color-scheme` and can be forced with `data-theme` on `<html>`.
+- **Grid** — an asymmetric two-column row (`.row`): a narrow mono rail carrying the section
+  label, a wide column carrying the prose. Collapses to one column under 860px.
+- **Products** — `.register` / `.entry`, a numbered list. Rounds takes `.entry--lead` for
+  the larger treatment.
 
-🔹 SECTION 2: What We Do
-Brask houses ventures and communities that span across:
+All tokens live in `:root` at the top of `assets/site.css`.
 
-🛠️ Technology & Product
-– Helping founders and builders launch faster
+## Editing
 
-📈 Business & Marketing
-– Growing online businesses and agencies
+**Adding or changing a product** — copy an `.entry` block in `index.html` and renumber the
+`.entry-index` values. Nothing is generated, so what you type is what ships.
 
-🧠 Ideas & Personal Growth
-– Building disciplined, confident, world-aware leaders
+**Adding the Rounds App Store link** — there's a commented-out `<a class="link">` marking the
+spot in both `index.html` and `rounds.html`. Uncomment it and drop the listing URL in.
 
-🩺 Healthcare & Education
-– Empowering the next generation of physician-innovators
+**Voice** — plain, direct, slightly dry. Present tense, honest about scale. No mission
+statement, no metrics dashboard, no "coming soon." If something isn't real yet, it doesn't go
+on the page.
 
-🔹 SECTION 3: Our Projects
-(Use card-style layout with logos or icons)
+## Local preview
 
-🚀 JANUS
-A creative partner for fast-growing SaaS & eCom brands
-→ [Visit site]
+```sh
+python3 -m http.server 8000
+```
 
-📹 Performant Ads
-Courses, tools, and agency services for growth-stage founders
-→ [Explore]
-
-💻 Builder’s Forge
-For devs and founders building software MVPs and shipping fast.
-→ [Join Waitlist]
-
-Agency Foundry
-Growing online businesses. For young hustlers looking to build and grow a service business.
-→ [Join Waitlist]
-
-👨‍⚕️ Med Match
-Mentorship & prep for premeds and med students. 
-→ [Apply]
-
-🧠 The Bara Society
-A private network for ambitious thinkers. If Benjamin Franklin and Plato were alive together at the same time, we like to think they'd both be here.
-→ [Request Invite]
-
-More coming soon...
-
-🔹 SECTION 4: Join the Ecosystem
-Want to build, learn, or collaborate?
-We host several high-signal communities under Brask. Tell us who you are, and what you’re trying to do. 
-
-We’ll invite you to the right circle.
-
-👉 [“Find Your Circle” Button] → Leads to intake form
-
-🔹 SECTION 5: Why Brask?
-We move fast, but think long-term
-
-We don’t believe in gatekeeping — we believe in gravity
-
-We don’t sell community. We build with it.
-
-Brask is not a brand. It’s a force multiplier.
-
-You bring the spark. We help you build the fire.
-
-🔹 FOOTER
-Brask Group
-Creating opportunities for you.
-
-[Newsletter] – Get updates & drops
-
-[X / Twitter]
-
-[LinkedIn]
-
-[Email] – hello@braskgroup.com
-
-Copyright © 2025
-
+Then open <http://localhost:8000>.
