@@ -313,6 +313,97 @@ a { color: inherit; }
   gap: 22px;
 }
 
+/* ── Figures ────────────────────────────────────────────
+   Images are evidence, not decoration: hairline frame, mono
+   caption, no shadows. Figures inside a prose column break
+   the measure so screenshots read at a usable size.
+   ──────────────────────────────────────────────────────── */
+
+.figure { margin-top: 30px; max-width: none; }
+
+.figure figcaption {
+  margin-top: 13px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  line-height: 1.6;
+}
+
+.shots {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.shots--trio { grid-template-columns: repeat(3, 1fr); max-width: 760px; }
+.shots--pair { grid-template-columns: repeat(2, 1fr); max-width: 510px; }
+@media (max-width: 700px) {
+  /* Two-up wraps cleanly; a trio stays one row rather than
+     orphaning its third shot onto a line of its own. */
+  .shots { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .shots--pair { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .shots--trio { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+}
+
+.shots img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  border-radius: 7px;
+  background: var(--paper-2);
+}
+
+/* App icon paired with a product name. */
+
+.entry-head {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+.entry-head .entry-name { margin-bottom: 0; }
+
+.app-icon {
+  display: block;
+  border-radius: 22.5%;
+  border: 1px solid var(--rule);
+  flex: none;
+}
+.entry-head .app-icon { width: 48px; height: 48px; }
+.entry--lead .entry-head .app-icon { width: 62px; height: 62px; }
+.doc .app-icon { width: 68px; height: 68px; margin-bottom: 22px; }
+@media (max-width: 700px) {
+  .entry--lead .entry-head .app-icon { width: 50px; height: 50px; }
+}
+
+/* Portrait sitting in the label rail, under its eyebrow. */
+
+.rail { min-width: 0; }
+
+.rail-portrait { margin-top: 18px; max-width: var(--rail); }
+.rail-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+}
+.rail-portrait figcaption {
+  margin-top: 11px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  line-height: 1.55;
+}
+@media (max-width: 860px) {
+  .rail-portrait { margin-top: 16px; margin-bottom: 4px; }
+}
+
 /* ── Links ────────────────────────────────────────────── */
 
 .link {
