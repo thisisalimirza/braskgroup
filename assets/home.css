@@ -1,15 +1,15 @@
 /* ═══════════════════════════════════════════════════════
-   Brask Group — front page
+   Brask Group — front page, For Founders, For Partners
    The bold layout: a black hero with drifting geometry,
-   centered section headings, and lifted cards on white.
-   Self-contained on purpose — every other page still runs
-   on the editorial system in site.css, so this file owns
-   its own reset and tokens and never fights that one.
+   centered section headings, and lifted cards on flat
+   white. Self-contained on purpose — the document pages
+   (rounds, legal, 404) still run on the editorial system
+   in site.css, so this file owns its own reset and tokens
+   and never fights that one.
    ═══════════════════════════════════════════════════════ */
 
 :root {
   --paper:      #FFFFFF;
-  --paper-2:    #F6F6F4;
   --ink:        #0B0B0C;
   --ink-soft:   #46464C;
   --ink-mute:   #6B6B72;
@@ -18,20 +18,25 @@
   --accent:      #C4390A;
   --accent-bright: #FF5A1F;
 
-  /* The four areas of impact. Held at a similar darkness so
-     they read as one family rather than four loud choices,
-     and all clear AA as text on white. */
-  --health:   #C4390A;
-  --agency:   #12695A;
-  --society:  #1F4FA8;
-  --horizons: #6A3EA1;
+  /* Areas of impact. The bright pair is the icon colour the
+     old site used; the deep pair is the same hue pulled down
+     far enough to clear AA as text on white. Icons take the
+     bright one, labels take the deep one. */
+  --health-bright:   #FF6B6B;
+  --agency-bright:   #00C4B4;
+  --society-bright:  #4A90E2;
+  --horizons-bright: #7E57C2;
+  --health:   #B9382B;
+  --agency:   #0E7A6E;
+  --society:  #2166B8;
+  --horizons: #5F41A0;
 
   --sans: 'Schibsted Grotesk', -apple-system, 'Segoe UI', system-ui, sans-serif;
   --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
   --container: 1180px;
-  --lift: 0 18px 44px rgba(11, 11, 12, .09);
-  --lift-hi: 0 26px 60px rgba(11, 11, 12, .14);
+  --card: 0 10px 30px rgba(11, 11, 12, .06);
+  --card-hi: 0 22px 52px rgba(11, 11, 12, .12);
   --ease: cubic-bezier(.22, 1, .36, 1);
 }
 
@@ -114,7 +119,8 @@ h1, h2, h3, h4 {
 .section-heading .eyebrow { color: var(--accent); }
 
 /* A faint crosshatch, the way the old site marked its
-   alternating sections. Barely there by design. */
+   alternating sections. Barely there by design — it is the
+   only thing separating one white section from the next. */
 .section-pattern { overflow: hidden; }
 .section-pattern::before {
   content: '';
@@ -127,7 +133,6 @@ h1, h2, h3, h4 {
   opacity: .028;
   pointer-events: none;
 }
-.section-tint { background: var(--paper-2); }
 
 /* ── Scroll progress ──────────────────────────────────── */
 
@@ -142,7 +147,7 @@ h1, h2, h3, h4 {
 }
 
 /* ── Navbar ───────────────────────────────────────────────
-   Transparent over the hero, then a white bar with a
+   Transparent over a dark hero, then a white bar with a
    hairline once the hero has scrolled past. The logo is a
    single transparent PNG filtered to pure white or pure
    black, so it stays legible on either ground.
@@ -192,20 +197,23 @@ h1, h2, h3, h4 {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 26px;
   font-family: var(--mono);
   font-size: 12px;
   letter-spacing: .05em;
   text-transform: uppercase;
 }
-.nav-links a {
+.nav-links > a,
+.nav-dropdown-trigger {
   position: relative;
   color: rgba(255, 255, 255, .78);
   text-decoration: none;
   padding: 3px 0;
+  white-space: nowrap;
   transition: color .2s ease;
 }
-.nav-links a::after {
+.nav-links > a::after,
+.nav-dropdown-trigger::after {
   content: '';
   position: absolute;
   left: 0; bottom: -2px;
@@ -213,27 +221,124 @@ h1, h2, h3, h4 {
   background: var(--accent-bright);
   transition: width .28s var(--ease);
 }
-.nav-links a:hover { color: #fff; }
-.nav-links a:hover::after { width: 100%; }
+.nav-links > a:hover,
+.nav-dropdown-trigger:hover { color: #fff; }
+.nav-links > a:hover::after,
+.nav-dropdown:hover .nav-dropdown-trigger::after { width: 100%; }
 
-.navbar.scrolled .nav-links a { color: var(--ink-soft); }
-.navbar.scrolled .nav-links a:hover { color: var(--ink); }
+.navbar.scrolled .nav-links > a,
+.navbar.scrolled .nav-dropdown-trigger { color: var(--ink-soft); }
+.navbar.scrolled .nav-links > a:hover,
+.navbar.scrolled .nav-dropdown-trigger:hover { color: var(--ink); }
 
-.nav-cta {
-  padding: 9px 18px;
-  border: 1px solid rgba(255, 255, 255, .35);
+/* Get Involved ─────────────────────────────────────────── */
+
+.nav-dropdown { position: relative; }
+
+.nav-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.nav-dropdown-trigger .chev {
+  width: 9px; height: 9px;
+  transition: transform .25s var(--ease);
+}
+.nav-dropdown:hover .nav-dropdown-trigger .chev,
+.nav-dropdown-trigger[aria-expanded="true"] .chev { transform: rotate(180deg); }
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 16px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  width: 274px;
+  padding: 8px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  box-shadow: var(--card-hi);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .22s ease, transform .22s var(--ease), visibility .22s;
+}
+/* A hover bridge, so the pointer can cross the gap. */
+.nav-dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%; left: 0;
+  width: 100%; height: 20px;
+}
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu,
+.nav-dropdown-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-item {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  align-items: start;
+  gap: 2px 12px;
+  padding: 13px 14px;
+  border-radius: 9px;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: 0;
+  transition: background .18s ease;
+}
+.dropdown-item:hover { background: #F6F6F4; }
+.dropdown-item svg {
+  grid-row: span 2;
+  width: 20px; height: 20px;
+  margin-top: 3px;
+  justify-self: center;
+  color: var(--accent);
+}
+.dropdown-title {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.dropdown-sub {
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--ink-mute);
+}
+.dropdown-item[aria-current="page"] .dropdown-title { color: var(--accent); }
+
+/* The one filled button in the bar. Selector carries the
+   parent so it outranks the generic `.nav-links > a` rule
+   above — otherwise the pill loses its padding and collapses
+   under its own label. */
+.nav-links > a.nav-cta {
+  padding: 11px 22px;
   border-radius: 999px;
-  color: #fff !important;
-  transition: background .22s ease, border-color .22s ease, color .22s ease;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background .22s ease, transform .22s var(--ease), box-shadow .22s var(--ease);
 }
-.nav-cta::after { display: none; }
-.nav-cta:hover { background: rgba(255, 255, 255, .12); border-color: #fff; }
-.navbar.scrolled .nav-cta {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: #fff !important;
+.nav-links > a.nav-cta::after { display: none; }
+.nav-links > a.nav-cta:hover {
+  background: var(--accent-bright);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(255, 90, 31, .32);
 }
-.navbar.scrolled .nav-cta:hover { background: var(--accent); border-color: var(--accent); }
+.navbar.scrolled .nav-links > a.nav-cta { color: #fff; }
 
 .mobile-menu {
   display: none;
@@ -259,38 +364,61 @@ h1, h2, h3, h4 {
 .mobile-menu[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .mobile-menu[aria-expanded="true"] span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
-@media (max-width: 900px) {
+/* Drawer. Get Involved stops being a dropdown here and just
+   lists its two pages inline — no second tap to find them. */
+@media (max-width: 980px) {
   .mobile-menu { display: flex; }
   .nav-links {
     position: absolute;
     top: 100%; left: 0;
     width: 100%;
+    max-height: calc(100svh - 74px);
+    overflow-y: auto;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
     padding: 8px 22px 22px;
     background: var(--paper);
     border-bottom: 1px solid var(--rule);
-    box-shadow: var(--lift);
+    box-shadow: var(--card);
     display: none;
   }
   .nav-links.open { display: flex; }
-  .nav-links a,
-  .navbar.scrolled .nav-links a {
+  .nav-links > a,
+  .navbar.scrolled .nav-links > a {
     color: var(--ink);
     padding: 14px 0;
     border-bottom: 1px solid var(--rule);
     font-size: 13px;
   }
-  .nav-links a::after { display: none; }
-  .nav-cta,
-  .navbar.scrolled .nav-cta {
-    margin-top: 16px;
+  .nav-links > a::after { display: none; }
+
+  .nav-dropdown { padding: 14px 0 4px; border-bottom: 1px solid var(--rule); }
+  .nav-dropdown::after { display: none; }
+  .nav-dropdown-trigger { display: none; }
+  .nav-dropdown-menu {
+    position: static;
+    transform: none;
+    width: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    background: none;
+  }
+  .dropdown-item { padding: 10px 0; }
+  .dropdown-item:hover { background: none; }
+  .dropdown-item svg { justify-self: start; }
+
+  .nav-links > a.nav-cta {
+    margin-top: 18px;
     text-align: center;
-    border-radius: 8px;
-    background: var(--ink);
-    border-color: var(--ink);
-    color: #fff !important;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 15px 22px;
+    border-bottom: 0;
   }
 }
 
@@ -307,6 +435,14 @@ h1, h2, h3, h4 {
   padding: 140px 0 120px;
   text-align: center;
 }
+
+/* The inner pages take the same hero, sized to a header
+   rather than a full screen. */
+#hero.page-hero {
+  min-height: 0;
+  padding: 190px 0 110px;
+}
+@media (max-width: 860px) { #hero.page-hero { padding: 140px 0 80px; } }
 
 .hero-content {
   position: relative;
@@ -327,6 +463,17 @@ h1, h2, h3, h4 {
   margin-bottom: 28px;
 }
 .hero-content h1 .accent { color: var(--accent-bright); }
+.page-hero .hero-content h1 { font-size: clamp(2.3rem, 5.2vw, 3.9rem); }
+
+.hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+  margin-bottom: 22px;
+}
 
 .hero-sub {
   font-size: clamp(1.05rem, 1.8vw, 1.3rem);
@@ -385,8 +532,27 @@ h1, h2, h3, h4 {
   border-color: #fff;
 }
 
-/* Fact strip, carried over from the current site — the one
-   thing about Brask Group that is pure fact, not framing. */
+/* On white ground the same two buttons invert. */
+.cta-buttons--light .cta-primary {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+.cta-buttons--light .cta-primary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 12px 30px rgba(196, 57, 10, .26);
+}
+.cta-buttons--light .cta-secondary {
+  color: var(--ink);
+  border-color: var(--rule-strong);
+}
+.cta-buttons--light .cta-secondary:hover {
+  background: #F6F6F4;
+  border-color: var(--ink);
+}
+
+/* Fact strip — the one part of this page that is pure fact. */
 .fact-strip {
   margin: 52px auto 0;
   padding-top: 22px;
@@ -489,15 +655,15 @@ h1, h2, h3, h4 {
 }
 @media (max-height: 700px), (max-width: 700px) { .scroll-indicator { display: none; } }
 
-/* ── Vision ───────────────────────────────────────────── */
+/* ── Vision / two-column prose ────────────────────────── */
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1.15fr .85fr;
-  gap: 72px;
-  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
 }
-@media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } }
+@media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 36px; } }
 
 .about-content h2 {
   font-size: clamp(2.1rem, 4vw, 3.1rem);
@@ -508,13 +674,12 @@ h1, h2, h3, h4 {
   line-height: 1.6;
   color: var(--ink);
   font-weight: 500;
-  margin-bottom: 22px;
   text-wrap: pretty;
 }
-.about-content p + p { margin-top: 1.05em; }
+.about-body p + p { margin-top: 1.05em; }
 
 .founder-quote {
-  margin-top: 38px;
+  margin-top: 34px;
   padding-left: 26px;
   border-left: 3px solid var(--accent);
 }
@@ -536,114 +701,76 @@ h1, h2, h3, h4 {
   color: var(--accent);
 }
 
-.about-figure { position: relative; }
-.about-figure img {
-  width: 100%;
-  height: auto;
-  border-radius: 14px;
-  box-shadow: var(--lift);
-}
-.about-figure figcaption {
-  margin-top: 16px;
-  font-family: var(--mono);
-  font-size: 10.5px;
-  font-weight: 500;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
-  line-height: 1.7;
-}
-/* An orange corner rule, so the portrait reads as placed
-   rather than pasted. */
-.about-figure::before {
-  content: '';
-  position: absolute;
-  top: -14px; right: -14px;
-  width: 92px; height: 92px;
-  border-top: 3px solid var(--accent-bright);
-  border-right: 3px solid var(--accent-bright);
-  border-radius: 0 14px 0 0;
-}
-@media (max-width: 900px) { .about-figure { max-width: 380px; } .about-figure::before { display: none; } }
-
-/* ── Areas of impact ──────────────────────────────────── */
+/* ── Areas of impact ──────────────────────────────────────
+   Broad values, not a product index: centered cards, one
+   coloured mark each, and deliberately nothing underneath
+   pointing at a venture.
+   ──────────────────────────────────────────────────────── */
 
 .focus-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 26px;
 }
+.focus-grid--three { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 1040px) { .focus-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 620px)  { .focus-grid { grid-template-columns: 1fr; } }
+@media (max-width: 620px)  { .focus-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; } }
 
 .focus-card {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   background: var(--paper);
-  border: 1px solid var(--rule);
-  border-radius: 16px;
-  padding: 38px 30px 34px;
-  overflow: hidden;
-  transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s ease;
-}
-.focus-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 3px;
-  background: var(--tone, var(--ink));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .4s var(--ease);
+  border-radius: 15px;
+  padding: 44px 30px 40px;
+  box-shadow: var(--card);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
 }
 .focus-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--lift);
-  border-color: var(--rule-strong);
+  transform: translateY(-5px);
+  box-shadow: var(--card-hi);
 }
-.focus-card:hover::before { transform: scaleX(1); }
 
-.focus-card[data-area="health"]   { --tone: var(--health); }
-.focus-card[data-area="agency"]   { --tone: var(--agency); }
-.focus-card[data-area="society"]  { --tone: var(--society); }
-.focus-card[data-area="horizons"] { --tone: var(--horizons); }
+.focus-card[data-area="health"]   { --tone: var(--health-bright); }
+.focus-card[data-area="agency"]   { --tone: var(--agency-bright); }
+.focus-card[data-area="society"]  { --tone: var(--society-bright); }
+.focus-card[data-area="horizons"] { --tone: var(--horizons-bright); }
 
 .focus-icon {
-  width: 46px; height: 46px;
+  width: 48px; height: 48px;
   margin-bottom: 22px;
   color: var(--tone, var(--ink));
 }
 .focus-icon svg { width: 100%; height: 100%; display: block; }
 
 .focus-card h3 {
-  font-size: 1.28rem;
+  font-size: 1.3rem;
   margin-bottom: 12px;
 }
 .focus-card p {
-  font-size: .97rem;
+  font-size: .99rem;
   line-height: 1.65;
   color: var(--ink-mute);
+  text-wrap: pretty;
 }
 
-/* The venture doing the work in this area, tied to it by
-   colour and a short rule. */
-.focus-tag {
-  display: inline-flex;
-  align-items: center;
+/* The founders page reuses the card with a detail list. */
+.focus-details {
+  list-style: none;
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   gap: 9px;
-  margin-top: 20px;
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
-  letter-spacing: .1em;
+  letter-spacing: .08em;
   text-transform: uppercase;
-  color: var(--tone, var(--ink-mute));
-}
-.focus-tag::before {
-  content: '';
-  width: 14px;
-  height: 1px;
-  background: currentColor;
-  flex: none;
+  color: var(--ink-mute);
 }
 
 /* ── Ventures ─────────────────────────────────────────── */
@@ -654,22 +781,21 @@ h1, h2, h3, h4 {
   gap: 30px;
 }
 @media (max-width: 940px) { .ventures-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 760px)  { .ventures-grid { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .ventures-grid { grid-template-columns: 1fr; } }
 
 .venture-card {
   position: relative;
   display: flex;
   flex-direction: column;
   background: var(--paper);
-  border: 1px solid var(--rule);
   border-radius: 18px;
   overflow: hidden;
-  transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .3s ease;
+  box-shadow: var(--card);
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease);
 }
 .venture-card:hover {
   transform: translateY(-8px);
-  box-shadow: var(--lift-hi);
-  border-color: var(--rule-strong);
+  box-shadow: var(--card-hi);
 }
 
 .venture-card[data-area="health"]   { --tone: var(--health); }
@@ -681,7 +807,7 @@ h1, h2, h3, h4 {
   position: relative;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: var(--paper-2);
+  background: var(--paper);
   border-bottom: 1px solid var(--rule);
 }
 .venture-image img {
@@ -833,80 +959,219 @@ h1, h2, h3, h4 {
   .venture-card--lead .venture-title { font-size: 1.7rem; }
 }
 
-/* ── Writing ──────────────────────────────────────────── */
+/* ── Insights ─────────────────────────────────────────────
+   Hand-written today, CMS-fed later: the markup is a plain
+   list of articles so a template can render straight into it.
+   ──────────────────────────────────────────────────────── */
 
-.writing-card {
+.insights-grid {
   display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 0;
-  border: 1px solid var(--rule);
-  border-radius: 18px;
-  overflow: hidden;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+@media (max-width: 940px) { .insights-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 700px) { .insights-grid { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; } }
+
+.insight-card {
+  display: flex;
+  flex-direction: column;
   background: var(--paper);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--card);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
 }
-@media (max-width: 860px) { .writing-card { grid-template-columns: 1fr; } }
-
-.writing-body { padding: 46px 46px 44px; }
-.writing-body h3 {
-  font-size: clamp(1.5rem, 2.6vw, 2rem);
-  margin-bottom: 16px;
-  text-wrap: balance;
+.insight-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-hi);
 }
-.writing-body p { color: var(--ink-mute); }
-.writing-body p + p { margin-top: 1em; }
-.writing-body .link { margin-top: 26px; }
-@media (max-width: 860px) { .writing-body { padding: 32px 28px 34px; } }
 
-.writing-aside {
-  background: var(--ink);
-  color: rgba(255, 255, 255, .82);
-  padding: 46px 40px;
+.insight-image {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #FAFAF9;
+}
+.insight-image img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Where an article has no image yet. */
+.placeholder-wrapper {
+  width: 100%; height: 100%;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 22px;
+  gap: 10px;
+  border-bottom: 1px dashed var(--rule-strong);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #A9A9AE;
 }
-.writing-aside .eyebrow { color: rgba(255, 255, 255, .5); margin-bottom: 0; }
-.writing-topics {
-  list-style: none;
+.placeholder-wrapper svg { width: 20px; height: 20px; opacity: .5; }
+
+.insight-content {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  flex: 1;
+  padding: 26px 28px 28px;
 }
-.writing-topics li {
-  position: relative;
-  padding-left: 22px;
-  font-size: .98rem;
-  line-height: 1.6;
+.insight-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 16px;
 }
-.writing-topics li::before {
-  content: '';
-  position: absolute;
-  left: 0; top: .72em;
-  width: 9px; height: 1px;
-  background: var(--accent-bright);
+.insight-category {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: #FDF0EA;
+  padding: 5px 11px;
+  border-radius: 999px;
 }
-@media (max-width: 860px) { .writing-aside { padding: 32px 28px; } }
+.insight-date {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.insight-card h3 {
+  font-size: 1.22rem;
+  line-height: 1.3;
+  margin-bottom: 12px;
+  text-wrap: pretty;
+}
+.insight-card p {
+  font-size: .96rem;
+  line-height: 1.68;
+  color: var(--ink-mute);
+}
+.insight-card .read-more { margin-top: auto; padding-top: 22px; }
+
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+}
+.read-more .arw { transition: transform .3s var(--ease); }
+.read-more:hover .arw { transform: translateX(4px); }
 
 /* ── Two-up notes (founder + funding) ─────────────────── */
 
 .notes-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  align-items: start;
   gap: 30px;
 }
 @media (max-width: 860px) { .notes-grid { grid-template-columns: 1fr; } }
 
 .note-card {
   background: var(--paper);
-  border: 1px solid var(--rule);
-  border-radius: 16px;
+  border-radius: 15px;
   padding: 38px 34px 34px;
+  box-shadow: var(--card);
 }
-.note-card h3 { font-size: 1.24rem; margin-bottom: 14px; }
+.note-card h3 { font-size: 1.24rem; margin-bottom: 16px; }
 .note-card p { font-size: .98rem; line-height: 1.72; color: var(--ink-mute); }
 .note-card p + p { margin-top: 1em; }
 .note-card .link { margin-top: 22px; }
+.note-card a:not(.link) {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  transition: color .18s ease, text-decoration-color .18s ease;
+}
+.note-card a:not(.link):hover { color: var(--accent); text-decoration-color: var(--accent); }
+
+/* Headshot at the size a byline wants, not a hero. */
+.note-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.note-head h3 { margin-bottom: 0; }
+.note-portrait {
+  width: 62px; height: 62px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex: none;
+  border: 1px solid var(--rule);
+}
+
+/* ── Founder call-out ─────────────────────────────────── */
+
+.founder-callout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 40px;
+  padding: 54px 56px;
+  border-radius: 20px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  box-shadow: var(--card);
+}
+@media (max-width: 860px) {
+  .founder-callout { grid-template-columns: 1fr; gap: 28px; padding: 36px 28px; text-align: center; }
+  .founder-callout .cta-buttons { justify-content: center; margin-top: 0; }
+}
+.founder-callout h2 {
+  font-size: clamp(1.8rem, 3.4vw, 2.5rem);
+  margin-bottom: 14px;
+  text-wrap: balance;
+}
+.founder-callout p { color: var(--ink-mute); max-width: 54ch; }
+.founder-callout .cta-buttons { margin-top: 0; flex-wrap: nowrap; }
+@media (max-width: 620px) { .founder-callout .cta-buttons { flex-wrap: wrap; } }
+
+/* ── Numbered process ─────────────────────────────────── */
+
+.steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  counter-reset: step;
+}
+@media (max-width: 940px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
+
+.steps li {
+  counter-increment: step;
+  padding-top: 22px;
+  border-top: 2px solid var(--ink);
+}
+.steps li::before {
+  content: counter(step, decimal-leading-zero);
+  display: block;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.steps h3 { font-size: 1.1rem; margin-bottom: 10px; }
+.steps p { font-size: .95rem; line-height: 1.65; color: var(--ink-mute); }
 
 /* ── Closing call to action ───────────────────────────── */
 
@@ -1075,8 +1340,10 @@ footer {
   .js .reveal { opacity: 1; transform: none; transition: none; }
   .venture-card:hover,
   .focus-card:hover,
+  .insight-card:hover,
   .cta-primary:hover,
   .cta-secondary:hover,
+  .nav-cta:hover,
   .mission-link:hover { transform: none; }
   * { scroll-behavior: auto; }
 }

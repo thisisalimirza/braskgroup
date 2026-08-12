@@ -51,6 +51,31 @@
     });
   }
 
+  // Get Involved. CSS already opens it on hover and on
+  // focus-within; this adds click, which is what a touch user
+  // on a wide screen actually does, and keeps aria honest.
+  var trigger = document.querySelector('.nav-dropdown-trigger');
+  var dropdown = document.getElementById('get-involved-menu');
+  if (trigger && dropdown) {
+    var setOpen = function (open) {
+      trigger.setAttribute('aria-expanded', String(open));
+      dropdown.classList.toggle('open', open);
+    };
+    trigger.addEventListener('click', function (e) {
+      e.stopPropagation();
+      setOpen(trigger.getAttribute('aria-expanded') !== 'true');
+    });
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.nav-dropdown')) setOpen(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setOpen(false);
+    });
+    dropdown.addEventListener('focusout', function (e) {
+      if (!e.relatedTarget || !e.relatedTarget.closest('.nav-dropdown')) setOpen(false);
+    });
+  }
+
   // Scroll progress hairline.
   if (!reduce) {
     var bar = document.createElement('div');
