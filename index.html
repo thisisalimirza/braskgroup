@@ -4,21 +4,21 @@
 <script>document.documentElement.className += ' js';</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brask Group — Building the parts of AI in medicine worth wanting</title>
-<meta name="description" content="Brask Group builds software and writes analysis for a healthcare system being remade by AI — training, practice, and delivery alike. Independent, self-funded, no outside capital.">
+<title>Brask Group — Advancing humanity through bold ideas and ventures</title>
+<meta name="description" content="Brask Group builds software and writes analysis for the systems people depend on most — starting in medicine. Independent, self-funded, no outside capital.">
 <link rel="canonical" href="https://braskgroup.com/">
 <meta name="author" content="Ali Mirza">
-<meta name="theme-color" content="#FFFFFF">
+<meta name="theme-color" content="#0B0B0C">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Brask Group">
 <meta property="og:url" content="https://braskgroup.com/">
-<meta property="og:title" content="Brask Group — Building the parts of AI in medicine worth wanting">
-<meta property="og:description" content="Software and analysis for a healthcare system being remade by AI — training, practice, and delivery alike.">
+<meta property="og:title" content="Brask Group — Advancing humanity through bold ideas and ventures">
+<meta property="og:description" content="Software and analysis for the systems people depend on most — advancing health, agency, society, and horizons.">
 <meta property="og:image" content="https://braskgroup.com/assets/og_image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Brask Group — Building the parts of AI in medicine worth wanting">
-<meta name="twitter:description" content="Software and analysis for a healthcare system being remade by AI — training, practice, and delivery alike.">
+<meta name="twitter:title" content="Brask Group — Advancing humanity through bold ideas and ventures">
+<meta name="twitter:description" content="Software and analysis for the systems people depend on most — advancing health, agency, society, and horizons.">
 <meta name="twitter:image" content="https://braskgroup.com/assets/og_image.png">
 
 <link rel="icon" type="image/png" href="assets/brask-icon.png">
@@ -27,7 +27,7 @@
 <link rel="preload" href="assets/fonts/schibsted-grotesk-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/ibm-plex-mono-500-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts.css">
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/home.css">
 
 <script type="application/ld+json">
 {
@@ -59,165 +59,284 @@
 
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="masthead" id="masthead">
-  <div class="wrap masthead-inner">
-    <a href="/" class="wordmark"><span class="mark" aria-hidden="true"></span>Brask Group</a>
-    <nav class="nav" aria-label="Primary">
-      <a href="#portfolio">Portfolio</a>
-      <a href="#approach">Approach</a>
+<nav class="navbar" id="navbar" aria-label="Primary">
+  <div class="nav-container">
+    <a href="/" class="logo" aria-label="Brask Group — home">
+      <img src="assets/brasklogo-transparent.png" alt="Brask Group" class="logo-image" width="767" height="325">
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="#vision">Vision</a>
+      <a href="#impact">Impact</a>
+      <a href="#ventures">Ventures</a>
       <a href="#writing">Writing</a>
-      <a href="#contact">Contact</a>
-    </nav>
+      <a href="#contact" class="nav-cta">Get in Touch</a>
+    </div>
+    <button class="mobile-menu" id="mobile-menu" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-</header>
+</nav>
 
 <main id="main">
 
   <!-- ── Hero ─────────────────────────────────────────── -->
-  <section class="wrap hero">
-    <div class="hero-stack">
-      <h1>AI is already reshaping medicine. We&rsquo;re building <span class="accent">the parts of that future worth wanting.</span></h1>
-      <p class="hero-sub">Brask Group builds software and writes analysis for a healthcare system being remade by AI &mdash; training, practice, and delivery alike. We start wherever we can see the problem clearest, and build outward from there.</p>
+  <section id="hero">
+    <div class="hero-background" aria-hidden="true">
+      <div class="floating-element element-1"></div>
+      <div class="floating-element element-2"></div>
+      <div class="floating-element element-3"></div>
+      <div class="floating-element element-4"></div>
+      <div class="floating-element element-5"></div>
+      <div class="floating-element element-6"></div>
+    </div>
+    <div class="hero-content">
+      <h1>Advancing humanity through <span class="accent">bold ideas and ventures</span></h1>
+      <p class="hero-sub">Brask Group builds software and writes analysis for the systems people depend on most &mdash; starting in medicine, where we can see the problem clearest, and building outward from there.</p>
+      <div class="cta-buttons">
+        <a href="#ventures" class="cta-primary">Explore Our Ventures</a>
+        <a href="#contact" class="cta-secondary">Partner With Us</a>
+      </div>
       <p class="fact-strip">
         <span>Independent</span>
         <span>Self-funded</span>
         <span>No outside capital</span>
       </p>
     </div>
+    <a href="#vision" class="scroll-indicator">
+      <span>Scroll to discover</span>
+      <span class="mouse" aria-hidden="true"></span>
+    </a>
   </section>
 
-  <!-- ── Approach ─────────────────────────────────────── -->
-  <section class="wrap section" id="approach">
-    <div class="row">
-      <p class="eyebrow">Our thesis</p>
-      <div class="prose">
-        <p class="lead-in">AI is coming to medicine regardless of how the field feels about it &mdash; training, clinical practice, and how care gets delivered are all already changing. Some clinicians are excited, many are anxious, and both reactions are reasonable: a lot of what&rsquo;s being built is built by people who&rsquo;ve never sat with a patient or carried a pager.</p>
-        <p>We build from the other side of that gap. Not as a general bet on AI, but problem by problem, wherever the failure mode is clear enough to build directly against. Our first was in medical education: students are already heavy users of AI, but most of that use looks the same way &mdash; ask a question, get an answer, move on. That&rsquo;s fast, and it&rsquo;s exactly the wrong shape for how clinical intuition actually gets built, which happens through iterative, back-and-forth reasoning, wrong turns included. Rounds is our answer to that specific problem. It won&rsquo;t be the last problem we take on.</p>
-        <p>That&rsquo;s the whole approach, and it scales past where we started. Every product and every essay is a brick in the same structure &mdash; a specific, growing answer to what AI should look like inside medicine, built by people close enough to the problem to get the details right, wherever in the system that problem happens to be.</p>
+  <!-- ── Vision ───────────────────────────────────────── -->
+  <section class="section section-pattern" id="vision">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content reveal">
+          <p class="eyebrow">Our vision</p>
+          <h2>Humanity advances when people are free to build</h2>
+          <p class="lead">At Brask Group, we believe humanity advances when individuals and communities are empowered to reach their full potential.</p>
+          <p>That belief has a specific first target. AI is coming to medicine regardless of how the field feels about it &mdash; training, clinical practice, and how care gets delivered are all already changing. Some clinicians are excited, many are anxious, and both reactions are reasonable: a lot of what&rsquo;s being built is built by people who&rsquo;ve never sat with a patient or carried a pager.</p>
+          <p>We build from the other side of that gap. Not as a general bet on technology, but problem by problem, wherever the failure mode is clear enough to build directly against. Every product and every essay is a brick in the same structure &mdash; a specific, growing answer to what the systems people depend on should actually look like.</p>
+          <figure class="founder-quote">
+            <blockquote>&ldquo;I&rsquo;m dedicated to creating opportunities that enable people to build, grow, and make meaningful impact. Through first-principles thinking and strategic innovation, we can unlock unprecedented potential in others.&rdquo;</blockquote>
+            <cite>Ali Mirza, Founder</cite>
+          </figure>
+        </div>
+        <figure class="about-figure reveal">
+          <img src="assets/img/ali-mirza.jpg" alt="Ali Mirza, founder of Brask Group" width="800" height="800" loading="lazy" decoding="async">
+          <figcaption>Ali Mirza<br>Founder, Brask Group</figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- ── Portfolio ────────────────────────────────────── -->
-  <section class="wrap section" id="portfolio">
-    <p class="eyebrow register-label">What we&rsquo;ve built &mdash; starting point, not the whole map</p>
-    <div class="register">
+  <!-- ── Areas of impact ──────────────────────────────── -->
+  <section class="section section-tint" id="impact">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="eyebrow">What we work on</p>
+        <h2>Areas of Impact</h2>
+        <p class="section-intro">Four directions, one thesis: people do more when the systems around them are built with them in mind.</p>
+      </div>
+      <div class="focus-grid">
 
-      <article class="entry entry--lead">
-        <p class="entry-index">01</p>
-        <div class="entry-body">
-          <div class="entry-head">
-            <img class="app-icon" src="assets/img/icon-rounds.png" alt="" width="256" height="256">
-            <h3 class="entry-name">Rounds</h3>
+        <article class="focus-card reveal" data-area="health">
+          <div class="focus-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M6.4 12h2.3l1.6-3.8 2.5 7.6 1.6-3.8h3.2"/>
+            </svg>
           </div>
-          <p>Our starting point was medical education, because that&rsquo;s the vantage point our founder had. We noticed medical students studying the same way they&rsquo;d use a search engine: ask, get an answer, move on. That&rsquo;s efficient, and it skips the exact back-and-forth reasoning that builds clinical intuition. Rounds is built to put that reasoning process back in &mdash; case simulations that push students to work through a case the way a real patient encounter demands, not hand them the answer.</p>
-          <p>Live on the App Store, used daily by students across clinical rotations. Rounds is self-sustaining on its own revenue. It&rsquo;s our flagship today because it&rsquo;s what we&rsquo;ve proven &mdash; not because medical education is the limit of what we&rsquo;re building toward.</p>
-        </div>
+          <h3>Advancing Health</h3>
+          <p>Innovating within healthcare to improve how medicine is learned, practiced, and delivered &mdash; built by people close enough to the work to get the details right.</p>
+          <p class="focus-tag">Rounds</p>
+        </article>
 
-        <figure class="figure-row">
-          <p class="figure-label">Rounds &middot; iOS</p>
-          <div class="figure-body">
-            <div class="shots">
+        <article class="focus-card reveal" data-area="agency">
+          <div class="focus-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M15.6 8.4l-2 5.2-5.2 2 2-5.2z"/>
+            </svg>
+          </div>
+          <h3>Advancing Agency</h3>
+          <p>Empowering builders and operators with the systems, tools, and leverage to own their work instead of renting it.</p>
+          <p class="focus-tag">Byline Blogs</p>
+        </article>
+
+        <article class="focus-card reveal" data-area="society">
+          <div class="focus-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="8.5" r="3.2"/>
+              <path d="M3.4 19.6a5.6 5.6 0 0 1 11.2 0"/>
+              <path d="M16.2 6.1a3.2 3.2 0 0 1 0 5.8"/>
+              <path d="M17.6 14.3a5.6 5.6 0 0 1 3 5.3"/>
+            </svg>
+          </div>
+          <h3>Advancing Society</h3>
+          <p>Supporting ambitious people and the communities and institutions that hold them together, one coordination problem at a time.</p>
+          <p class="focus-tag">Sitr</p>
+        </article>
+
+        <article class="focus-card reveal" data-area="horizons">
+          <div class="focus-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2.8 18.2h18.4"/>
+              <path d="M6.6 18.2a5.4 5.4 0 0 1 10.8 0"/>
+              <path d="M12 4.4v2.1M5.9 7l1.5 1.5M18.1 7l-1.5 1.5M2.9 13.4h2.1M19 13.4h2.1"/>
+            </svg>
+          </div>
+          <h3>Advancing Horizons</h3>
+          <p>Investing in the future through education, and through the frontier problems nobody has gotten around to solving yet.</p>
+          <p class="focus-tag">My Med Stack</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Ventures ─────────────────────────────────────── -->
+  <section class="section section-pattern" id="ventures">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="eyebrow">What we&rsquo;ve built</p>
+        <h2>Our Ventures</h2>
+        <p class="section-intro">A starting point, not the whole map. Each one began as a problem we could see clearly enough to build directly against.</p>
+      </div>
+      <div class="ventures-grid">
+
+        <article class="venture-card venture-card--lead reveal" data-area="health">
+          <div class="venture-inner">
+            <div class="venture-image venture-image--shots">
               <img src="assets/img/rounds/daily-case.webp" alt="A Rounds case showing five clinical clues, only the first unlocked" width="900" height="1956" loading="lazy" decoding="async">
               <img src="assets/img/rounds/home.webp" alt="The Rounds home screen with the day&rsquo;s case and a streak counter" width="900" height="1956" loading="lazy" decoding="async">
-              <img src="assets/img/rounds/progress.webp" alt="The Rounds progress screen showing streak, win rate, and weak spots" width="900" height="1956" loading="lazy" decoding="async">
             </div>
-            <figcaption>A case with its clues still locked, the daily case, and progress over time.</figcaption>
+            <div class="venture-body">
+              <p class="venture-category">Advancing Health</p>
+              <div class="venture-head">
+                <img class="app-icon" src="assets/img/icon-rounds.png" alt="" width="256" height="256" loading="lazy" decoding="async">
+                <h3 class="venture-title">Rounds</h3>
+              </div>
+              <p class="venture-description">Medical students study the way they&rsquo;d use a search engine: ask, get an answer, move on. That&rsquo;s efficient, and it skips the exact back-and-forth reasoning that builds clinical intuition. Rounds puts that reasoning back in &mdash; case simulations that push students to work a case the way a real patient encounter demands, rather than handing them the answer.</p>
+              <p class="venture-description">Live on the App Store, used daily by students across clinical rotations, and self-sustaining on its own revenue.</p>
+              <div class="venture-foot">
+                <span class="tag"><span class="dot" aria-hidden="true"></span>Live &middot; App Store</span>
+                <!-- Drop the App Store listing URL in here when it's handy:
+                     <a class="link" href="https://apps.apple.com/app/id…">View on the App Store <span class="arw">&rarr;</span></a> -->
+                <a class="link" href="rounds.html">About Rounds <span class="arw">&rarr;</span></a>
+              </div>
+            </div>
           </div>
-        </figure>
+        </article>
 
-        <div class="entry-foot">
-          <p class="entry-tags">
-            <span class="tag">Live &middot; App Store</span>
-          </p>
-          <p class="entry-actions">
-            <!-- Drop the App Store listing URL in here when it's handy:
-                 <a class="link" href="https://apps.apple.com/app/id…">View on the App Store <span class="arw">&rarr;</span></a> -->
-            <a class="link" href="rounds.html">About Rounds <span class="arw">&rarr;</span></a>
-          </p>
-        </div>
-      </article>
+        <article class="venture-card reveal" data-area="horizons">
+          <div class="venture-image">
+            <img src="assets/img/ventures/my-med-stack.svg" alt="" width="800" height="600" loading="lazy" decoding="async">
+          </div>
+          <div class="venture-body">
+            <p class="venture-category">Advancing Horizons</p>
+            <h3 class="venture-title">My Med Stack</h3>
+            <p class="venture-description">A discovery tool for medical training programs, built to simplify an application process that&rsquo;s more opaque than it needs to be. A straightforward data and search problem, solved as one.</p>
+          </div>
+        </article>
 
-      <article class="entry">
-        <p class="entry-index">02</p>
-        <div class="entry-body">
-          <h3 class="entry-name">Byline Blogs</h3>
-          <p>An automated content pipeline giving small healthcare practices &mdash; starting with direct primary care clinics &mdash; access to real SEO content without agency costs.</p>
-        </div>
-      </article>
+        <article class="venture-card reveal" data-area="society">
+          <div class="venture-image">
+            <img src="assets/img/ventures/sitr.svg" alt="" width="800" height="600" loading="lazy" decoding="async">
+          </div>
+          <div class="venture-body">
+            <p class="venture-category">Advancing Society</p>
+            <h3 class="venture-title">Sitr</h3>
+            <p class="venture-description">Originally built to solve inpatient bed management, Sitr&rsquo;s core logic generalized into event seating &mdash; a clean example of how a healthcare-first problem can produce a broader product.</p>
+          </div>
+        </article>
 
-      <article class="entry">
-        <p class="entry-index">03</p>
-        <div class="entry-body">
-          <h3 class="entry-name">Med Stack</h3>
-          <p>A discovery tool for medical training programs, built to simplify an application process that&rsquo;s more opaque than it needs to be. A straightforward data and search problem, solved as one.</p>
-        </div>
-      </article>
+        <article class="venture-card reveal" data-area="agency">
+          <div class="venture-image">
+            <img src="assets/img/ventures/byline-blogs.svg" alt="" width="800" height="600" loading="lazy" decoding="async">
+          </div>
+          <div class="venture-body">
+            <p class="venture-category">Advancing Agency</p>
+            <h3 class="venture-title">Byline Blogs</h3>
+            <p class="venture-description">An automated content pipeline giving small healthcare practices &mdash; starting with direct primary care clinics &mdash; access to real SEO content without agency costs.</p>
+          </div>
+        </article>
 
-      <article class="entry">
-        <p class="entry-index">04</p>
-        <div class="entry-body">
-          <h3 class="entry-name">Sitr</h3>
-          <p>Originally built to solve inpatient bed management, Sitr&rsquo;s core logic generalized into event seating &mdash; a clean example of how a healthcare-first problem can produce a broader product.</p>
-        </div>
-      </article>
-
+      </div>
     </div>
   </section>
 
   <!-- ── Writing ──────────────────────────────────────── -->
-  <section class="wrap section" id="writing">
-    <div class="row">
-      <p class="eyebrow">Analysis</p>
-      <div class="prose">
-        <p>Software is half the approach. The other half is written &mdash; arguing for what medicine&rsquo;s relationship with AI should look like, from someone still training inside it. We publish at <em>Side Effects</em>: essays on AI in clinical practice, medical education, and the systems underneath both.</p>
-        <p class="doc-actions">
+  <section class="section section-tint" id="writing">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Analysis</p>
+        <h2>Insights</h2>
+        <p class="section-intro">Software is half the approach. The other half is written.</p>
+      </div>
+      <div class="writing-card reveal">
+        <div class="writing-body">
+          <h3>Side Effects &mdash; arguing for what medicine&rsquo;s relationship with technology should look like</h3>
+          <p>Written from inside the training pipeline rather than from a distance: essays on AI in clinical practice, on how medical education actually works, and on the systems underneath both.</p>
+          <p>Every essay is the same brick as every product &mdash; a specific answer to a specific problem, published where practitioners can argue back.</p>
           <a class="link" href="https://thisisalimirza.substack.com" rel="me">Read Side Effects <span class="arw">&rarr;</span></a>
-        </p>
+        </div>
+        <aside class="writing-aside">
+          <p class="eyebrow">What it covers</p>
+          <ul class="writing-topics">
+            <li>AI in clinical practice &mdash; what it changes, and what it only claims to</li>
+            <li>Medical education, and the gap between how it works and how it&rsquo;s described</li>
+            <li>The delivery systems underneath both</li>
+          </ul>
+        </aside>
       </div>
     </div>
   </section>
 
-  <!-- ── How we operate ───────────────────────────────── -->
-  <section class="wrap section" id="operate">
-    <div class="row">
-      <p class="eyebrow">Funding</p>
-      <div class="prose">
-        <p>Rounds funds itself. The rest of the portfolio is funded independently &mdash; through consulting work, JANUS (a marketing agency operated prior to Brask Group), and Capital Alpha, an investment portfolio under the same ownership. Brask Group has taken no outside investment.</p>
+  <!-- ── Behind Brask Group ───────────────────────────── -->
+  <section class="section section-pattern" id="about">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="eyebrow">The company</p>
+        <h2>Behind Brask Group</h2>
       </div>
-    </div>
-  </section>
-
-  <!-- ── Founder ──────────────────────────────────────── -->
-  <section class="wrap section" id="founder">
-    <div class="row">
-      <div class="rail">
-        <p class="eyebrow">Built by</p>
-        <figure class="rail-portrait">
-          <img src="assets/img/ali-mirza.jpg" alt="Ali Mirza, founder of Brask Group" width="800" height="800" loading="lazy" decoding="async">
-          <figcaption>Ali Mirza<br>Founder</figcaption>
-        </figure>
-      </div>
-      <div class="prose">
-        <p>Brask Group was founded by Ali Mirza, when he was a 1st year medical student at UConn School of Medicine. Prior to Brask Group and medical school, he founded and operated a marketing agency (JANUS). Prior to his work in marketing he worked at Epic Systems, learning first-hand what the interface of tech and medicine looks like at highest levels today. In undergrad he studied Classics, Biochemistry, Economics, and Game Theory. Today, Ali writes <em>Side Effects</em> and leads Brask Group&rsquo;s product and editorial work.</p>
-        <p class="doc-actions">
+      <div class="notes-grid">
+        <article class="note-card reveal">
+          <h3>Who&rsquo;s behind it</h3>
+          <p>Brask Group was founded by Ali Mirza when he was a first-year medical student at UConn School of Medicine. Before Brask Group and medical school he founded and operated a marketing agency, JANUS. Before that he worked at Epic Systems, learning first-hand what the interface of technology and medicine looks like at the highest levels today. In undergrad he studied Classics, Biochemistry, Economics, and Game Theory.</p>
+          <p>Today, Ali writes <em>Side Effects</em> and leads Brask Group&rsquo;s product and editorial work.</p>
           <a class="link" href="https://thisisalimirza.com" rel="me">More about Ali <span class="arw">&rarr;</span></a>
-        </p>
+        </article>
+        <article class="note-card reveal">
+          <h3>How it&rsquo;s funded</h3>
+          <p>Rounds funds itself. The rest of the portfolio is funded independently &mdash; through consulting work, JANUS (a marketing agency operated prior to Brask Group), and Capital Alpha, an investment portfolio under the same ownership.</p>
+          <p>Brask Group has taken no outside investment. That is a deliberate choice: it means the work answers to the problem in front of it rather than to a return schedule.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ── Contact ──────────────────────────────────────── -->
-  <section class="wrap section" id="contact">
-    <div class="row">
-      <p class="eyebrow">Get in touch</p>
-      <div class="prose">
+  <!-- ── Join our mission ─────────────────────────────── -->
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <div class="mission-content">
+        <h2>Join Our Mission</h2>
+        <p class="mission-description">Be part of building the parts of this future worth wanting &mdash; as a partner, a collaborator, or a reader who argues back.</p>
         <a class="contact-email" href="mailto:ali@braskgroup.com">ali@braskgroup.com</a>
-        <div class="elsewhere">
-          <a href="https://www.linkedin.com/in/thisisalimirza/" rel="me">LinkedIn</a>
-          <a href="https://thisisalimirza.substack.com" rel="me">Substack</a>
-          <!-- Drop the App Store listing URL in here when it's handy:
-               <a href="https://apps.apple.com/app/id…">App Store</a> -->
+        <div class="mission-links">
+          <a class="mission-link" href="mailto:ali@braskgroup.com?subject=Partnering%20with%20Brask%20Group">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>
+            Partner With Us
+          </a>
+          <a class="mission-link" href="https://thisisalimirza.substack.com" rel="me">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4.2-1.1L19 8.1a2.2 2.2 0 0 0-3.1-3.1L5.1 15.8z"/><path d="M14.6 6.4l3 3"/></svg>
+            Read Side Effects
+          </a>
+          <a class="mission-link" href="https://www.linkedin.com/in/thisisalimirza/" rel="me">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.2h4V21H3zM9.1 9.2h3.8v1.6h.06c.53-1 1.82-2 3.75-2 4 0 4.75 2.6 4.75 6V21h-4v-5.3c0-1.27-.03-2.9-1.79-2.9-1.8 0-2.07 1.37-2.07 2.8V21h-4z"/></svg>
+            Connect on LinkedIn
+          </a>
         </div>
       </div>
     </div>
@@ -225,16 +344,41 @@
 
 </main>
 
-<footer class="wrap colophon">
-  <p>Brask Group LLC &middot; Connecticut, United States</p>
-  <p class="colophon-legal">
-    <a href="privacy-policy.html">Privacy</a>
-    <a href="terms-of-service.html">Terms</a>
-    <span>&copy; <span id="yr">2026</span></span>
-  </p>
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section brand">
+        <img src="assets/brasklogo-transparent.png" alt="Brask Group" class="logo-image" width="767" height="325" loading="lazy">
+        <p class="tagline">&ldquo;Building tomorrow&rsquo;s opportunities, today.&rdquo;</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <a href="#vision">Vision</a>
+        <a href="#impact">Areas of Impact</a>
+        <a href="#ventures">Ventures</a>
+        <a href="#writing">Insights</a>
+        <a href="#about">Behind Brask Group</a>
+      </div>
+      <div class="footer-section">
+        <h4>Get Involved</h4>
+        <a href="mailto:ali@braskgroup.com">Partner With Us</a>
+        <a href="https://thisisalimirza.substack.com" rel="me">Read Side Effects</a>
+        <a href="https://www.linkedin.com/in/thisisalimirza/" rel="me">LinkedIn</a>
+        <a href="rounds.html">About Rounds</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Brask Group LLC &middot; Connecticut, United States</p>
+      <p class="footer-legal">
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="terms-of-service.html">Terms</a>
+        <span>&copy; <span id="yr">2026</span></span>
+      </p>
+    </div>
+  </div>
 </footer>
 
-<script src="assets/site.js" defer></script>
+<script src="assets/home.js" defer></script>
 
 </body>
 </html>

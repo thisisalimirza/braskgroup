@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="A run of published pages, one in front and more queued behind it">
+  <defs>
+    <pattern id="grid-byline" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0v40" fill="none" stroke="#0B0B0C" stroke-opacity=".05" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="800" height="600" fill="#F0F6F4"/>
+  <rect width="800" height="600" fill="url(#grid-byline)"/>
+
+  <!-- Pages queued behind. -->
+  <rect x="196" y="128" width="360" height="384" rx="14" fill="#FFFFFF" fill-opacity=".65" stroke="#12695A" stroke-opacity=".16" transform="rotate(-6 376 320)"/>
+  <rect x="228" y="120" width="360" height="384" rx="14" fill="#FFFFFF" fill-opacity=".85" stroke="#12695A" stroke-opacity=".22" transform="rotate(-3 408 312)"/>
+
+  <!-- The page in front. -->
+  <g>
+    <rect x="252" y="112" width="360" height="384" rx="14" fill="#FFFFFF" stroke="#12695A" stroke-opacity=".3"/>
+    <rect x="252" y="112" width="360" height="10" rx="5" fill="#12695A"/>
+
+    <rect x="288" y="164" width="180" height="16" rx="8" fill="#0B0B0C" fill-opacity=".78"/>
+    <rect x="288" y="192" width="120" height="16" rx="8" fill="#0B0B0C" fill-opacity=".78"/>
+
+    <rect x="288" y="238" width="288" height="9" rx="4.5" fill="#0B0B0C" fill-opacity=".13"/>
+    <rect x="288" y="262" width="288" height="9" rx="4.5" fill="#0B0B0C" fill-opacity=".13"/>
+    <rect x="288" y="286" width="228" height="9" rx="4.5" fill="#0B0B0C" fill-opacity=".13"/>
+    <rect x="288" y="326" width="288" height="9" rx="4.5" fill="#0B0B0C" fill-opacity=".1"/>
+    <rect x="288" y="350" width="288" height="9" rx="4.5" fill="#0B0B0C" fill-opacity=".1"/>
+    <rect x="288" y="374" width="180" height="9" rx="4.5" fill="#0B0B0C" fill-opacity=".1"/>
+
+    <rect x="288" y="426" width="96" height="26" rx="13" fill="#12695A" fill-opacity=".12"/>
+    <rect x="396" y="426" width="72" height="26" rx="13" fill="#12695A" fill-opacity=".12"/>
+  </g>
+
+  <!-- The pipeline: one page ships, the next is already moving. -->
+  <path d="M120 304h72" stroke="#12695A" stroke-opacity=".45" stroke-width="3" stroke-linecap="round"/>
+  <path d="M172 288l20 16-20 16" fill="none" stroke="#12695A" stroke-opacity=".45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M648 304h48" stroke="#FF5A1F" stroke-width="3" stroke-linecap="round"/>
+  <path d="M676 288l20 16-20 16" fill="none" stroke="#FF5A1F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
