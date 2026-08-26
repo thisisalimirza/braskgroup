@@ -7,7 +7,7 @@ commit, push; Vercel serves it.
 
 | Path | What it is |
 | --- | --- |
-| `index.html` | Front page: hero, what this is, Brask Studio, what I've built, Capital Alpha, about, contact |
+| `index.html` | Front page: hero, what this is, Brask Studio, what we've built, Capital Alpha, about, contact |
 | `founders.html` | For Founders — the pitch to people building something, and how to start |
 | `partners.html` | For Partners — institutions, operators, and capital partners |
 | `rounds.html` | Rounds product page, plus its App Store–required privacy policy and terms |
@@ -86,8 +86,9 @@ a section id means updating `founders.html`, `partners.html`, `rounds.html`, `40
 both legal pages too. The nav block is duplicated across pages by hand — change one, change
 all of them.
 
-**Voice** — first person, matched to the Brask Studio site: short, factual sentences, no
-mission language. Brask Group is one system — Studio's client work pays for the experiments,
+**Voice** — first person plural, matched to the Brask Studio site: short, factual sentences,
+no mission language. "We", never "I" — the register is plain, not personal. The About section
+speaks about Ali Mirza by name rather than as "I". Brask Group is one system — Studio's client work pays for the experiments,
 the experiments become Studio's proof of work — not a portfolio of four companies. Say what a
 thing is and who uses it, then stop. Never say a product uses AI unless it does. No invented
 metrics — Rounds carries a `Live · App Store` tag because it is; the numbers on the other
