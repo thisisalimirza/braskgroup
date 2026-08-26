@@ -106,6 +106,16 @@ h1, h2, h3, h4 {
   margin: 0 auto;
   text-wrap: pretty;
 }
+/* The same voice as .section-intro, but after the grid rather
+   than before it — a closing aside, not a promise. */
+.section-outro {
+  font-size: 1.02rem;
+  color: var(--ink-mute);
+  max-width: 620px;
+  margin: 52px auto 0;
+  text-align: center;
+  text-wrap: pretty;
+}
 
 .eyebrow {
   font-family: var(--mono);
@@ -491,6 +501,10 @@ h1, h2, h3, h4 {
   justify-content: center;
   margin-top: 44px;
 }
+.cta-primary .arw,
+.cta-secondary .arw { display: inline-block; transition: transform .3s var(--ease); }
+.cta-primary:hover .arw,
+.cta-secondary:hover .arw { transform: translateX(4px); }
 
 .cta-primary,
 .cta-secondary {
@@ -1078,6 +1092,7 @@ h1, h2, h3, h4 {
   gap: 30px;
 }
 @media (max-width: 860px) { .notes-grid { grid-template-columns: 1fr; } }
+.notes-grid--single { grid-template-columns: minmax(0, 720px); justify-content: center; }
 
 .note-card {
   background: var(--paper);
@@ -1140,6 +1155,7 @@ h1, h2, h3, h4 {
   text-wrap: balance;
 }
 .founder-callout p { color: var(--ink-mute); max-width: 54ch; }
+.founder-callout p + p { margin-top: .9em; }
 .founder-callout .cta-buttons { margin-top: 0; flex-wrap: nowrap; }
 @media (max-width: 620px) { .founder-callout .cta-buttons { flex-wrap: wrap; } }
 
