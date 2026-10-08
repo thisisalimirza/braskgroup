@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>document.documentElement.className += ' js';</script>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brask Group — The stuff we build, in one place</title>
-<meta name="description" content="Brask Group is the entity we run everything under: Brask Studio (client sites), a handful of shipped products, and Capital Alpha. Some of it's client work, some of it's our own experiments, all of it feeds the rest.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Brask Group</title>
+<meta name="description" content="Brask Group LLC is a Connecticut company. It makes an exam-prep app for medical students, a school-planning site, and an event seating tool, and it runs a web design studio.">
 <link rel="canonical" href="https://braskgroup.com/">
 <meta name="author" content="Ali Mirza">
-<meta name="theme-color" content="#0B0B0C">
+<meta name="theme-color" content="#fafaf9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1215" media="(prefers-color-scheme: dark)">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Brask Group">
 <meta property="og:url" content="https://braskgroup.com/">
-<meta property="og:title" content="Brask Group — The stuff we build, in one place">
-<meta property="og:description" content="Brask Group is the entity we run everything under. Some of it's client work. Some of it's our own experiments. All of it feeds the rest.">
+<meta property="og:title" content="Brask Group">
+<meta property="og:description" content="Software, starting with medical education.">
 <meta property="og:image" content="https://braskgroup.com/assets/og_image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Brask Group — The stuff we build, in one place">
-<meta name="twitter:description" content="Brask Group is the entity we run everything under. Some of it's client work. Some of it's our own experiments. All of it feeds the rest.">
+<meta name="twitter:title" content="Brask Group">
+<meta name="twitter:description" content="Software, starting with medical education.">
 <meta name="twitter:image" content="https://braskgroup.com/assets/og_image.png">
 
 <link rel="icon" type="image/png" href="assets/brask-icon.png">
 <link rel="apple-touch-icon" href="assets/brask-icon.png">
 
 <link rel="preload" href="assets/fonts/schibsted-grotesk-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/ibm-plex-mono-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts.css">
-<link rel="stylesheet" href="assets/home.css">
 
 <script type="application/ld+json">
 {
@@ -39,16 +38,233 @@
   "email": "ali@braskgroup.com",
   "founder": {
     "@type": "Person",
-    "name": "Ali Mirza",
-    "url": "https://thisisalimirza.com"
-  },
-  "sameAs": [
-    "https://www.linkedin.com/in/thisisalimirza/",
-    "https://braskstudio.com/",
-    "https://capitalalphafund.com/"
-  ]
+    "name": "Ali Mirza"
+  }
 }
 </script>
+
+<style>
+  :root {
+    --bg: #fafaf9;
+    --ink: #15181c;
+    --muted: #5b6168;
+    --rule: #dcdedf;
+    --accent: #1d3fb8;
+    --accent-ink: #ffffff;
+    --font-body: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1215;
+      --ink: #ecedee;
+      --muted: #9aa0a6;
+      --rule: #272c31;
+      --accent: #8ea6ff;
+      --accent-ink: #0f1215;
+      color-scheme: dark;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #0f1215;
+    --ink: #ecedee;
+    --muted: #9aa0a6;
+    --rule: #272c31;
+    --accent: #8ea6ff;
+    --accent-ink: #0f1215;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.55;
+    margin: 0;
+    padding-inline: 20px;
+    padding-block: 0 56px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 880px; margin-inline: auto; }
+
+  a { color: inherit; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding-block: 28px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .brand { font-weight: 700; font-size: 18px; letter-spacing: -0.01em; }
+  .location { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+
+  .intro { padding-block: 72px 64px; }
+
+  h1 {
+    font-size: clamp(34px, 6.4vw, 58px);
+    line-height: 1.06;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+    margin: 0 0 24px;
+    max-width: 18ch;
+    text-wrap: balance;
+  }
+
+  .lede { font-size: 19px; color: var(--muted); max-width: 54ch; margin: 0; }
+
+  section {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 16px 40px;
+    padding-block: 36px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 5px;
+  }
+
+  h2 { font-size: 20px; letter-spacing: -0.01em; margin: 0; }
+
+  .body p { margin: 0; max-width: 56ch; }
+  .body p + p { margin-top: 14px; }
+
+  .kind {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    margin-top: 2px;
+  }
+
+  .hook { display: block; color: var(--ink); font-weight: 600; margin-bottom: 4px; }
+
+  .flagship h2 { font-size: 28px; letter-spacing: -0.02em; }
+  .flagship .kind { margin-bottom: 14px; }
+  .flagship p { color: var(--muted); font-size: 18px; max-width: 54ch; }
+  .flagship .hook { font-size: 20px; }
+
+  .rows { margin: 0; padding: 0; list-style: none; }
+
+  .row {
+    display: grid;
+    grid-template-columns: minmax(0, 190px) minmax(0, 1fr);
+    gap: 4px 24px;
+    padding-block: 18px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .row:first-child { border-top: 0; padding-top: 0; }
+  .row:last-child { padding-bottom: 0; }
+  .row p { color: var(--muted); max-width: 52ch; }
+
+  .row h2 a,
+  .flagship h2 a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--rule);
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+
+  .row h2 a:hover,
+  .flagship h2 a:hover {
+    text-decoration-color: var(--accent);
+  }
+
+  .studio p { color: var(--muted); }
+  .studio .hook { font-size: 20px; }
+
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin-top: 18px;
+  }
+
+  .email {
+    font-family: var(--font-mono);
+    font-size: 17px;
+    color: var(--ink);
+    user-select: all;
+    overflow-wrap: anywhere;
+  }
+
+  .btn {
+    font: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    background: var(--accent);
+    color: var(--accent-ink);
+    border: 0;
+    border-radius: 4px;
+    padding: 10px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .btn.ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--rule);
+  }
+
+  .btn:hover { filter: brightness(1.08); }
+  .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .cta { margin-top: 18px; }
+
+  .status {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--muted);
+    min-height: 1.2em;
+    margin-top: 10px;
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 24px;
+    margin-top: 36px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  footer a { text-decoration: underline; text-underline-offset: 2px; }
+  footer a:hover { color: var(--ink); }
+
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .intro { padding-block: 48px 40px; }
+    section { grid-template-columns: minmax(0, 1fr); gap: 8px; padding-block: 28px; }
+    .label { padding-top: 0; }
+    .row { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  }
+</style>
 
 <!-- Vercel Web Analytics -->
 <script>
@@ -58,249 +274,114 @@
 </head>
 <body>
 
-<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header>
+    <div class="brand">Brask Group</div>
+    <div class="location">Connecticut</div>
+  </header>
 
-<nav class="navbar" id="navbar" aria-label="Primary">
-  <div class="nav-container">
-    <a href="/" class="logo" aria-label="Brask Group — home">
-      <img src="assets/brasklogo-transparent.png" alt="Brask Group" class="logo-image" width="767" height="325">
-    </a>
-    <div class="nav-links" id="nav-links">
-      <a href="#studio">Studio</a>
-      <a href="#ventures">Ventures</a>
-      <a href="#capital-alpha">Capital Alpha</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <a href="https://braskstudio.com/" class="nav-cta" rel="noopener">Hire Brask Studio</a>
+  <main>
+    <div class="intro">
+      <h1>Software, starting with medical education.</h1>
+      <p class="lede">Brask Group LLC is a Connecticut company. It makes an exam-prep app for medical students, a school-planning site, and an event seating tool, and it runs a web design studio.</p>
     </div>
-    <button class="mobile-menu" id="mobile-menu" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
 
-<main id="main">
-
-  <!-- ── Hero ─────────────────────────────────────────── -->
-  <section id="hero">
-    <div class="hero-background" aria-hidden="true">
-      <div class="floating-element element-1"></div>
-      <div class="floating-element element-2"></div>
-      <div class="floating-element element-3"></div>
-      <div class="floating-element element-4"></div>
-      <div class="floating-element element-5"></div>
-      <div class="floating-element element-6"></div>
-    </div>
-    <div class="hero-content">
-      <h1>The stuff we build, <span class="accent">in one place.</span></h1>
-      <p class="hero-sub">Brask Group is the entity we run everything under. Some of it&rsquo;s client work. Some of it&rsquo;s our own experiments. All of it feeds the rest.</p>
-      <div class="cta-buttons">
-        <a href="#ventures" class="cta-primary">See what we&rsquo;ve built</a>
-        <a href="https://braskstudio.com/" class="cta-secondary" rel="noopener">Hire Brask Studio</a>
+    <section class="flagship">
+      <div class="label">Flagship</div>
+      <div class="body">
+        <h2><a href="https://www.getrounds.app/" target="_blank" rel="noopener">Rounds</a></h2>
+        <div class="kind">iOS app</div>
+        <p><strong class="hook">Learn to think through a diagnosis, not just memorize one.</strong> Rounds gives you First Aid-aligned cases for USMLE Step 1, then clinical calculators, a differential builder and illness scripts for clerkships. Free with a medical school .edu email.</p>
+        <div class="cta"><a class="btn" href="https://www.getrounds.app/" target="_blank" rel="noopener">Visit Rounds</a></div>
       </div>
-    </div>
-    <a href="#what" class="scroll-indicator">
-      <span>Scroll</span>
-      <span class="mouse" aria-hidden="true"></span>
-    </a>
-  </section>
+    </section>
 
-  <!-- ── What this actually is ────────────────────────── -->
-  <section class="section section-pattern" id="what">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-content reveal">
-          <p class="eyebrow">Brask Group</p>
-          <h2>What this actually is</h2>
-          <p class="lead">We run a small agency, Brask Studio, building sites for healthcare companies and early-stage startups. That work pays for the experiments &mdash; apps, tools, a newsletter &mdash; we build for ourselves.</p>
-        </div>
-        <div class="about-body reveal">
-          <p>Some of those experiments turn into real products with real users. When they do, they usually end up as case studies for Studio, which brings in the next client. It&rsquo;s one system, not four separate companies pretending to be a portfolio.</p>
-          <p>We&rsquo;ve done this before. JANUS, the agency Ali ran before medical school, was the same model. Brask Studio is that model run better, funding things that actually interest us this time. JANUS did everything from email marketing to full-stack web development &mdash; SEO, analytics, Shopify &mdash; before settling on motion design launch videos. Brask Studio is the hyper-focused version of that: clean, fast marketing sites.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Brask Studio ─────────────────────────────────── -->
-  <section class="section" id="studio">
-    <div class="container">
-      <div class="founder-callout reveal">
-        <div>
-          <p class="eyebrow">Client work</p>
-          <h2>Brask Studio</h2>
-          <p>Clean, fast marketing sites for healthcare companies and early-stage startups. Two weeks, flat rate, no tiers.</p>
-          <p>Studio has its own site with pricing, past work, and an FAQ that actually answers your questions.</p>
-        </div>
-        <div class="cta-buttons cta-buttons--light">
-          <a href="https://braskstudio.com/" class="cta-primary" rel="noopener">Go there <span class="arw">&rarr;</span></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── What we've built ─────────────────────────────────
-       data-area is colour only: it picks the accent tone each
-       card is tinted with. It no longer labels anything.
-       ────────────────────────────────────────────────────── -->
-  <section class="section section-pattern" id="ventures">
-    <div class="container">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Ventures</p>
-        <h2>What we&rsquo;ve built</h2>
-      </div>
-      <div class="ventures-grid">
-
-        <article class="venture-card venture-card--lead reveal" data-area="health">
-          <div class="venture-inner">
-            <div class="venture-image venture-image--shots">
-              <img src="assets/img/rounds/daily-case.webp" alt="A Rounds case showing five clinical clues, only the first unlocked" width="900" height="1956" loading="lazy" decoding="async">
-              <img src="assets/img/rounds/home.webp" alt="The Rounds home screen with the day&rsquo;s case and a streak counter" width="900" height="1956" loading="lazy" decoding="async">
+    <section>
+      <div class="label">Also built</div>
+      <div class="body">
+        <ul class="rows">
+          <li class="row">
+            <div>
+              <h2><a href="https://mymedstack.com/" target="_blank" rel="noopener">Med Stack</a></h2>
+              <div class="kind">Website</div>
             </div>
-            <div class="venture-body">
-              <div class="venture-head">
-                <img class="app-icon" src="assets/img/icon-rounds.png" alt="" width="256" height="256" loading="lazy" decoding="async">
-                <h3 class="venture-title">Rounds</h3>
-              </div>
-              <p class="venture-description">Clinical reasoning app used by medical students across 40+ schools. Live on the App Store, self-sustaining on its own revenue.</p>
-              <div class="venture-foot">
-                <span class="tag"><span class="dot" aria-hidden="true"></span>Live &middot; App Store</span>
-                <!-- Drop the App Store listing URL in here when it's handy:
-                     <a class="link" href="https://apps.apple.com/app/id…">View on the App Store <span class="arw">&rarr;</span></a> -->
-                <a class="link" href="rounds.html">About Rounds <span class="arw">&rarr;</span></a>
-              </div>
+            <p><strong class="hook">Planning your path into medicine?</strong> Med Stack puts school and program comparisons, application score calculators and insights from current students and residents in one place. Free to use.</p>
+          </li>
+          <li class="row">
+            <div>
+              <h2><a href="https://www.usesitr.com/" target="_blank" rel="noopener">Sitr</a></h2>
+              <div class="kind">Web app</div>
             </div>
-          </div>
-        </article>
-
-        <article class="venture-card reveal" data-area="society">
-          <div class="venture-image">
-            <img src="assets/img/ventures/sitr.svg" alt="" width="800" height="600" loading="lazy" decoding="async">
-          </div>
-          <div class="venture-body">
-            <h3 class="venture-title">Sitr</h3>
-            <p class="venture-description">Started as inpatient bed management, turned into event seating for large-scale medical school events. Same underlying logic, different label.</p>
-          </div>
-        </article>
-
-        <article class="venture-card reveal" data-area="agency">
-          <div class="venture-image">
-            <img src="assets/img/ventures/byline-blogs.svg" alt="" width="800" height="600" loading="lazy" decoding="async">
-          </div>
-          <div class="venture-body">
-            <h3 class="venture-title">Byline Blogs</h3>
-            <p class="venture-description">Publishing pipeline for small healthcare DPC clinics that don&rsquo;t want to pay agency prices for content.</p>
-          </div>
-        </article>
-
-        <article class="venture-card reveal" data-area="horizons">
-          <div class="venture-image">
-            <img src="assets/img/ventures/my-med-stack.svg" alt="" width="800" height="600" loading="lazy" decoding="async">
-          </div>
-          <div class="venture-body">
-            <h3 class="venture-title">Med Stack</h3>
-            <p class="venture-description">A directory of medical training programs, built because the existing ones are worse than they should be. Med Stack gets over 1,000 visitors per month.</p>
-          </div>
-        </article>
-
+            <p><strong class="hook">Retire the seating spreadsheet.</strong> Send guests a link and they pick their own seats, no account needed, while you watch the chart fill in live. Built for school formals, weddings, galas and dinners. Free for small events.</p>
+          </li>
+        </ul>
       </div>
-      <p class="section-outro reveal">Most of these started as tools we needed and couldn&rsquo;t find. A few turned into things other people needed too.</p>
-    </div>
-  </section>
+    </section>
 
-  <!-- ── Capital Alpha ────────────────────────────────── -->
-  <section class="section" id="capital-alpha">
-    <div class="container">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Newsletter</p>
-        <h2>Capital Alpha</h2>
-        <p class="section-intro">An investing newsletter. Two reasons it exists: we want to get better at explaining how we think about markets, and we&rsquo;re building a public track record we can point to later if we ever want to raise a fund. It&rsquo;s a long bet, but one we&rsquo;re interested in.</p>
-        <div class="cta-buttons">
-          <a href="https://capitalalphafund.com/" class="cta-primary" rel="noopener">Subscribe <span class="arw">&rarr;</span></a>
+    <section class="studio">
+      <div class="label">Web design</div>
+      <div class="body">
+        <h2>Brask Studio</h2>
+        <div class="kind">Service</div>
+        <p style="margin-top:14px"><strong class="hook">Need a marketing website for your practice or company?</strong> Brask Studio builds sites for healthcare practices, professional services firms and early-stage companies. Pricing and the process are on the Studio site.</p>
+        <div class="cta"><a class="btn" href="https://www.braskstudio.com/" target="_blank" rel="noopener">Visit Brask Studio</a></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="label">Who</div>
+      <div class="body">
+        <p>Brask Group was founded by Ali, a medical student at UConn School of Medicine and a former software engineer at Epic. He builds the products and does the Studio's client work himself.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="label">Contact</div>
+      <div class="body">
+        <p>For anything about Brask Group or one of its products, email:</p>
+        <div class="contact-row">
+          <span class="email" id="addr">ali@braskgroup.com</span>
+          <button class="btn ghost" id="copy" type="button">Copy address</button>
+          <a class="btn" href="mailto:ali@braskgroup.com">Open in mail</a>
         </div>
+        <div class="status" id="status" role="status" aria-live="polite"></div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- ── About ────────────────────────────────────────── -->
-  <section class="section section-pattern" id="about">
-    <div class="container">
-      <div class="notes-grid notes-grid--single">
-        <article class="note-card reveal">
-          <div class="note-head">
-            <img class="note-portrait" src="assets/img/ali-mirza.jpg" alt="Ali Mirza, founder of Brask Group" width="800" height="800" loading="lazy" decoding="async">
-            <h3>About</h3>
-          </div>
-          <p>Brask Group is run by Ali Mirza, MS3 at UConn School of Medicine. Before medical school: Project Manager at Epic, then a marketing agency, JANUS. Undergrad was Classics, Economics, Biochemistry, and Game Theory, which is a strange enough combination that people usually ask about it, so here it is before you have to.</p>
-          <p>Everything under Brask Group exists because we like building things, and we&rsquo;d rather they fund each other than sit as separate side projects with no relationship to one another.</p>
-          <a class="link" href="https://www.linkedin.com/in/thisisalimirza/" rel="me">LinkedIn <span class="arw">&rarr;</span></a>
-        </article>
-      </div>
-    </div>
-  </section>
+  <footer>
+    <span>&copy; <span id="yr">2026</span> Brask Group LLC</span>
+    <span>Connecticut</span>
+  </footer>
+</div>
 
-  <!-- ── Contact ──────────────────────────────────────── -->
-  <section class="cta-section" id="contact">
-    <div class="container">
-      <div class="mission-content">
-        <h2>Contact</h2>
-        <p class="mission-description">Building something, hiring for a site, or just want to talk about one of these. Email direct.</p>
-        <a class="contact-email" href="mailto:ali@braskgroup.com">ali@braskgroup.com</a>
-        <div class="mission-links">
-          <a class="mission-link" href="https://braskstudio.com/" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M3.5 9h17"/><circle cx="6.6" cy="7" r=".5" fill="currentColor"/></svg>
-            Hire Brask Studio
-          </a>
-          <a class="mission-link" href="https://capitalalphafund.com/" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16.5l4.5-5 3.5 3 3.5-5 4.5 4.5"/><path d="M3.5 20h17"/></svg>
-            Read Capital Alpha
-          </a>
-          <a class="mission-link" href="https://www.linkedin.com/in/thisisalimirza/" rel="me">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.2h4V21H3zM9.1 9.2h3.8v1.6h.06c.53-1 1.82-2 3.75-2 4 0 4.75 2.6 4.75 6V21h-4v-5.3c0-1.27-.03-2.9-1.79-2.9-1.8 0-2.07 1.37-2.07 2.8V21h-4z"/></svg>
-            Connect on LinkedIn
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+<script>
+  (function () {
+    var y = document.getElementById("yr");
+    if (y) y.textContent = new Date().getFullYear();
 
-</main>
+    var btn = document.getElementById("copy");
+    var status = document.getElementById("status");
+    var addr = document.getElementById("addr");
 
-<footer>
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-section brand">
-        <img src="assets/brasklogo-transparent.png" alt="Brask Group" class="logo-image" width="767" height="325" loading="lazy">
-      </div>
-      <div class="footer-section">
-        <h4>This site</h4>
-        <a href="#what">What this is</a>
-        <a href="#studio">Brask Studio</a>
-        <a href="#ventures">What we&rsquo;ve built</a>
-        <a href="#capital-alpha">Capital Alpha</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="footer-section">
-        <h4>Elsewhere</h4>
-        <a href="https://braskstudio.com/" rel="noopener">Brask Studio</a>
-        <a href="https://capitalalphafund.com/" rel="noopener">Capital Alpha</a>
-        <a href="rounds.html">About Rounds</a>
-        <a href="https://www.linkedin.com/in/thisisalimirza/" rel="me">LinkedIn</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>Brask Group LLC &middot; Connecticut, United States</p>
-      <p class="footer-legal">
-        <a href="privacy-policy.html">Privacy</a>
-        <a href="terms-of-service.html">Terms</a>
-        <span>&copy; <span id="yr">2026</span></span>
-      </p>
-    </div>
-  </div>
-</footer>
-
-<script src="assets/home.js" defer></script>
+    btn.addEventListener("click", function () {
+      var text = addr.textContent;
+      function selectFallback() {
+        var r = document.createRange();
+        r.selectNodeContents(addr);
+        var s = window.getSelection();
+        s.removeAllRanges();
+        s.addRange(r);
+        status.textContent = "Address selected. Copy it manually.";
+      }
+      try {
+        navigator.clipboard.writeText(text).then(function () {
+          status.textContent = "Address copied.";
+        }, selectFallback);
+      } catch (e) { selectFallback(); }
+    });
+  })();
+</script>
 
 </body>
 </html>

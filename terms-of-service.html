@@ -1,21 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>document.documentElement.className += ' js';</script>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Terms of Service | Brask Group</title>
 <meta name="description" content="Terms governing your use of the websites, products, and services operated by Brask Group LLC.">
 <link rel="canonical" href="https://braskgroup.com/terms-of-service.html">
-<meta name="theme-color" content="#FFFFFF">
+<meta name="theme-color" content="#fafaf9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1215" media="(prefers-color-scheme: dark)">
 
 <link rel="icon" type="image/png" href="assets/brask-icon.png">
 <link rel="apple-touch-icon" href="assets/brask-icon.png">
 
 <link rel="preload" href="assets/fonts/schibsted-grotesk-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/ibm-plex-mono-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts.css">
-<link rel="stylesheet" href="assets/site.css">
+
+<style>
+  :root {
+    --bg: #fafaf9;
+    --ink: #15181c;
+    --muted: #5b6168;
+    --rule: #dcdedf;
+    --accent: #1d3fb8;
+    --font-body: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1215;
+      --ink: #ecedee;
+      --muted: #9aa0a6;
+      --rule: #272c31;
+      --accent: #8ea6ff;
+      color-scheme: dark;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #0f1215;
+    --ink: #ecedee;
+    --muted: #9aa0a6;
+    --rule: #272c31;
+    --accent: #8ea6ff;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.55;
+    margin: 0;
+    padding-inline: 20px;
+    padding-block: 0 56px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 880px; margin-inline: auto; }
+
+  a { color: inherit; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding-block: 28px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .brand { font-weight: 700; font-size: 18px; letter-spacing: -0.01em; text-decoration: none; }
+  .location { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+
+  .doc-header {
+    padding-block: 56px 40px;
+  }
+
+  .doc-label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-size: clamp(28px, 5vw, 42px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    margin: 0 0 16px;
+  }
+
+  .doc-meta {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .doc-lede {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 56ch;
+    margin-top: 24px;
+  }
+
+  .doc-body {
+    max-width: 64ch;
+  }
+
+  .doc-body h2 {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 48px 0 16px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .doc-body h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .doc-body p {
+    color: var(--muted);
+    margin: 0 0 1em;
+  }
+
+  .doc-body ul {
+    list-style: none;
+    margin: 0 0 1.2em;
+    padding: 0;
+  }
+
+  .doc-body li {
+    position: relative;
+    color: var(--muted);
+    padding-left: 20px;
+    margin-bottom: 0.5em;
+  }
+
+  .doc-body li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 6px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .doc-body a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .doc-body a:hover {
+    text-decoration-color: transparent;
+  }
+
+  .doc-back {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .back-link {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  .back-link:hover {
+    color: var(--ink);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 24px;
+    margin-top: 48px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .footer-legal {
+    display: flex;
+    gap: 16px;
+  }
+
+  .footer-legal a {
+    color: var(--muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .footer-legal a:hover {
+    color: var(--ink);
+  }
+
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .doc-header { padding-block: 40px 32px; }
+  }
+</style>
 
 <!-- Vercel Web Analytics -->
 <script>
@@ -25,94 +233,87 @@
 </head>
 <body>
 
-<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header>
+    <a href="/" class="brand">Brask Group</a>
+    <div class="location">Connecticut</div>
+  </header>
 
-<header class="masthead" id="masthead">
-  <div class="wrap masthead-inner">
-    <a href="index.html" class="wordmark"><span class="mark" aria-hidden="true"></span>Brask Group</a>
-    <nav class="nav" aria-label="Primary">
-      <a href="index.html#about">About</a>
-      <a href="index.html#ventures">Ventures</a>
-      <a href="founders.html">Founders</a>
-      <a href="partners.html">Partners</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+  <main>
+    <div class="doc-header">
+      <p class="doc-label">Legal</p>
+      <h1>Terms of Service</h1>
+      <p class="doc-meta">Last updated: January 2025</p>
+      <p class="doc-lede">These Terms of Service ("Terms") govern your access to and use of websites, products, and services operated by Brask Group LLC ("we," "our," or "us").</p>
+    </div>
 
-<main id="main">
+    <div class="doc-body">
+      <h2>1. Acceptance of terms</h2>
+      <p>By accessing and using our services, you accept and agree to be bound by these Terms. If you do not agree to these Terms, you may not use our services.</p>
 
-  <section class="wrap wrap--narrow doc">
-    <p class="doc-kicker"><span class="dot" aria-hidden="true"></span>Legal</p>
-    <h1>Terms of Service</h1>
-    <p class="doc-meta">Last updated: January 2025</p>
-    <p class="doc-lede">These Terms of Service (&ldquo;Terms&rdquo;) govern your access to and use of websites, products, and services operated by Brask Group LLC (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;).</p>
-  </section>
+      <h2>2. Description of services</h2>
+      <p>Brask Group LLC builds and operates software, primarily for healthcare and medical education. Our services include:</p>
+      <ul>
+        <li>Medical education applications</li>
+        <li>Software tools and utilities</li>
+        <li>Educational content and resources</li>
+        <li>Other services as described on our websites</li>
+      </ul>
 
-  <section class="wrap wrap--narrow doc-body">
+      <h2>3. User responsibilities</h2>
+      <p>You agree to:</p>
+      <ul>
+        <li>Provide accurate and complete information when creating accounts or using our services</li>
+        <li>Use our services for lawful purposes only</li>
+        <li>Not share account credentials with others</li>
+        <li>Not attempt to reverse engineer, compromise, or interfere with our services</li>
+        <li>Respect intellectual property rights</li>
+        <li>Comply with all applicable laws and regulations</li>
+      </ul>
 
-    <h2>1. Acceptance of terms</h2>
-    <p>By accessing and using our services, you accept and agree to be bound by these Terms. If you do not agree to these Terms, you may not use our services.</p>
+      <h2>4. Educational use</h2>
+      <p>Our medical education products are study tools. They do not replace formal medical education, clinical training, or professional medical advice, and nothing in them should be used to make decisions about the care of a real patient.</p>
 
-    <h2>2. Description of services</h2>
-    <p>Brask Group LLC builds and operates software, primarily for healthcare and medical education. Our services include:</p>
-    <ul>
-      <li>Medical education applications</li>
-      <li>Software tools and utilities</li>
-      <li>Educational content and resources</li>
-      <li>Other services as described on our websites</li>
-    </ul>
+      <h2>5. Intellectual property</h2>
+      <p>All content, features, and functionality of our services are owned by Brask Group LLC or its licensors and are protected by copyright, trademark, and other intellectual property laws. You may not reproduce, distribute, or create derivative works without our written permission.</p>
 
-    <h2>3. User responsibilities</h2>
-    <p>You agree to:</p>
-    <ul>
-      <li>Provide accurate and complete information when creating accounts or using our services</li>
-      <li>Use our services for lawful purposes only</li>
-      <li>Not share account credentials with others</li>
-      <li>Not attempt to reverse engineer, compromise, or interfere with our services</li>
-      <li>Respect intellectual property rights</li>
-      <li>Comply with all applicable laws and regulations</li>
-    </ul>
+      <h2>6. Limitation of liability</h2>
+      <p>Our services are provided "as is" without warranties of any kind, either express or implied. We are not liable for any damages arising from your use of our services, including but not limited to indirect, incidental, or consequential damages.</p>
 
-    <h2>4. Educational use</h2>
-    <p>Our medical education products are study tools. They do not replace formal medical education, clinical training, or professional medical advice, and nothing in them should be used to make decisions about the care of a real patient.</p>
+      <h2>7. Indemnification</h2>
+      <p>You agree to indemnify and hold harmless Brask Group LLC and its officers, directors, employees, and agents from any claims, damages, or expenses arising from your use of our services or violation of these Terms.</p>
 
-    <h2>5. Intellectual property</h2>
-    <p>All content, features, and functionality of our services are owned by Brask Group LLC or its licensors and are protected by copyright, trademark, and other intellectual property laws. You may not reproduce, distribute, or create derivative works without our written permission.</p>
+      <h2>8. Account termination</h2>
+      <p>We reserve the right to suspend or terminate your account at any time for violation of these Terms or for any other reason we deem necessary, with or without notice.</p>
 
-    <h2>6. Limitation of liability</h2>
-    <p>Our services are provided &ldquo;as is&rdquo; without warranties of any kind, either express or implied. We are not liable for any damages arising from your use of our services, including but not limited to indirect, incidental, or consequential damages.</p>
+      <h2>9. Governing law</h2>
+      <p>These Terms are governed by the laws of the State of Connecticut, United States, without regard to conflict of law principles.</p>
 
-    <h2>7. Indemnification</h2>
-    <p>You agree to indemnify and hold harmless Brask Group LLC and its officers, directors, employees, and agents from any claims, damages, or expenses arising from your use of our services or violation of these Terms.</p>
+      <h2>10. Changes to terms</h2>
+      <p>We may modify these Terms at any time. Continued use of our services after changes constitutes acceptance of the new Terms. We will notify users of material changes by posting the updated Terms on our websites.</p>
 
-    <h2>8. Account termination</h2>
-    <p>We reserve the right to suspend or terminate your account at any time for violation of these Terms or for any other reason we deem necessary, with or without notice.</p>
+      <h2>11. Contact us</h2>
+      <p>If you have questions about these Terms of Service, please contact us at <a href="mailto:ali@braskgroup.com">ali@braskgroup.com</a>.</p>
 
-    <h2>9. Governing law</h2>
-    <p>These Terms are governed by the laws of the State of Connecticut, United States, without regard to conflict of law principles.</p>
+      <div class="doc-back">
+        <a class="back-link" href="/">&larr; Brask Group</a>
+      </div>
+    </div>
+  </main>
 
-    <h2>10. Changes to terms</h2>
-    <p>We may modify these Terms at any time. Continued use of our services after changes constitutes acceptance of the new Terms. We will notify users of material changes by posting the updated Terms on our websites.</p>
+  <footer>
+    <span>&copy; <span id="yr">2026</span> Brask Group LLC</span>
+    <div class="footer-legal">
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="terms-of-service.html">Terms</a>
+    </div>
+  </footer>
+</div>
 
-    <h2>11. Contact us</h2>
-    <p>If you have questions about these Terms of Service, please contact us at <a href="mailto:ali@braskgroup.com">ali@braskgroup.com</a>.</p>
-
-    <p class="doc-back"><a class="link link--back" href="index.html">&larr; Brask Group</a></p>
-  </section>
-
-</main>
-
-<footer class="wrap colophon">
-  <p>Brask Group LLC &middot; Connecticut, United States</p>
-  <p class="colophon-legal">
-    <a href="privacy-policy.html">Privacy</a>
-    <a href="terms-of-service.html">Terms</a>
-    <span>&copy; <span id="yr">2026</span></span>
-  </p>
-</footer>
-
-<script src="assets/site.js" defer></script>
+<script>
+  var y = document.getElementById("yr");
+  if (y) y.textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>

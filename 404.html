@@ -1,57 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>document.documentElement.className += ' js';</script>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Not found | Brask Group</title>
 <meta name="description" content="That page doesn't exist.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#FFFFFF">
+<meta name="theme-color" content="#fafaf9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1215" media="(prefers-color-scheme: dark)">
 
 <link rel="icon" type="image/png" href="/assets/brask-icon.png">
 <link rel="apple-touch-icon" href="/assets/brask-icon.png">
 
 <link rel="preload" href="/assets/fonts/schibsted-grotesk-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/ibm-plex-mono-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts.css">
-<link rel="stylesheet" href="/assets/site.css">
+
+<style>
+  :root {
+    --bg: #fafaf9;
+    --ink: #15181c;
+    --muted: #5b6168;
+    --rule: #dcdedf;
+    --accent: #1d3fb8;
+    --accent-ink: #ffffff;
+    --font-body: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1215;
+      --ink: #ecedee;
+      --muted: #9aa0a6;
+      --rule: #272c31;
+      --accent: #8ea6ff;
+      --accent-ink: #0f1215;
+      color-scheme: dark;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #0f1215;
+    --ink: #ecedee;
+    --muted: #9aa0a6;
+    --rule: #272c31;
+    --accent: #8ea6ff;
+    --accent-ink: #0f1215;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.55;
+    margin: 0;
+    padding-inline: 20px;
+    padding-block: 0 56px;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wrap { max-width: 880px; margin-inline: auto; width: 100%; }
+
+  a { color: inherit; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding-block: 28px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .brand { font-weight: 700; font-size: 18px; letter-spacing: -0.01em; text-decoration: none; }
+  .location { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: 48px;
+  }
+
+  .code {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-size: clamp(28px, 5vw, 42px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    margin: 0 0 16px;
+    max-width: 18ch;
+  }
+
+  .desc { font-size: 18px; color: var(--muted); max-width: 48ch; margin: 0 0 24px; }
+
+  .link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .link:hover { text-decoration: underline; }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+  }
+</style>
 </head>
 <body>
 
-<header class="masthead" id="masthead">
-  <div class="wrap masthead-inner">
-    <a href="/" class="wordmark"><span class="mark" aria-hidden="true"></span>Brask Group</a>
-    <nav class="nav" aria-label="Primary">
-      <a href="/#studio">Studio</a>
-      <a href="/#ventures">What we&rsquo;ve built</a>
-      <a href="/#capital-alpha">Capital Alpha</a>
-      <a href="/#about">About</a>
-      <a href="/#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+<div class="wrap">
+  <header>
+    <a href="/" class="brand">Brask Group</a>
+    <div class="location">Connecticut</div>
+  </header>
 
-<main class="wrap wrap--narrow notfound">
-  <p class="notfound-code">Error 404</p>
-  <h1>There&rsquo;s nothing at this address.</h1>
-  <p>Either the page moved or the link was wrong. The front page has everything.</p>
-  <p class="doc-actions">
-    <a class="link" href="/">Brask Group <span class="arw">&rarr;</span></a>
-    <a class="link link--quiet" href="mailto:ali@braskgroup.com">Email me <span class="arw">&rarr;</span></a>
-  </p>
-</main>
+  <main>
+    <p class="code">Error 404</p>
+    <h1>There's nothing at this address.</h1>
+    <p class="desc">Either the page moved or the link was wrong. The front page has everything.</p>
+    <a class="link" href="/">Go to Brask Group &rarr;</a>
+  </main>
 
-<footer class="wrap colophon">
-  <p>Brask Group LLC &middot; Connecticut, United States</p>
-  <p class="colophon-legal">
-    <a href="/privacy-policy.html">Privacy</a>
-    <a href="/terms-of-service.html">Terms</a>
-    <span>&copy; <span id="yr">2026</span></span>
-  </p>
-</footer>
+  <footer>
+    <span>&copy; <span id="yr">2026</span> Brask Group LLC</span>
+    <span>Connecticut</span>
+  </footer>
+</div>
 
-<script src="/assets/site.js" defer></script>
+<script>
+  var y = document.getElementById("yr");
+  if (y) y.textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
