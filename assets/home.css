@@ -605,3 +605,54 @@ footer {
 @media (max-width: 800px) {
   .project-media--phones img { width: 100px; }
 }
+
+/* Brand-aligned portfolio previews */
+.brand-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  padding: 32px 24px;
+}
+.brand-mark {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+.brand-preview p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  margin: 0;
+  max-width: 180px;
+}
+
+/* Sitr — light cream, clean */
+.project-media--sitr {
+  background: #FAF8F5;
+  color: #1A1A1A;
+  min-height: 180px;
+  padding: 0;
+}
+.project-card--sitr .brand-mark { color: #1A1A1A; }
+
+/* MedStack — clean medical tools, light */
+.project-media--medstack {
+  background: #F8FAFC;
+  color: #0F172A;
+  min-height: 180px;
+  padding: 0;
+}
+.project-card--medstack .brand-mark { color: #0F172A; }
+
+/* Byline — dark sophisticated, warm text */
+.project-media--byline {
+  background: #0D0C09;
+  color: #EDE9E0;
+  min-height: 180px;
+  padding: 0;
+}
+.project-card--byline .brand-mark { color: #EDE9E0; }
+.project-card--byline .brand-preview p { opacity: 0.7; }
