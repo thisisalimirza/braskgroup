@@ -491,3 +491,64 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }
+
+/* Editorial refinements for more professional presence */
+.section {
+  position: relative;
+}
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(180px, 40%);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--burgundy), transparent);
+  opacity: 0.6;
+}
+.section-alt::before {
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.thesis-grid h2::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: var(--burgundy);
+  margin-top: 20px;
+}
+.project-card {
+  border-top: 3px solid transparent;
+}
+.project-card:hover {
+  border-top-color: var(--burgundy);
+}
+.project-card--featured {
+  border-top: 3px solid var(--burgundy);
+}
+.about-portrait {
+  position: relative;
+}
+.about-portrait::after {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(139, 30, 63, .25);
+  border-radius: 12px;
+  pointer-events: none;
+}
+.eyebrow {
+  position: relative;
+  display: inline-block;
+}
+.eyebrow::before {
+  content: '';
+  position: absolute;
+  left: -16px;
+  top: 50%;
+  width: 8px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+}
