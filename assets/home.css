@@ -552,3 +552,56 @@ footer {
   background: currentColor;
   opacity: 0.5;
 }
+
+/* Hero visual life */
+#hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 80px;
+}
+.hero-visual {
+  display: flex;
+  gap: 28px;
+  margin-top: 64px;
+  position: relative;
+  z-index: 1;
+}
+.hero-phone {
+  width: 180px;
+  border-radius: 28px;
+  box-shadow: 0 24px 60px rgba(0,0,0,.4);
+  border: 4px solid rgba(255,255,255,.1);
+}
+.hero-phone--offset {
+  transform: translateY(24px);
+}
+@media (max-width: 700px) {
+  .hero-visual { gap: 16px; margin-top: 40px; }
+  .hero-phone { width: 130px; }
+  .hero-phone--offset { transform: translateY(16px); }
+}
+
+/* Richer portfolio media */
+.project-media--phones {
+  background: linear-gradient(135deg, #0A2340 0%, #061930 100%);
+  padding: 40px 24px;
+  min-height: 340px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  justify-content: center;
+}
+.project-media--phones img {
+  width: 140px;
+  border-radius: 22px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.35);
+  border: 3px solid rgba(255,255,255,.08);
+}
+.project-card--featured .project-media--phones img:nth-child(2) {
+  transform: translateY(-20px);
+  z-index: 1;
+}
+@media (max-width: 800px) {
+  .project-media--phones img { width: 100px; }
+}
